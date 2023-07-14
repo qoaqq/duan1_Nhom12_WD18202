@@ -1,26 +1,56 @@
 <?php
 class App{
 
-    protected $controller="Home";
-    protected $action="SayHi";
+    protected $controller="kh_Home";
+    protected $action="Theme";
     protected $params=[];
 
     function __construct(){
  
         $arr = $this->UrlProcess();
- 
         // Controller
-        if( file_exists("./mvc/controllers/".$arr[0].".php") ){
-            $this->controller = $arr[0];
-            unset($arr[0]);
+        if(!empty($arr[0]) && $arr[0]=="admin"){
+            $controller=!empty($arr[1]) ? $arr[1]: "admin_Home";
+            $controllerPath="./mvc/controllers/admin/".$controller.".php";
+            if(file_exists($controllerPath)){
+                require_once $controllerPath;
+                $this->controller=$controller;
+            }
+            else{
+                require_once "./mvc/controllers/khachhang/kh_Home.php";
+                $this->controller="kh_Home";
+            }
         }
-        require_once "./mvc/controllers/". $this->controller .".php";
+        else{
+            if(empty($arr[0])){
+                $this->controller="kh_Home";
+            }
+            else{
+                $this->controller=$arr[0];
+            }
+            $controllerPath="./mvc/controllers/khachhang/".$this->controller.".php";
+            if(file_exists($controllerPath)){
+                require_once "./mvc/controllers/khachhang/".$this->controller.".php";
+            }
+            else {
+                require_once "./mvc/controllers/khachhang/kh_Home.php";
+                $this->controller="kh_Home";
+            }
+        }
+
         $this->controller = new $this->controller;
 
-        // Action
-        if(isset($arr[1])){
-            if( method_exists( $this->controller , $arr[1]) ){
-                $this->action = $arr[1];
+        //Action
+        if(!empty($arr[0]) && $arr[0]="admin"){
+            $action=!empty($arr[2]) ? $arr[2] : "Theme";
+            if( method_exists( $this->controller , $action) ){
+                $this->action = $action;
+            }
+            unset($arr[2]);
+        }else{
+            $action=!empty($arr[1]) ? $arr[1] : "Theme";
+            if( method_exists( $this->controller , $action) ){
+                $this->action = $action;
             }
             unset($arr[1]);
         }
