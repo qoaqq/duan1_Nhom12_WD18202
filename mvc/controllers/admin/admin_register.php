@@ -18,11 +18,12 @@ class admin_register extends Controller {
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
         $email = $_POST['email'];
+        $password = $_POST['password'];
+        $hashPassword = password_hash($password, PASSWORD_DEFAULT);
         $type = $_POST['type'];
         $errors= array();
 
-        // ['img', 'fullname', 'phonenumber', 'address', 'email', 'type']
-        
+
         $file = $_FILES['img'];
         $img = $file['name'];
         if ($file['size'] <= 0) {
@@ -35,16 +36,17 @@ class admin_register extends Controller {
             }
         }
 
-        // die;
-        if(isset($_POST["btn_insertUser"])){
-            $this->admin_register->insertUser($fullname, $phonenumber, $address, $email, $img, $type);
-            move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-            header("location: http://localhost/live/admin/admin_register");
-            exit();
+        if(empty($errors)) {
+            if(isset($_POST["btn_insertUser"])){
+                $this->admin_register->insertUser($fullname, $phonenumber, $address, $email, $password, $img, $type);
+                move_uploaded_file($file['tmp_name'], "./public/img/".$img);
+                header("location: http://localhost/live/admin/admin_login");
+            }
+        } else {
+            $this->view_Admin("admin_register", [
+                'errors' => $errors,
+                'page' => 'register'
+            ]);
         }
-
-        $this->view_Admin("admin_register", [
-            'error' => $errors
-        ]);
     }
 }

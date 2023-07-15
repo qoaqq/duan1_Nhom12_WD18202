@@ -19,7 +19,7 @@
                           <svg class="icon">
                             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
-                        <input class="form-control" name="phonenumber" type="number" placeholder="Số Điện Thoại">
+                        <input class="form-control" name="phonenumber" type="text" placeholder="Số Điện Thoại">
                       </div>
 
                       <div class="input-group mb-4"><span class="input-group-text">
@@ -40,22 +40,24 @@
                           <svg class="icon">
                             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
-                        <input class="form-control" name="img" type="file" placeholder="Ảnh">
-                        
-                      </div>
-                      <p style="color: red;" ><?= $data['errors'] ?? '' ?></p>
-                      <div class="input-group mb-4"><span class="input-group-text">
-                          <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                          </svg></span>
-                        <input class="form-control" name="type" type="number" placeholder="Vai Trò">
+                        <input class="form-control" name="password" type="password" placeholder="Password">
                       </div>
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
                             <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
-                        <input class="form-control" name="special" type="number" placeholder="Đặc biệt">
+                        <input class="form-control" name="img" type="file" placeholder="Ảnh">
+                        
+                      </div>
+                      <p style="color: red;" ><?= $data['errors']['img'] ?? '' ?></p>
+                      
+
+                      <div class="input-group mb-4"><span class="input-group-text">
+                          <svg class="icon">
+                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                          </svg></span>
+                        <input class="form-control" name="special" type="number" placeholder="Vai Trò">
                       </div>
                       <button class="btn btn-block btn-success" name="btn_insertUser" type="submit">Create Account</button>
                     </div>
