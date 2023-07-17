@@ -12,24 +12,48 @@ class admin_login extends Controller {
     }
 
     public function loginFeature(){
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         $errors = array();
+        $checkLoggedIn = false;
 
-        if(isset($errors)) {
-            if(isset($_POST['btn_login'])){
-                $result = $this->admin_login->selectUser();
-                $a = $result->fetch_all(MYSQLI_ASSOC);
-                
-                echo "<pre>";
-                print_r($a);
-                echo "</pre>";
+        if(isset($_POST['btn_login'])){
+            if(empty($email)){
+                $errors['email'] = "Vui long nhap vao email";
             }
-        } else {
+            if(empty($password)){
+                $errors['password'] = "Vui long nhap vao mat khau";
+            }
+            
+            if(!empty($email) && !empty($password)){
+                $users = $this->admin_login->selectUserByEmail($email);
+                if(!empty($users)){
+                    if(password_verify($password, $users['password'])){
+                        $checkLoggedIn = true;
+                        if($checkLoggedIn == true) {
+                            $_SESSION['id'] = $users['id'];
+                            $this->admin_login->selectUserById($_SESSION['id']);
+                            header("Location: http://localhost/live/admin");
+                            exit;
+                        }
+                    }else{
+                        $errors['user']="Email hoac mat khau khong chinh xac";
+                    }
+                }
+            }
+        } 
+
+        if(!empty($errors)){
             $this->view_Admin("admin_login", [
                 'page' => 'login',
                 'errors' => $errors
             ]);
         }
+    }
+
+    public function logOutFeature() {
+        session_unset();
+        header("location: http://localhost/live/admin/admin_login");
+        exit();
     }
 }

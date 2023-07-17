@@ -1,3 +1,9 @@
+<?php 
+  if(!isset($_SESSION['id'])){
+    header("location: http://localhost/live/admin/admin_login");
+    exit;
+  }
+?>
 <!DOCTYPE html> 
 <html lang="en">
   <head>
@@ -45,7 +51,7 @@
       <!-- Content  -->
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <?php require_once "./mvc/views/Admin_Template/admin_pages/".$data['page'].".php"; ?>
+            <?php require_once "./mvc/views/Admin_Template/adminUser_Pages/".$data['page'].".php"; ?>
         </div>
         
       </div>

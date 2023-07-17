@@ -20,9 +20,8 @@ class admin_register extends Controller {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-        $type = $_POST['type'];
+        $active = $_POST['special'];
         $errors= array();
-
 
         $file = $_FILES['img'];
         $img = $file['name'];
@@ -37,10 +36,12 @@ class admin_register extends Controller {
         }
 
         if(empty($errors)) {
-            if(isset($_POST["btn_insertUser"])){
-                $this->admin_register->insertUser($fullname, $phonenumber, $address, $email, $password, $img, $type);
+            try {
+                $this->admin_register->insertUser($fullname, $phonenumber, $address, $email, $hashPassword, $img, $active);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
                 header("location: http://localhost/live/admin/admin_login");
+            } catch (Exception $e) {
+                echo "Lỗi: " . $e->getMessage();
             }
         } else {
             $this->view_Admin("admin_register", [

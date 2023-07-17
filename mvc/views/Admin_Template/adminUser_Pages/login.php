@@ -7,19 +7,24 @@
                 <div class="card col-md-7 p-4 mb-0">
                     <div class="card-body">
                     <h1>Login</h1>
-                    <p class="text-medium-emphasis">Sign In to your account</p>
+                    <p class="text-medium-emphasis">Don't have account?</p>
+                    <p class="text-medium-emphasis"><a class="text-decoration-none" href="http://localhost/live/admin/admin_register">Register</a>   Now</p>
+                    
+                    <p style="color: red;" ><?= $data['errors']['user'] ?? '' ?></p>
                     <div class="input-group mb-3"><span class="input-group-text">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
                         </svg></span>
-                        <input class="form-control" name="username" type="text" placeholder="Username">
+                        <input class="form-control" name="email" type="text" value="<?= $data['email'] ?? '' ?>" placeholder="Email">
                     </div>
+                    <p style="color: red;" ><?= $data['errors']['email'] ?? '' ?></p>
                     <div class="input-group mb-4"><span class="input-group-text">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                         </svg></span>
                         <input class="form-control" name="password" type="password" placeholder="Password">
                     </div>
+                    <p style="color: red;" ><?= $data['errors']['password'] ?? '' ?></p>
                     <div class="row">
                         <div class="col-6">
                         <button class="btn btn-primary px-4" name="btn_login" type="submit">Login</button>

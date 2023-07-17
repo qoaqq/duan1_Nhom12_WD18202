@@ -15,6 +15,7 @@ class App{
             if(file_exists($controllerPath)){
                 require_once $controllerPath;
                 $this->controller=$controller;
+                
             }
             else{
                 require_once "./mvc/controllers/khachhang/kh_Home.php";
@@ -38,6 +39,12 @@ class App{
             }
         }
 
+        // echo "<pre>";
+        // print_r($arr);
+        // echo "</pre>";
+
+        
+
         $this->controller = new $this->controller;
 
         //Action
@@ -46,12 +53,19 @@ class App{
             if( method_exists( $this->controller , $action) ){
                 $this->action = $action;
             }
-            unset($arr[2]);
         }else{
             $action=!empty($arr[1]) ? $arr[1] : "Theme";
             if( method_exists( $this->controller , $action) ){
                 $this->action = $action;
             }
+        }
+
+        if(!empty($arr[0]) && $arr[0]="admin"){
+            unset($arr[0]);
+            unset($arr[1]);
+            unset($arr[2]);
+        }else{
+            unset($arr[0]);
             unset($arr[1]);
         }
 
@@ -67,6 +81,5 @@ class App{
             return explode("/", filter_var(trim($_GET["url"], "/")));
         }
     }
-
 }
 ?>

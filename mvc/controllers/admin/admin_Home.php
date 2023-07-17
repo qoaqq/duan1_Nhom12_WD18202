@@ -1,14 +1,18 @@
 <?php
     class admin_Home extends Controller {
         public $adminHome_Model;
+        public $adminUser_Model;
 
     public function __construct(){
         $this->adminHome_Model = $this->admin_Model("adminHome_Model");
+        $this->adminUser_Model = $this->admin_Model("adminUser_Model");
     }
 
     public function Theme(){
+        $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
         $this->view_Admin("admin_home", [
-            'page' => 'home'
+            'page' => 'home',
+            'users' => $users
         ]);
     }
 }

@@ -1,3 +1,9 @@
+<?php 
+  if(!isset($_SESSION['id'])){
+    header("location: http://localhost/live/admin/admin_login");
+    exit;
+  }
+?>
 <!DOCTYPE html> 
 <html lang="en">
   <head>
@@ -37,17 +43,20 @@
   </head>
   <body>
     <!-- Side bar  -->
+    <?php require_once "./mvc/views/Admin_Template/block_admin/sidebar.php"; ?>
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
       <!-- Header  -->
+    <?php require_once "./mvc/views/Admin_Template/block_admin/header.php"; ?>
 
       <!-- Content  -->
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <?php require_once "./mvc/views/Admin_Template/admin_pages/".$data['page'].".php"; ?>
+          <?php require_once "./mvc/views/Admin_Template/adminUser_Pages/".$data['page'].".php"; ?>
         </div>
         
       </div>
       <!-- Footer  -->
+      <?php require_once "./mvc/views/Admin_Template/block_admin/footer.php"; ?>
     </div>
     <!-- CoreUI and necessary plugins-->
     <script src="/live/public/admin/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
@@ -59,6 +68,5 @@
     <script src="/live/public/admin/js/main.js"></script>
     <script>
     </script>
-
   </body>
 </html>

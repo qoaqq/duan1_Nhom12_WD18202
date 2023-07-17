@@ -10,42 +10,42 @@
                       
                       <div class="input-group mb-3"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
                           </svg></span>
                         <input class="form-control" name="fullname" type="text" placeholder="Họ và Tên">
                       </div>
 
                       <div class="input-group mb-3"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="phonenumber" type="text" placeholder="Số Điện Thoại">
                       </div>
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="address" type="text" placeholder="Địa Chỉ">
                       </div>
                       
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="email" type="email" placeholder="Email">
                       </div>
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="password" type="password" placeholder="Password">
                       </div>
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="img" type="file" placeholder="Ảnh">
                         
@@ -55,7 +55,7 @@
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                            <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                           </svg></span>
                         <input class="form-control" name="special" type="number" placeholder="Vai Trò">
                       </div>

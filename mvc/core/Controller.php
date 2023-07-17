@@ -7,7 +7,7 @@ class Controller{
     }
 
     public function view_Admin($view, $data=[]){
-        require_once "./mvc/views/Admin_Template/".$view.".php";
+        require_once "./mvc/views/Admin_Template/Admin_Interface/".$view.".php";
     }
 }
 ?>

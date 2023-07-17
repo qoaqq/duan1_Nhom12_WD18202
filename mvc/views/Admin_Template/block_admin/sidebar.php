@@ -11,13 +11,13 @@
         <li class="nav-item"><a class="nav-link" href="http://localhost/live/admin/admin_Home">
             <svg class="nav-icon">
               <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-            </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+            </svg> Home<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
         <li class="nav-title">Theme</li>
-        <li class="nav-item"><a class="nav-link" href="http://localhost/live/test/Sayhi">
+        <li class="nav-item"><a class="nav-link" href="http://localhost/live/admin/admin_users/">
             <svg class="nav-icon">
               <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-            </svg>Danh Mục</a></li>
-        <li class="nav-item"><a class="nav-link" href="http://localhost/live/test2/Sayhi">
+            </svg>Tài Khoản</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://localhost/live/admin/">
             <svg class="nav-icon">
               <use xlink:href="/live/public/admin/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
             </svg>Sản Phẩm</a></li>
