@@ -14,6 +14,7 @@ class admin_register extends Controller {
 
 
     public function InsertFeature() {
+        ini_set ('display_errors', 1); 
         $fullname = $_POST['fullname'];
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
@@ -50,9 +51,7 @@ class admin_register extends Controller {
             $errors['password'] = "Vui lòng nhập mật khẩu";
         }
 
-        if(empty($active)){
-            $errors['active'] = "Vui lòng nhập role";
-        }
+        
 
         $file = $_FILES['img'];
         $img = $file['name'];
