@@ -33,22 +33,55 @@ class admin_users extends Controller{
         $email = $_POST['email'];
         $password = $_POST['password'];
         $hashPass = password_hash($password, PASSWORD_DEFAULT);
-        $role = $_POST['role'];
         $file = $_FILES['img'];
         $img = $_POST['img'];
+        $errors = array();
+
+        if(empty($fullname)) {
+            $errors['fullname'] = "Vui lòng nhập tên";
+        }
+
+        if(empty($phonenumber)){
+            $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
+        }
+
+        if(empty($address)){
+            $errors['address'] = "Vui lòng nhập địa chỉ";
+        }
+
+        if(empty($email)){
+            $errors['email'] = "Vui lòng nhập email";
+        }
+
+        if(empty($password)){
+            $errors['password'] = "Vui lòng nhập mật khẩu";
+        }
 
         if ($file['size'] > 0) {
             $image = ['jpg', 'png', 'gif'];
             $img = $file['name'];
+            $ext = pathinfo($img, PATHINFO_EXTENSION);
+            if (!in_array($ext, $image)) {
+                $errors['img'] = "File không phải là ảnh";
+            }
         }
 
-        if(isset($_POST['btn_updateUser'])){
-            $this->admin_users->updateUserById($id, $fullname, $phonenumber, $address, $email, $hashPass, $img, $role);
-            move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-            header("location: http://localhost/live/admin/admin_users");
-            exit();
-        } else {
-            
+        if(empty($errors)){
+            if(isset($_POST['btn_updateUser'])){
+                $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $hashPass, $img);
+                move_uploaded_file($file['tmp_name'], "./public/img/".$img);
+                header("location: http://localhost/live/admin/admin_users");
+                exit();
+            }
+        }
+
+        if(!empty($errors)){
+            $updateTable = $this->admin_users->selectUserById($id);
+            $this->view_Admin("admin_users", [
+                'page' => 'updateUser',
+                'errors' => $errors,
+                'update' => $updateTable
+            ]);
         }
     }
 

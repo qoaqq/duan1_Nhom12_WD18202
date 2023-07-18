@@ -40,8 +40,14 @@ class adminUser_Model extends DB{
           return mysqli_query($this->con, $qr);
      }
 
-     public function updateAdminProdfileById($id, $tentk, $sdt, $diachi, $email, $password, $anh){
-          $qr = "UPDATE `khachhang` SET `tenkh`='$tentk',`sdt`='$sdt',`diachi`='$diachi',`email`='$email',`password`='$password',`anh`='$anh' 
+     public function updateUserByIdRole($id, $tenkh, $sdt, $diachi, $email, $password, $anh){
+          $qr = "UPDATE `khachhang` SET `tenkh`='$tenkh',`sdt`='$sdt',`diachi`='$diachi',`email`='$email',`password`='$password',`anh`='$anh' 
+          WHERE `vaitro`=b'0' AND `id`=$id";
+          return mysqli_query($this->con, $qr);
+     }
+
+     public function updateAdminProdfileById($id, $tentk, $sdt, $diachi, $email, $anh){
+          $qr = "UPDATE `khachhang` SET `tenkh`='$tentk',`sdt`='$sdt',`diachi`='$diachi',`email`='$email',`anh`='$anh' 
           WHERE `id`=$id";
           return mysqli_query($this->con, $qr);
      }

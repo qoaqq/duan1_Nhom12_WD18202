@@ -21,7 +21,38 @@ class admin_register extends Controller {
         $password = $_POST['password'];
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
         $active = $_POST['special'];
+        $value = [
+            'fullname' => $fullname,
+            'phonenumber' => $phonenumber,
+            'address' => $address,
+            'email' => $email,
+            'active' => $active
+        ];
         $errors= array();
+
+        if(empty($fullname)) {
+            $errors['fullname'] = "Vui lòng nhập tên";
+        }
+
+        if(empty($phonenumber)){
+            $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
+        }
+
+        if(empty($address)){
+            $errors['address'] = "Vui lòng nhập địa chỉ";
+        }
+
+        if(empty($email)){
+            $errors['email'] = "Vui lòng nhập email";
+        }
+
+        if(empty($password)){
+            $errors['password'] = "Vui lòng nhập mật khẩu";
+        }
+
+        if(empty($active)){
+            $errors['active'] = "Vui lòng nhập role";
+        }
 
         $file = $_FILES['img'];
         $img = $file['name'];
@@ -46,7 +77,8 @@ class admin_register extends Controller {
         } else {
             $this->view_Admin("admin_register", [
                 'errors' => $errors,
-                'page' => 'register'
+                'page' => 'register',
+                'value' => $value
             ]);
         }
     }

@@ -1,7 +1,7 @@
 <form action="http://localhost/live/admin/admin_users/deleteFeatureByCheckBox" method="post">
 <button type="button" id="select-all" class="btn btn-success">Chọn tất cả</button>
 <button type="button" id="deselect-all" class="btn btn-danger">Bỏ chọn tất cả</button>
-<button type="submit" class="btn btn-warning">Xóa theo mục đã chọn</button>
+<button type="submit" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-warning">Xóa theo mục đã chọn</button>
 
     <table class="table text-center">
         <tr>
@@ -36,22 +36,22 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-    const selectAllBtn = document.getElementById('select-all');
-    const deselectAllBtn = document.getElementById('deselect-all');
+        const selectAllBtn = document.getElementById('select-all');
+        const deselectAllBtn = document.getElementById('deselect-all');
 
-    selectAllBtn.addEventListener('click', function() {
-        selectAllCheckboxes(true);
-    });
+        selectAllBtn.addEventListener('click', function() {
+            selectAllCheckboxes(true);
+        });
 
-    deselectAllBtn.addEventListener('click', function() {
-        selectAllCheckboxes(false);
-    });
+        deselectAllBtn.addEventListener('click', function() {
+            selectAllCheckboxes(false);
+        });
     });
 
     function selectAllCheckboxes(checked) {
-    const checkboxes = document.querySelectorAll('input[name="ids[]"]');
-    checkboxes.forEach(function(checkbox) {
-        checkbox.checked = checked;
-    });
+        const checkboxes = document.querySelectorAll('input[name="ids[]"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = checked;
+        });
     }
 </script>
