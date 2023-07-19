@@ -39,10 +39,6 @@ class App{
             }
         }
 
-        // echo "<pre>";
-        // print_r($arr);
-        // echo "</pre>";
-
         
 
         $this->controller = new $this->controller;

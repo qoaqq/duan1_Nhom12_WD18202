@@ -1,18 +1,15 @@
-<?php
+<?php 
+    
     class admin_Home extends Controller {
-        public $adminHome_Model;
-        public $adminUser_Model;
+        public $danhmucModel;
 
     public function __construct(){
-        $this->adminHome_Model = $this->admin_Model("adminHome_Model");
-        $this->adminUser_Model = $this->admin_Model("adminUser_Model");
+        $this->danhmucModel = $this->model("danhmucModel");
     }
 
     public function Theme(){
-        $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
-        $this->view_Admin("admin_home", [
-            'page' => 'home',
-            'users' => $users
-        ]);
+        $this->view_admin("admin_Home");
     }
 }
+
+?>
