@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="http://localhost/live/admin/admin_users/updateFeature/<?= $data['update']['id'] ?>" class="container">
+<form method="post" enctype="multipart/form-data" action="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/updateFeature/<?= $data['update']['id'] ?>" class="container">
   <div class="form-group">
     <input type="hidden" class="form-control" id="exampleInputEmail1" name="fullname" value="<?= $data['update']['id'] ?>">
   </div>
@@ -36,7 +36,7 @@
   <div class="form-group">
     <label for="exampleInputPassword1">Ảnh</label>
     <input type="hidden" name="img" value="<?= $data['update']['anh'] ?>">
-    <img src="/live/public/img/<?= $data['update']['anh'] ?>" width="200" height="200" alt="">
+    <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['update']['anh'] ?>" width="200" height="200" alt="">
     <input type="file" name="img">
   </div>
   <p style="color: red;"><?= $data['errors']['img'] ?? '' ?></p>

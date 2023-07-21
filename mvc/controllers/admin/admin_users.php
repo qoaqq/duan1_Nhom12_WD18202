@@ -70,7 +70,7 @@ class admin_users extends Controller{
             if(isset($_POST['btn_updateUser'])){
                 $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $hashPass, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-                header("location: http://localhost/live/admin/admin_users");
+                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();
             }
         }
@@ -87,7 +87,7 @@ class admin_users extends Controller{
 
     public function deleteFeatureById($id){
         $this->admin_users->deleteUserById($id);
-        header("location: http://localhost/live/admin/admin_users");
+        header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
         exit();
     }
 
@@ -95,10 +95,10 @@ class admin_users extends Controller{
         if(isset($_POST['ids']) && is_array($_POST['ids'])){
             $ids = $_POST['ids'];
             $this->admin_users->deleteUserByCheckBox(...$ids);
-            header("location: http://localhost/live/admin/admin_users");
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
             exit();
         } else {
-            header("location: http://localhost/live/admin/admin_users");
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
         }
     }
 }

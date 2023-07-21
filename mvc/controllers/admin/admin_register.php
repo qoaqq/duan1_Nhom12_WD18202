@@ -69,7 +69,7 @@ class admin_register extends Controller {
             try {
                 $this->admin_register->insertUser($fullname, $phonenumber, $address, $email, $hashPassword, $img, $active);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-                header("location: http://localhost/live/admin/admin_login");
+                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
             } catch (Exception $e) {
                 echo "Lỗi: " . $e->getMessage();
             }

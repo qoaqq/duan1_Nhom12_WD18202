@@ -3,11 +3,11 @@
         
         public $sanphamModel;
         public function __construct(){
-            $this->sanphamModel = $this->model("sanphamModel");
+            $this->sanphamModel = $this->admin_Model("sanphamModel");
         }
 
         public function Theme(){
-            $listsp = $this->sanphamModel = $this->model("sanphamModel");
+            $listsp = $this->sanphamModel = $this->admin_Model("sanphamModel");
             $this->view_admin("admin_sanpham", [
                 'page'=>'sanpham_page',
                 'listsp' => $listsp

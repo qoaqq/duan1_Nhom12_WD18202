@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="http://localhost/live/admin/admin_profile/updateAdminProfile/<?= $data['users']['id'] ?>" class="container">
+<form method="post" enctype="multipart/form-data" action="http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/updateAdminProfile/<?= $data['users']['id'] ?>" class="container">
   <div class="form-group">
     <label for="formGroupExampleInput">Tên tài khoản:</label>
     <input type="text" class="form-control" id="formGroupExampleInput" name="fullname" value="<?= $data['users']['tenkh'] ?? '' ?>">
@@ -22,7 +22,7 @@
   <div class="form-group">
     <label for="formGroupExampleInput2">Ảnh</label>
     <input type="hidden" name="img" value="<?= $data['users']['anh'] ?>">
-    <img src="/live/public/img/<?= $data['users']['anh'] ?>" width="200p" height="200" id="formGroupExampleInput2" alt="">
+    <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['users']['anh'] ?>" width="200p" height="200" id="formGroupExampleInput2" alt="">
     <input type="file" name="img">
     <p style="color: red;"><?= $data['errors']['img'] ?? '' ?></p>
   </div>

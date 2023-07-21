@@ -4,7 +4,7 @@
         public $danhmucModel;
 
         public function __construct(){
-            $this->danhmucModel = $this->model("danhmucModel");
+            $this->danhmucModel = $this->admin_Model("danhmucModel");
         }
         
         public function Theme(){
