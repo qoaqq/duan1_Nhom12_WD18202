@@ -3,7 +3,7 @@
     <input type="hidden" value="<?= $data['id'] ?>" name="id">
     <div class="form-group">
         <label for="tensp">Tên sản phẩm</label>
-        <input type="text" class="form-control" id="tensp" aria-describedby="emailHelp" name="tensp" value="<?= $data['sp']['tensp'] ?? '' ?>">
+        <input type="text" class="form-control" id="tensp" aria-describedby="emailHelp" name="tensp" value="<?= $data['sp']['ten_sanpham'] ?? '' ?>">
         <p style="color: red;" ><?= $data['errors']['tensp'] ?? '' ?></p>
     </div>
 
@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label for="imgInp">Ảnh cũ</label><br>
-        <img src="/duan1_Nhom12_WD18202/public/images/<?= $data['sp']['anh'] ?>" width="150px" id="formGroupExampleInput2" alt="">
+        <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['sp']['anh'] ?>" width="150px" id="formGroupExampleInput2" alt="">
         <input type="hidden" value="<?= $data['sp']['anh'] ?>" name="anh">
         <label for="" style="display:block;">Ảnh mới</label>
         <input type="file" name="anh">
@@ -36,7 +36,7 @@
 
     <div class="form-group">
         <label for="idlh">ID loại hàng</label>
-        <input type="text" disabled class="form-control" id="idlh" aria-describedby="emailHelp" name="idlh" value="<?= $data['sp']['idlh'] ?? '' ?>">
+        <input type="text" disabled class="form-control" id="idlh" aria-describedby="emailHelp" name="idlh" value="<?= $data['sp']['id_loaihang'] ?? '' ?>">
     </div>
 
     <button type="submit" class="btn btn-primary" name="btn_editSanpham">Sửa</button>

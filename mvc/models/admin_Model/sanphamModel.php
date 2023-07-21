@@ -2,10 +2,7 @@
     class sanphamModel extends DB{
         public function listSanpham(){
             $qr = "SELECT * FROM sanpham";
-            
             $result = mysqli_query($this->con, $qr);
-            // var_dump($result);
-            // die;
             return $result; 
         }
 
@@ -15,7 +12,7 @@
         }
 
         public function updateSanpham($id, $tensp, $gia, $anh, $mota, $soluong){
-            $qr = "UPDATE `sanpham` SET `tensp` = '$tensp', `gia` = $gia, `anh` = '$anh', `mota` = '$mota', `soluong` = $soluong WHERE `id` = $id";
+            $qr = "UPDATE `sanpham` SET `ten_sanpham` = '$tensp', `gia` = $gia, `anh` = '$anh', `mota` = '$mota', `soluong` = $soluong WHERE `id` = $id";
             $result = mysqli_query($this->con, $qr);
             return $result;
         }

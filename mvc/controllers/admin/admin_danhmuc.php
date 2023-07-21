@@ -20,21 +20,12 @@
         }
 
         public function addDM_Feature(){
-            if(isset($_POST['btn_addDanhmuc'])){
-                $tendm = $_POST['tendm'];
-                $errors = array();
+            $tendm = $_POST['tendm'];
+            echo $tendm;
+            $errors = array();
 
-                if(empty($tendm)){
-                    $errors['tendm'] = "Vui lòng nhập tên danh mục";
-                }
-                
-                // if(!empty($tendm)){
-                //     echo "1111111";
-                //     // $this->danhmucModel->insertDanhmuc($tendm);
-                //     // header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm");
-                //     // exit();
-                // }
-               
+            if(empty($tendm)){
+                $errors['tendm'] = "Vui lòng nhập tên danh mục";
             }
 
             if(!empty($errors)){
@@ -43,9 +34,12 @@
                     'errors' => $errors
                 ]);
             }else{
-                 $this->danhmucModel->insertDanhmuc($tendm);
+                if(isset($_POST['btn_addDanhmuc'])){
+                    $this->danhmucModel->insertDanhmuc($tendm);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm");
                     exit();
+                }
+                
             }
         }
 
@@ -97,9 +91,7 @@
             if(isset($_POST['btn_delByCheckBox'])) {
                 if(isset($_POST['ids']) && is_array($_POST['ids'])){
                     $del_ids = $_POST['ids'];
-                
                     if(!empty($del_ids)) {
-                        
                         $this->danhmucModel->deleteDanhmuc(...$del_ids);
                         header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm");
                         exit();
@@ -126,11 +118,10 @@
             
         }
         
+        //http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm
 
         public function showDm(){
             $listdm = $this->danhmucModel->listDanhmuc();
-            // var_dump($listdm);
-            // die;
             $this->view_admin("admin_danhMuc", [
                 'page' => 'danhmuc_page',
                 'listdm' => $listdm,

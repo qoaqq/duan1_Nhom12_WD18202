@@ -17,20 +17,20 @@
   </head>
   <body>
     
-  <?php require_once "./mvc/views/Admin_Templete/block_admin/sidebar.php"; ?>
+  <?php require_once "./mvc/views/Admin_Template/block_admin/sidebar.php" ?>
 
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
     
-      <?php require_once "./mvc/views/Admin_Templete/block_admin/header.php"; ?>
+      <?php require_once "./mvc/views/Admin_Template/block_admin/header.php" ?>
 
       <!-- Content -->
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <?php require_once "./mvc/views/Admin_Templete/adminSanPham_Pages/".$data['page'].".php"; ?>
+          <?php require_once "./mvc/views/Admin_Template/adminSanPham_Pages/".$data['page'].".php" ?>
         </div>
       </div>
 
-      <?php require_once "./mvc/views/Admin_Templete/block_admin/footer.php"; ?>
+      <?php require_once "./mvc/views/Admin_Template/block_admin/footer.php" ?>
     </div>
     
     <!-- CoreUI and necessary plugins-->

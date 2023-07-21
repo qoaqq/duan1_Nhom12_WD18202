@@ -14,7 +14,6 @@
         <div class="form-group">
             <label for="img">Ảnh</label>
             <input type="file" class="form-control" id="inputdanhmuc" aria-describedby="emailHelp" name="anh">
-            <img src="./public/images/<?php echo isset($image) ? $image : '' ?>" alt="" >
             <p style="color: red;" ><?= $data['errors']['anh'] ?? '' ?></p>
         </div>
         <div class="form-group">

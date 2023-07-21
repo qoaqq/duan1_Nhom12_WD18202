@@ -15,7 +15,6 @@
         }
 
         public function addSP_Theme(){
-        
             $this->view_admin("admin_sanpham",[
                 'page' => "add_sanpham"
             ]);
@@ -28,49 +27,45 @@
             $soluong = $_POST['soluong'];
             $file = $_FILES['anh'];  
             $img = $file['name'];
-            
-            if(isset($_POST['btn_addSanpham'])){
-                
-                $errors = array();
-                
-                if(empty($tensp)){
-                    $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
-                }
-                if($gia <= 0 && (empty($gia))){
-                    $errors['gia'] = "Vui lòng nhập giá sản phẩm";
-                }
-                if(empty($mota)){
-                    $errors['mota'] = "Vui lòng nhập mô tả";
-                }
-                if($soluong <= 0 && (empty($soluong))){ 
-                    $errors['soluong'] = "Vui lòng nhập số lượng";
-                }
+            $errors = array();
 
-             
-                if ($file['size'] <= 0) {
-                    $errors['anh'] = "Bạn cần nhập ảnh";
-                } else {
-                    $image = ['jpg', 'png', 'gif'];
-                    $ext = pathinfo($img, PATHINFO_EXTENSION);
-                    if (!in_array($ext, $image)) {
-                        $errors['anh'] = "File không phải là ảnh";
-                    }
+            if(empty($tensp)){
+                $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
+            }
+            if($gia <= 0 && (empty($gia))){
+                $errors['gia'] = "Vui lòng nhập giá sản phẩm";
+            }
+            if(empty($mota)){
+                $errors['mota'] = "Vui lòng nhập mô tả";
+            }
+            if($soluong <= 0 && (empty($soluong))){ 
+                $errors['soluong'] = "Vui lòng nhập số lượng";
+            }
+
+            if ($file['size'] <= 0) {
+                $errors['anh'] = "Bạn cần nhập ảnh";
+            } else {
+                $image = ['jpg', 'png', 'gif'];
+                $ext = pathinfo($img, PATHINFO_EXTENSION);
+                if (!in_array($ext, $image)) {
+                    $errors['anh'] = "File không phải là ảnh";
                 }
-                
-                move_uploaded_file($file['tmp_name'], "./public/images/".$img);
+            }
             
-                if(!empty($errors)){
-                    $this->view_admin("admin_sanpham", [
-                        'page' => 'sanpham_page',
-                        'errors' => $errors
-                    ]);
-                }
-                else{
+            if(empty($errors)){
+                if(isset($_POST['btn_addSanpham'])){
                     $this->sanphamModel->insertSanpham($tensp,$gia,$img,$mota,$soluong);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
+                    move_uploaded_file($file['tmp_name'], "./public/images/".$img);
                     exit();
                 }
-           
+            }
+
+            if(!empty($errors)){
+                $this->view_admin("admin_sanpham", [
+                    'page' => 'add_sanpham',
+                    'errors' => $errors
+                ]);
             }
         }
 
@@ -140,8 +135,6 @@
             }
             
         }
-
-        
         
         public function delSP_byCheckBox(){
             if(isset($_POST['btn_delByCheckBox'])) {
@@ -172,23 +165,14 @@
             $this->sanphamModel->deleteSanpham((int)$id);
             header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
             exit();
-            
-
-            $this->view_admin("admin_sanPham", [
-                'page' => 'sanpham_page'
-            ]);
         }
         
         public function showSp(){
             $listsp = $this->sanphamModel->listSanpham();
-            // var_dump($listsp);
-            // die;
             $this->view_admin("admin_sanpham", [
                 'page' => 'sanpham_page',
                 'listsp' => $listsp
             ]);
-
-            
         }
         
     }

@@ -1,8 +1,8 @@
 <?php 
-  if(!isset($_SESSION['id'])){
-    header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
-    exit;
-  }
+  // if(!isset($_SESSION['id'])){
+  //   header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+  //   exit;
+  // }
 ?>
 <!DOCTYPE html> 
 <html lang="en">

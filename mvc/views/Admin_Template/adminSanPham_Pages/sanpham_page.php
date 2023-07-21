@@ -1,7 +1,7 @@
-<form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byCheckBox" method="post">
+<form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byCheckBox" enctype="multipart/form-data" method="post">
 <h1 class="text-center">QUẢN LÝ SẢN PHẨM</h1>
 <a class="btn btn-dark" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/addSP_Theme/">Thêm sản phẩm</a>
-<a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byCheckBox"><button id="deleteAllBtn" class="btn btn-secondary" name="btn_delByCheckBox" onclick="return confirm('Bạn có chắc chắn muốn xóa dữ liệu?')">Xóa Tất Cả</button></a>
+<a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byCheckBox"><button id="deleteAllBtn" class="btn btn-secondary" name="btn_delByCheckBox" onclick="return confirm('Bạn có chắc chắn muốn xóa dữ liệu?')">Xóa Theo Mục Đã Chọn</button></a>
 <button id="uncheckAllBtn" onclick="uncheckAll()" class="btn btn-info" type="button">Bỏ chọn tất cả</button>
 <button id="checkAllBtn" onclick="checkAll()" class="btn btn-info" type="button">Chọn tất cả</button>
     <table class="table">
@@ -30,12 +30,12 @@
                                 
                                 <td><input type="checkbox" name="ids[]" value="<?= $row['id'] ?>"></td>
                                 <td><?= $row['id'] ?></td>
-                                <td><?= $row['tensp'] ?></td>
+                                <td><?= $row['ten_sanpham'] ?></td>
                                 <td><?= $row['gia'] ?></td>
-                                <td><img src="/duan1_Nhom12_WD18202/public/images/<?= $row['anh']?>" width="120px" alt=""></td>
+                                <td><img src="/duan1_Nhom12_WD18202/public/img/<?= $row['anh']?>" width="120px" alt=""></td>
                                 <td><?= $row['mota'] ?></td>
                                 <td><?= $row['soluong'] ?></td>
-                                <td><?= $row['idlh'] ?></td>
+                                <td><?= $row['id_loaihang'] ?></td>
                          
                                 <td>
                                     <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/editSP_Theme/<?= $row['id'] ?>">Sửa</a>

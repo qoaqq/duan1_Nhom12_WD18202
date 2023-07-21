@@ -4,7 +4,6 @@
         public $adminUser_Model;
 
     public function __construct(){
-        $this->adminHome_Model = $this->admin_Model("adminHome_Model");
         $this->adminUser_Model = $this->admin_Model("adminUser_Model");
     }
 
@@ -14,5 +13,6 @@
             'page' => 'home',
             'users' => $users
         ]);
+        echo "11111";
     }
 }
