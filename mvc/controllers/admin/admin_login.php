@@ -33,7 +33,7 @@ class admin_login extends Controller {
                         if($checkLoggedIn == true) {
                             $_SESSION['id'] = $users['id'];
                             $this->admin_login->selectUserById($_SESSION['id']);
-                            header("Location: http://localhost/live/admin");
+                            header("Location: http://localhost/duan1_Nhom12_WD18202/admin");
                             exit;
                         }
                     }else{
@@ -53,7 +53,7 @@ class admin_login extends Controller {
 
     public function logOutFeature() {
         session_unset();
-        header("location: http://localhost/live/admin/admin_login");
+        header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
         exit();
     }
 }

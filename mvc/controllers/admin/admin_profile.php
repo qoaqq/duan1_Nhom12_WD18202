@@ -51,7 +51,7 @@ class admin_profile extends Controller{
             if(isset($_POST['btn_updateAdminProfile'])){
                 $this->admin_profile->updateAdminProdfileById($id, $fullname, $phonenumber, $address, $email, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-                header("location: http://localhost/live/admin/admin_profile/".$id);
+                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/".$id);
                 exit();
             }
         }else{
