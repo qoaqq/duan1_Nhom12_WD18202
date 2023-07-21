@@ -20,16 +20,19 @@
             ]);
         }
 
-        public function addDM_Theme(){        
+        public function addDM_Theme(){  
+            $loaiHang = $this->danhmucModel->selectAll_loaiHang();      
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $this->view_admin("admin_danhMuc", [
                 'page' => 'add_danhmuc',
-                'users' => $users
+                'users' => $users,
+                'loaiHang' => $loaiHang
             ]);
         }
 
         public function addDM_Feature(){
             $tendm = $_POST['tendm'];
+            $idlh = $_POST['idlh'];
             $errors = array();
 
             if(empty($tendm)){
@@ -43,7 +46,7 @@
                 ]);
             }else{
                 if(isset($_POST['btn_addDanhmuc'])){
-                    $this->danhmucModel->insertDanhmuc($tendm);
+                    $this->danhmucModel->insertDanhmuc($tendm, $idlh);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme");
                     exit();
                 }
@@ -51,22 +54,24 @@
         }
 
         public function editDM_Feature($id){
+            $loaiHang = $this->danhmucModel->selectAll_loaiHang();
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $dm = $this->danhmucModel->getDanhmucById($id);
             $this->view_admin("admin_danhMuc", [
                 'page' => 'edit_danhmuc',
                 'dm' => $dm,
                 'id' => $id,
-                'users' => $users
+                'users' => $users,
+                'loaiHang' => $loaiHang
             ]);
         }
 
         public function editDM_Theme($id){
             $dm = $this->danhmucModel->getDanhmucById($id);
-
             if(isset($_POST['btn_editDanhmuc'])){
                 $tendm = $_POST['tendm'];
                 $id = $_POST['id'];
+                $idlh = $_POST['idlh'];
                 $errors = array();
                 
                 if(empty($tendm)){
@@ -74,13 +79,12 @@
                 }
 
                 if(!empty($tendm)){
-                    $this->danhmucModel->updateDanhmuc($tendm,$id);
+                    $this->danhmucModel->updateDanhmuc($tendm, $id, $idlh);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme");
                     exit();
                 }
             }
            
-
            if(!empty($errors)) {
                 $this->view_admin("admin_danhMuc", [
                     'page' => 'edit_danhmuc',

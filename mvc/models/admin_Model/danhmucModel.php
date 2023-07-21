@@ -1,14 +1,18 @@
 <?php
     class danhmucModel extends DB{
         
-        public function insertDanhmuc($tendm){
-            $qr = "INSERT INTO danhmuc VALUES (null,'$tendm',null)";
+        public function insertDanhmuc($tendm, $loaiHang){
+            $qr = "INSERT INTO danhmuc VALUES (null, '$tendm', $loaiHang)";
             return mysqli_query($this->con, $qr);
-
         }
 
-        public function updateDanhmuc($tendm, $id) {
-            $qr = "UPDATE `danhmuc` SET `ten_danhmuc`='$tendm', `id_loaihang`= null WHERE `id` = $id";
+        public function selectAll_loaiHang(){
+            $qr = "SELECT * FROM loaihang";
+            return mysqli_query($this->con, $qr);
+        }
+
+        public function updateDanhmuc($tendm, $id, $loaiHang) {
+            $qr = "UPDATE `danhmuc` SET `ten_danhmuc`='$tendm', `id_loaihang`=$loaiHang  WHERE `id` = $id";
             return mysqli_query($this->con, $qr);
         }
 

@@ -7,7 +7,13 @@
     </div>
     <div class="form-group">
     <label for="idloaihang">ID loại hàng</label>
-    <input type="text" disabled class="form-control" id="inputiddanhmuc" name="idlh">
+    <select name="idlh" id="">
+            <?php foreach ($data['loaiHang'] as $cate) : ?>
+                <option value="<?= $cate['id'] ?>">
+                    <?= $cate['ten_loaihang'] ?>
+                </option>
+            <?php endforeach ?>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary" name="btn_addDanhmuc">Thêm</button>
 </form>
