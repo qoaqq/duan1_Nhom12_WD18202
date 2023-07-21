@@ -2,6 +2,7 @@
     class admin_sanpham extends Controller{
         
         public $sanphamModel;
+        public $adminUser_Model;
         public function __construct(){
             $this->sanphamModel = $this->admin_Model("sanphamModel");
             $this->adminUser_Model = $this->admin_Model("adminUser_Model");
@@ -16,10 +17,12 @@
         }
 
         public function addSP_Theme(){
+            $loaiHang = $this->sanphamModel->selectAll_loaiHang();
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $this->view_admin("admin_sanpham",[
                 'page' => "add_sanpham",
-                'users' => $users
+                'users' => $users,
+                'loaiHang' => $loaiHang
             ]);
         }
 
@@ -38,6 +41,7 @@
             $gia = $_POST['gia'];
             $mota = $_POST['mota'];
             $soluong = $_POST['soluong'];
+            $idlh = $_POST['idlh'];
             $file = $_FILES['anh'];  
             $img = $file['name'];
             $errors = array();
@@ -67,7 +71,7 @@
             
             if(empty($errors)){
                 if(isset($_POST['btn_addSanpham'])){
-                    $this->sanphamModel->insertSanpham($tensp,$gia,$img,$mota,$soluong);
+                    $this->sanphamModel->insertSanpham($tensp,$gia,$img,$mota,$soluong,$idlh);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                     move_uploaded_file($file['tmp_name'], "./public/images/".$img);
                     exit();
@@ -83,13 +87,15 @@
         }
 
         public function editSP_Theme($id){ 
+            $loaiHang = $this->sanphamModel->selectAll_loaiHang();
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $sp = $this->sanphamModel->getSanphamByID($id); 
             $this->view_admin("admin_sanPham", [
                 'page' => 'edit_sanpham',
                 'sp' => $sp,
                 'id' => $id,
-                'users' => $users
+                'users' => $users,
+                'loaiHang' => $loaiHang
             ]);
         }
 
@@ -100,6 +106,7 @@
             $mota = $_POST['mota'];
             $soluong = $_POST['soluong'];
             $id = $_POST['id'];
+            $idlh = $_POST['idlh'];
             $errors = array();
          
             $file = $_FILES['anh'];
@@ -126,7 +133,7 @@
            
             if(isset($_POST['btn_editSanpham'])){
                 if((!empty($tensp)) && (!empty($gia)) && (!empty($mota)) && (!empty($soluong))){
-                    $this->sanphamModel->updateSanpham($id, $tensp, $gia, $images, $mota, $soluong);
+                    $this->sanphamModel->updateSanpham($id, $tensp, $gia, $images, $mota, $soluong,$idlh);
                     move_uploaded_file($file['tmp_name'], "./public/im/".$images);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                     exit();

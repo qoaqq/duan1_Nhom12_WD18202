@@ -9,12 +9,12 @@
         <div class="form-group">
             <label for="idloaihang">ID loại hàng</label>
             <select name="idlh">
-            <?php foreach ($data['loaiHang'] as $cate) : ?>
-                <option value="<?= $cate['id'] ?>" <?= ($cate['id'] == $data['dm']['id_loaihang']) ? 'selected' : '' ?>>
-                    <?= $cate['ten_loaihang'] ?>
-                </option>
-            <?php endforeach ?>
-        </select>
+                <?php foreach ($data['loaiHang'] as $cate) : ?>
+                    <option value="<?= $cate['id'] ?>" <?= ($cate['id'] == $data['dm']['id_loaihang']) ? 'selected' : '' ?>>
+                        <?= $cate['ten_loaihang'] ?>
+                    </option>
+                <?php endforeach ?>
+            </select>
         </div>
        
         <button type="submit" class="btn btn-primary" name="btn_editDanhmuc">Sửa</button>

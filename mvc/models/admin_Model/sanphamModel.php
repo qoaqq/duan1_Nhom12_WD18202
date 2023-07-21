@@ -6,13 +6,18 @@
             return $result; 
         }
 
-        public function insertSanpham($tensp,$gia,$anh,$mota,$soluong){
-            $qr = "INSERT INTO sanpham VALUES (null,'$tensp','$gia','$anh','$mota','$soluong',null)";
+        public function selectAll_loaiHang(){
+            $qr = "SELECT * FROM loaihang";
             return mysqli_query($this->con, $qr);
         }
 
-        public function updateSanpham($id, $tensp, $gia, $anh, $mota, $soluong){
-            $qr = "UPDATE `sanpham` SET `ten_sanpham` = '$tensp', `gia` = $gia, `anh` = '$anh', `mota` = '$mota', `soluong` = $soluong WHERE `id` = $id";
+        public function insertSanpham($tensp, $gia, $anh, $mota, $soluong, $loaihang){
+            $qr = "INSERT INTO sanpham VALUES (null, '$tensp', '$gia', '$anh', '$mota', '$soluong', $loaihang)";
+            return mysqli_query($this->con, $qr);
+        }
+
+        public function updateSanpham($id, $tensp, $gia, $anh, $mota, $soluong, $loaihang){
+            $qr = "UPDATE `sanpham` SET `ten_sanpham` = '$tensp', `gia` = $gia, `anh` = '$anh', `mota` = '$mota', `soluong` = $soluong, `id_loaihang` = $loaihang WHERE `id` = $id";
             $result = mysqli_query($this->con, $qr);
             return $result;
         }

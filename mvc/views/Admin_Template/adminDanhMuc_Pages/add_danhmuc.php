@@ -7,7 +7,7 @@
     </div>
     <div class="form-group">
     <label for="idloaihang">ID loại hàng</label>
-    <select name="idlh" id="">
+        <select name="idlh" id="">
             <?php foreach ($data['loaiHang'] as $cate) : ?>
                 <option value="<?= $cate['id'] ?>">
                     <?= $cate['ten_loaihang'] ?>

@@ -28,8 +28,13 @@
         </div>
         <div class="form-group">
             <label for="idloaihang">ID loại hàng</label>
-            <input type="text" class="form-control" id="inputdanhmuc" aria-describedby="emailHelp" name="idlh" disabled>
-            
+            <select name="idlh" id="idloaihang">
+                <?php foreach ($data['loaiHang'] as $sp) : ?>
+                    <option value="<?= $sp['id'] ?>">
+                        <?= $sp['ten_loaihang'] ?>
+                    </option>
+                <?php endforeach ?>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary" name="btn_addSanpham">Thêm</button>

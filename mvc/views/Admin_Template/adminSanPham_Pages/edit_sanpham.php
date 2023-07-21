@@ -36,7 +36,13 @@
 
     <div class="form-group">
         <label for="idlh">ID loại hàng</label>
-        <input type="text" disabled class="form-control" id="idlh" aria-describedby="emailHelp" name="idlh" value="<?= $data['sp']['id_loaihang'] ?? '' ?>">
+        <select name="idlh">
+                <?php foreach ($data['loaiHang'] as $sp) : ?>
+                    <option value="<?= $sp['id'] ?>" <?= ($sp['id'] == $data['sp']['id_loaihang']) ? 'selected' : '' ?>>
+                        <?= $sp['ten_loaihang'] ?>
+                    </option>
+                <?php endforeach ?>
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary" name="btn_editSanpham">Sửa</button>
