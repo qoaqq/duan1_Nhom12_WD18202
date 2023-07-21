@@ -100,45 +100,37 @@
             $mota = $_POST['mota'];
             $soluong = $_POST['soluong'];
             $id = $_POST['id'];
+            $errors = array();
          
             $file = $_FILES['anh'];
             $images = $_POST['anh'];
+
+            if(empty($tensp)){
+                $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
+            }
+            if($gia <= 0 && (empty($gia))){
+                $errors['gia'] = "Vui lòng nhập giá sản phẩm";
+            }
+            if($soluong <= 0 && (empty($soluong))){ 
+                $errors['soluong'] = "Vui lòng nhập số lượng";
+            }
+
+            if ($file['size'] > 0) {
+                $img = ['jpg', 'png', 'gif'];
+                $images = $file['name'];
+                $ext = pathinfo($images, PATHINFO_EXTENSION);
+                if (!in_array($ext, $img)) {
+                    $errors['anh'] = "File không phải là ảnh";
+                }
+            }
            
             if(isset($_POST['btn_editSanpham'])){
-
-               
-                $errors = array();
-                
-                if(empty($tensp)){
-                    $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
-                }
-                if($gia <= 0 && (empty($gia))){
-                    $errors['gia'] = "Vui lòng nhập giá sản phẩm";
-                }
-                if($soluong <= 0 && (empty($soluong))){ 
-                    $errors['soluong'] = "Vui lòng nhập số lượng";
-                }
-
-                if ($file['size'] > 0) {
-                    $img = ['jpg', 'png', 'gif'];
-                    //lấy tên ảnh mới
-                    $images = $file['name'];
-                    //Lấy phần mở rộng của file
-                    $ext = pathinfo($images, PATHINFO_EXTENSION);
-                    //Kiểm tra xem $ext có trong $img không
-                    if (!in_array($ext, $img)) {
-                        $errors['anh'] = "File không phải là ảnh";
-                    }
-                }
-                
                 if((!empty($tensp)) && (!empty($gia)) && (!empty($mota)) && (!empty($soluong))){
                     $this->sanphamModel->updateSanpham($id, $tensp, $gia, $images, $mota, $soluong);
                     move_uploaded_file($file['tmp_name'], "./public/im/".$images);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                     exit();
                 }
-                
-              
                 if(!empty($errors)){
                     $this->view_admin("admin_sanPham", [
                         'page' => 'edit_sanpham',
@@ -155,9 +147,7 @@
             if(isset($_POST['btn_delByCheckBox'])) {
                 if(isset($_POST['ids']) && is_array($_POST['ids'])){
                     $del_ids = $_POST['ids'];
-                
                     if(!empty($del_ids)) {
-                        
                         $this->sanphamModel->deleteSanpham(...$del_ids);
                         header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                         exit();
@@ -166,8 +156,6 @@
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                 }
             }
-            
-            die;
         }
 
         public function delSP_byId(){
