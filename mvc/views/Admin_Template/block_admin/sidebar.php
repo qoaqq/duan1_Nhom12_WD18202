@@ -17,44 +17,30 @@
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
             </svg>Tài Khoản</a></li>
-        <li class="nav-item"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/">
+            <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm">
+                <svg class="nav-icon">
+                  <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
+                </svg> Danh Mục</a></li>
+        <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp">
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-            </svg>Sản Phẩm</a></li>
+            </svg>Sản phẩm</a></li>
         <li class="nav-title">Components</li>
         <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
             </svg> Base</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> Accordion</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span> Breadcrumb</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/cards.html"><span class="nav-icon"></span> Cards</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/carousel.html"><span class="nav-icon"></span> Carousel</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/collapse.html"><span class="nav-icon"></span> Collapse</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/list-group.html"><span class="nav-icon"></span> List group</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/navs-tabs.html"><span class="nav-icon"></span> Navs &amp; Tabs</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/pagination.html"><span class="nav-icon"></span> Pagination</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/placeholders.html"><span class="nav-icon"></span> Placeholders</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/popovers.html"><span class="nav-icon"></span> Popovers</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/progress.html"><span class="nav-icon"></span> Progress</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/scrollspy.html"><span class="nav-icon"></span> Scrollspy</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/spinners.html"><span class="nav-icon"></span> Spinners</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/tables.html"><span class="nav-icon"></span> Tables</a></li>
-            <li class="nav-item"><a class="nav-link" href="base/tooltips.html"><span class="nav-icon"></span> Tooltips</a></li>
-          </ul>
+          
         </li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+        <li class="nav-group"><a class="nav-link" href="#">
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
             </svg> Buttons</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> Buttons</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a></li>
-            <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a></li>
-          </ul>
+         
         </li>
-        <li class="nav-item"><a class="nav-link" href="charts.html">
+      
+      
+        <li class="nav-group"><a class="nav-link" href="#">
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
             </svg> Charts</a></li>
@@ -87,12 +73,7 @@
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
             </svg> Notifications</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"></span> Alerts</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"></span> Badge</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"></span> Modals</a></li>
-            <li class="nav-item"><a class="nav-link" href="notifications/toasts.html"><span class="nav-icon"></span> Toasts</a></li>
-          </ul>
+         
         </li>
         <li class="nav-item"><a class="nav-link" href="widgets.html">
             <svg class="nav-icon">
@@ -105,11 +86,11 @@
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
             </svg> Pages</a>
           <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="login.html" target="_top">
+            <li class="nav-item"><a class="nav-link" href="#" target="_top">
                 <svg class="nav-icon">
                   <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
                 </svg> Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html" target="_top">
+            <li class="nav-item"><a class="nav-link" href="/views/register.html" target="_top">
                 <svg class="nav-icon">
                   <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
                 </svg> Register</a></li>

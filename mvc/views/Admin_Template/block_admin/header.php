@@ -52,7 +52,7 @@
           </div><a class="dropdown-item" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/<?= $data['users']['id'] ?>">
             <svg class="icon me-2">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-            </svg> Profile</a><a class="dropdown-item" href="">
+            </svg> Profile</a><a class="dropdown-item" href="#">
             <svg class="icon me-2">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
             </svg> Settings</a><a class="dropdown-item" href="#">
@@ -69,7 +69,6 @@
             <svg class="icon me-2">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
             </svg> Logout</a>
-            <?php "<pre>" ?>
         </div>
       </li>
     </ul>
