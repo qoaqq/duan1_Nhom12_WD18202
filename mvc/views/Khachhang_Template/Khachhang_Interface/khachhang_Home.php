@@ -103,8 +103,8 @@
                                                 <li><a href="#">Dashboard</a></li>
                                                 <li><a href="cart.html">my cart</a></li>
                                                 <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="#">Log out</a></li>
-                                                <li><a href="#">Log in</a></li>
+                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log out</a></li>
+                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/">Log in</a></li>
                                             </ul>
                                         </li>
                                     </ul>

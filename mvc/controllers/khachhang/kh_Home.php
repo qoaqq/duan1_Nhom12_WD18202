@@ -8,4 +8,8 @@
         public function Theme() {
             $this->view_Khachhang("khachhang_Home");
         }
+
+        public function checkOut(){
+            
+        }
 }
