@@ -26,7 +26,7 @@
       <!-- Content -->
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
-          <?php require_once "./mvc/views/Admin_Templete/admin_sanpham/".$data['page'].".php"; ?>
+          <?php require_once "./mvc/views/Admin_Templete/adminSanPham_Pages/".$data['page'].".php"; ?>
         </div>
       </div>
 
