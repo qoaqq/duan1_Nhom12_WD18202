@@ -3,7 +3,7 @@
         <input type="hidden" value="<?= $data['id']?>" name="id">
         <div class="form-group">
             <label for="danhmuc">Tên danh mục</label>
-            <input type="text" class="form-control" id="inputdanhmuc" aria-describedby="emailHelp" name="tendm" value="<?= $data['dm']['tendm'] ?? '' ?>">
+            <input type="text" class="form-control" id="inputdanhmuc" aria-describedby="emailHelp" name="tendm" value="<?= $data['dm']['ten_danhmuc'] ?? '' ?>">
         </div>
         <p style="color: red;"><?= $data['errors']['tendm'] ?? '' ?></p>
         <div class="form-group">

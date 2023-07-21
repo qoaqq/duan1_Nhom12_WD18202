@@ -13,6 +13,5 @@
             'page' => 'home',
             'users' => $users
         ]);
-        echo "11111";
     }
 }

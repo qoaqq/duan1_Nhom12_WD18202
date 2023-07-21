@@ -11,13 +11,13 @@
     <li class="nav-item"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_Home">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-        </svg> Home<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
+        </svg> Home</a></li>
     <li class="nav-title">Theme</li>
     <li class="nav-item"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
         </svg>Tài Khoản</a></li>
-    <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/showDm">
+    <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
         </svg> Danh Mục</a></li>
@@ -26,24 +26,6 @@
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>Sản phẩm</a></li>
     <li class="nav-title">Components</li>
-    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
-        </svg> Base</a>
-
-    </li>
-    <li class="nav-group"><a class="nav-link" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
-        </svg> Buttons</a>
-
-    </li>
-
-
-    <li class="nav-group"><a class="nav-link" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
-        </svg> Charts</a></li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
@@ -69,13 +51,7 @@
         <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
       </ul>
     </li>
-    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-        </svg> Notifications</a>
-
-    </li>
-    <li class="nav-item"><a class="nav-link" href="widgets.html">
+    <li class="nav-item"><a class="nav-link" href="">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-calculator"></use>
         </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>

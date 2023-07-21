@@ -2,7 +2,7 @@
     <h1>Thêm danh mục</h1>
     <div class="form-group">
     <label for="danhmuc">Tên danh mục</label>
-    <input type="text" class="form-control" id="inputdanhmuc" aria-describedby="emailHelp" name="tendm">
+    <input type="text" class="form-control" id="inputdanhmuc" name="tendm" >
     <p style="color: red;" ><?= $data['errors']['tendm'] ?? '' ?></p>
     </div>
     <div class="form-group">

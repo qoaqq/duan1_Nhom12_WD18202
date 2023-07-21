@@ -14,7 +14,6 @@ class admin_users extends Controller{
             'table' => $tableUsers
         ]);
     }
-    
 
     public function getIdUserUpdate($id){
         $users = $this->admin_users->selectUserById($_SESSION['id']);

@@ -4,6 +4,7 @@
         public $sanphamModel;
         public function __construct(){
             $this->sanphamModel = $this->admin_Model("sanphamModel");
+            $this->adminUser_Model = $this->admin_Model("adminUser_Model");
         }
 
         public function Theme(){
@@ -15,8 +16,20 @@
         }
 
         public function addSP_Theme(){
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $this->view_admin("admin_sanpham",[
-                'page' => "add_sanpham"
+                'page' => "add_sanpham",
+                'users' => $users
+            ]);
+        }
+
+        public function showSp(){
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+            $listsp = $this->sanphamModel->listSanpham();
+            $this->view_admin("admin_sanpham", [
+                'page' => 'sanpham_page',
+                'listsp' => $listsp,
+                'users' => $users
             ]);
         }
 
@@ -70,11 +83,13 @@
         }
 
         public function editSP_Theme($id){ 
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $sp = $this->sanphamModel->getSanphamByID($id); 
             $this->view_admin("admin_sanPham", [
                 'page' => 'edit_sanpham',
                 'sp' => $sp,
-                'id' => $id
+                'id' => $id,
+                'users' => $users
             ]);
         }
 
@@ -166,13 +181,4 @@
             header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
             exit();
         }
-        
-        public function showSp(){
-            $listsp = $this->sanphamModel->listSanpham();
-            $this->view_admin("admin_sanpham", [
-                'page' => 'sanpham_page',
-                'listsp' => $listsp
-            ]);
-        }
-        
     }
