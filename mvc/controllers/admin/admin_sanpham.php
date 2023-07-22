@@ -9,10 +9,12 @@
         }
 
         public function Theme(){
-            $listsp = $this->sanphamModel = $this->admin_Model("sanphamModel");
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+            $listsp = $this->sanphamModel->listSanpham();
             $this->view_admin("admin_sanpham", [
-                'page'=>'sanpham_page',
-                'listsp' => $listsp
+                'page' => 'sanpham_page',
+                'listsp' => $listsp,
+                'users' => $users
             ]);
         }
 
@@ -23,16 +25,6 @@
                 'page' => "add_sanpham",
                 'users' => $users,
                 'loaiHang' => $loaiHang
-            ]);
-        }
-
-        public function showSp(){
-            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
-            $listsp = $this->sanphamModel->listSanpham();
-            $this->view_admin("admin_sanpham", [
-                'page' => 'sanpham_page',
-                'listsp' => $listsp,
-                'users' => $users
             ]);
         }
 
@@ -52,13 +44,9 @@
             if($gia <= 0 && (empty($gia))){
                 $errors['gia'] = "Vui lòng nhập giá sản phẩm";
             }
-            if(empty($mota)){
-                $errors['mota'] = "Vui lòng nhập mô tả";
-            }
             if($soluong <= 0 && (empty($soluong))){ 
                 $errors['soluong'] = "Vui lòng nhập số lượng";
             }
-
             if ($file['size'] <= 0) {
                 $errors['anh'] = "Bạn cần nhập ảnh";
             } else {
@@ -68,12 +56,11 @@
                     $errors['anh'] = "File không phải là ảnh";
                 }
             }
-            
             if(empty($errors)){
                 if(isset($_POST['btn_addSanpham'])){
                     $this->sanphamModel->insertSanpham($tensp,$gia,$img,$mota,$soluong,$idlh);
                     header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
-                    move_uploaded_file($file['tmp_name'], "./public/images/".$img);
+                    move_uploaded_file($file['tmp_name'], "./public/img/".$img);
                     exit();
                 }
             }
@@ -132,10 +119,10 @@
             }
            
             if(isset($_POST['btn_editSanpham'])){
-                if((!empty($tensp)) && (!empty($gia)) && (!empty($mota)) && (!empty($soluong))){
+                if((!empty($tensp)) && (!empty($gia)) && (!empty($soluong))){
                     $this->sanphamModel->updateSanpham($id, $tensp, $gia, $images, $mota, $soluong,$idlh);
-                    move_uploaded_file($file['tmp_name'], "./public/im/".$images);
-                    header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
+                    move_uploaded_file($file['tmp_name'], "./public/img/".$images);
+                    header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme");
                     exit();
                 }
                 if(!empty($errors)){

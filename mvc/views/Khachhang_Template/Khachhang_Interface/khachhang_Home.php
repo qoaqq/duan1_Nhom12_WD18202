@@ -162,55 +162,28 @@
                             <div class="mainmenu">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">Home</a>
-                                            <div class="sub-menu">
+                                        <li><a href="index.html">Home</a></li>
+
+                                        <li class="mega-men"><a href="shop.html">Women</a>
+                                            <div class="mega-menu men">
                                                 <span>
-                                                    <a href="index.html">Home version 1</a>
+                                                    <a href="#">Bags</a>
+                                                    <a href="#">Bootees  Bags</a>
+                                                    <a href="#">Blazers</a>
                                                 </span>
                                                 <span>
-                                                    <a href="#">Home version 2</a>
+                                                    <a href="#">Clothing</a>
+                                                    <a href="#">coats</a>
+                                                    <a href="#">T-shirts</a>
+                                                </span>
+                                                <span>
+                                                    <a href="#">Lingerie</a>
+                                                    <a href="#">Bands</a>
+                                                    <a href="#">Furniture</a>
                                                 </span>
                                             </div>
                                         </li>
-                                        <li class="mega-women"><a href="shop.html">Women</a>
-                                            <div class="mega-menu women">
-                                                <div class="part-1">
-                                                    <span>
-                                                        <a href="#">Dresses</a>
-                                                        <a href="#">Cocktail</a>
-                                                        <a href="#">Day</a>
-                                                        <a href="#">Evening</a>
-                                                        <a href="#">Sports</a>
-                                                    </span>
-                                                    <span>
-                                                        <a href="#">shoes</a>
-                                                        <a href="#">Sports</a>
-                                                        <a href="#">run</a>
-                                                        <a href="#">sandals</a>
-                                                        <a href="#">Books</a>
-                                                    </span>
-                                                    <span>
-                                                        <a href="#">Handbags</a>
-                                                        <a href="#">Blazers</a>
-                                                        <a href="#">table</a>
-                                                        <a href="#">coats</a>
-                                                        <a href="#">kids</a>
-                                                    </span>
-                                                    <span>
-                                                        <a href="#">Clothing</a>
-                                                        <a href="#">T-shirts</a>
-                                                        <a href="#">coats</a>
-                                                        <a href="#">Jackets</a>
-                                                        <a href="#">jeans</a>
-                                                    </span>
-                                                </div>
-                                                <div class="part-2">
-                                                    <a href="#">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/menu-banner.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
+
                                         <li class="mega-men"><a href="shop.html">Men</a>
                                             <div class="mega-menu men">
                                                 <span>
@@ -230,26 +203,7 @@
                                                 </span>
                                             </div>
                                         </li>
-                                        <li class="mega-footwear"><a href="shop.html">Footwear</a>
-                                            <div class="mega-menu footwear">
-                                                <span>
-                                                    <a href="#">Footwear Man</a>
-                                                    <a href="#">gifts</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">Footwear Womens</a>
-                                                    <a href="#">boots</a>
-                                                </span>
-                                            </div>
-                                        </li>
-                                        <li class="mega-jewellery"><a href="shop.html">Jewellery</a>
-                                            <div class="mega-menu jewellery">
-                                                <span>
-                                                    <a href="#">Rings</a>
-                                                </span>
-                                            </div>
-                                        </li>
-                                        <li><a href="shop.html">accessories</a></li>
+                                        
                                         <li><a href="#">Pages</a>
                                             <div class="sub-menu pages">
                                                 <span>
@@ -3479,8 +3433,8 @@
                                 </div>
                                 <div class="product-img">
                                     <a href="single-product.html">
-                                        <img src="img/product/3.png" alt="" class="primary-img">
-                                        <img src="img/product/4.png" alt="" class="secondary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
                                     </a>
                                 </div>
                                 <div class="product-name">

@@ -5,10 +5,9 @@
 <button id="uncheckAllBtn" onclick="uncheckAll()" class="btn btn-info" type="button">Bỏ chọn tất cả</button>
 <button id="checkAllBtn" onclick="checkAll()" class="btn btn-info" type="button">Chọn tất cả</button>
     <table class="table">
-            <table class="table">
+            <table class="table" >
                 <thead>
-                    <tr>
-                        <th></th>
+                    <tr class="text-center" >
                         <th></th>
                         <th scope="col">ID sản phẩm</th>
                         <th scope="col">Tên sản phẩm</th>
@@ -23,23 +22,19 @@
                 <?php
                 foreach ($data['listsp'] as $row) { ?>
                     <tr>
-
                         <tbody>
-                            <tr>
-                                <td></td>
-                                
+                            <tr class="text-center" >
                                 <td><input type="checkbox" name="ids[]" value="<?= $row['id'] ?>"></td>
                                 <td><?= $row['id'] ?></td>
                                 <td><?= $row['ten_sanpham'] ?></td>
-                                <td><?= $row['gia'] ?></td>
-                                <td><img src="/duan1_Nhom12_WD18202/public/img/<?= $row['anh']?>" width="120px" alt=""></td>
+                                <td><?= $row['gia'] ?>$</td>
+                                <td><img src="/duan1_Nhom12_WD18202/public/img/<?= $row['anh'] ?>" width="120" ></td>
                                 <td><?= $row['mota'] ?></td>
                                 <td><?= $row['soluong'] ?></td>
                                 <td><?= $row['id_loaihang'] ?></td>
-                         
                                 <td>
                                     <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/editSP_Theme/<?= $row['id'] ?>">Sửa</a>
-                                    <a class="btn btn-danger" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byId/&id=<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa dữ liệu?')">Xóa</a>
+                                    <a class="btn btn-danger" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byId/<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa dữ liệu?')">Xóa</a>
                                 </td>
                             </tr>
                         </tbody>

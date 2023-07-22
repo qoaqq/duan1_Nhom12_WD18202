@@ -21,7 +21,7 @@
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
         </svg> Danh Mục</a></li>
-    <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp">
+    <li class="nav-group"><a class="nav-link" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme">
         <svg class="nav-icon">
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>Sản phẩm</a></li>
