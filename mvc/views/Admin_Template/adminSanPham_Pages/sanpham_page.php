@@ -19,8 +19,7 @@
                         <th scope="col">Thao tác</th>
                     </tr>
                 </thead>
-                <?php
-                foreach ($data['listsp'] as $row) { ?>
+                <?php foreach ($data['result'] as $row) { ?>
                     <tr>
                         <tbody>
                             <tr class="text-center" >
@@ -40,6 +39,20 @@
                         </tbody>
                     </tr>
                 <?php } ?>
+
+                <?php
+                    if($data['pagiNation']['current_page'] > 1 && $data['pagiNation']['total_page'] > 1){
+                        echo '<a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page='.($data['pagiNation']['current_page'] - 1).'">Prev</a> | ';
+                    }
+
+                    for($i = 1; $i <= $data['pagiNation']['total_page']; $i++){
+                        if($i == $data['pagiNation']['current_page']){
+                            echo '<span>'.$i.'</span> | ';
+                        }else{
+                            echo '<a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page='.($data['pagiNation']['current_page'] + 1).'">Next</a> | ';
+                        }
+                    }
+                ?>
         </tbody>
     </table>
     </tbody>

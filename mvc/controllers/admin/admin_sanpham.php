@@ -11,10 +11,30 @@
         public function Theme(){
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $listsp = $this->sanphamModel->listSanpham();
+            $totalRecords = $this->sanphamModel->totalRecords();
+            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 5;
+            $total_page = ceil($totalRecords / $limit);
+
+            if($current_page > $total_page) {
+                $current_page = $total_page;
+            }elseif($current_page < 1){
+                $current_page = 1;
+            }
+
+            $start = ($current_page - 1) * $limit;
+            $result = $this->sanphamModel->pagiNationLimit($start, $limit);
+            $pagiNation = [
+                'current_page' => $current_page,
+                'total_page' => $total_page
+            ];
+
             $this->view_admin("admin_sanpham", [
                 'page' => 'sanpham_page',
                 'listsp' => $listsp,
-                'users' => $users
+                'users' => $users,
+                'pagiNation' => $pagiNation,
+                'result' => $result
             ]);
         }
 
