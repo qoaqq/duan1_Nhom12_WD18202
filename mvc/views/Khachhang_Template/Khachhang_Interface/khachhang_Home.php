@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from htmldemo.net/james/james/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:19:20 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:02 GMT -->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,8 +18,6 @@
         <link href='https://fonts.googleapis.com/css?family=Norican' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- All css -->
 
         <!-- Bootstrap CSS
         ============================================ -->
@@ -62,10 +60,15 @@
         <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/responsive.css">
         <!-- modernizr JS
         ============================================ -->
-        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <!-- header area start -->
         <header>
             <div class="top-link">
                 <div class="container">
@@ -95,16 +98,30 @@
                             <div class="dashboard">
                                 <div class="account-menu">
                                     <ul>
+                                        <li class="search">
+                                            <a href="#">
+                                                <i class="fa fa-search"></i>
+                                            </a>
+                                            <ul class="search">
+                                                <li>
+                                                    <form action="#">
+                                                        <input type="text">
+                                                        <button type="submit"> <i class="fa fa-search"></i> </button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </li>
                                         <li>
                                             <a href="#">
                                                 <i class="fa fa-bars"></i>
                                             </a>
                                             <ul>
-                                                <li><a href="#">Dashboard</a></li>
+                                                <li><a href="my-account.html">my account</a></li>
+                                                <li><a href="wishlist.html">my wishlist</a></li>
                                                 <li><a href="cart.html">my cart</a></li>
                                                 <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log out</a></li>
-                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/">Log in</a></li>
+                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
+                                                <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -148,7 +165,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mainmenu-area product-items">
+            <div class="mainmenu-area home2 bg-color-tr product-items">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3">
@@ -203,6 +220,8 @@
                                                 </span>
                                             </div>
                                         </li>
+
+                                        <li><a href="shop-list.html">Shop List</a></li>
                                         
                                         <li><a href="#">Pages</a>
                                             <div class="sub-menu pages">
@@ -366,19 +385,20 @@
         </header>
         <!-- header area end -->
         <!-- slider area start -->
-        <div class="slider-area home1">
+        <div class="slider-area home2">
             <div class="bend niceties preview-2">
                 <div id="nivoslider" class="slides">
-                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-1.jpg" alt="" title="#slider-direction-1" />
-                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-2.jpg" alt="" title="#slider-direction-2" />
+                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-3.jpg" alt="" title="#slider-direction-1"  />
+                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-4.jpg" alt="" title="#slider-direction-2"  />
                 </div>
                 <!-- direction 1 -->
                 <div id="slider-direction-1" class="t-cn slider-direction">
                     <div class="slider-progress"></div>
                     <div class="slider-content t-lfl s-tb slider-1">
                         <div class="title-container s-tb-c title-compress">
-                            <h1 class="title1">Sale products</h1>
-                            <h2 class="title2" >nike Ari max 2015</h2>
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-logo.png" alt="">
+                            <h1 class="title1">Academy of sport</h1>
+                            <h2 class="title2" >sports center james</h2>
                             <h3 class="title3" >Lorem Ipsum is simply dummy text of the printing</h3>
                             <a href="#"><span>read more</span></a>
                         </div>
@@ -389,8 +409,9 @@
                     <div class="slider-progress"></div>
                     <div class="slider-content t-lfl s-tb slider-2">
                         <div class="title-container s-tb-c">
-                            <h1 class="title1">Sale products</h1>
-                            <h2 class="title2" >GET UP TO 50% SALE</h2>
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/slider/slider-logo.png" alt="">
+                            <h1 class="title1">Academy of sport</h1>
+                            <h2 class="title2" >sports center james</h2>
                             <h3 class="title3" >Lorem Ipsum is simply dummy text of the printing</h3>
                             <a href="#"><span>read more</span></a>
                         </div>
@@ -399,2862 +420,434 @@
             </div>
         </div>
         <!-- slider area end -->
-        <!-- banner area start -->
-        <div class="banner-area">
-            <div class="single-banner">
-                <div class="part-1">
-                    <div class="box-1 box">
-                        <h4>nike ari max 2015</h4>
-                        <h2>air superiority</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <a href="#">shopping now</a>
-                    </div>
-                    <div class="box-2">
-                        <a href="#">
-                            <img  src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/banner-2.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="part-2">
-                    <div class="search-box">
-                        <form action="#">
-                            <input type="text">
-                            <button type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </form>
-                    </div>
-                    <div class="box-3">
-                        <a href="#">
-                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/banner-1.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="box-4 box">
-                        <h4>nike ari max 2015</h4>
-                        <h2>air superiority</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <a href="#">shopping now</a>
-                    </div>
-                    <div class="box-5">
-                        <a href="#">
-                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/banner-3.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="box-6">
-                        <a href="#">
-                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/banner-4.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- banner area end -->
-        <!-- products area start -->
-        <div class="products-area">
+        <!-- service area start -->
+        <div class="service-area">
             <div class="container">
-                <div class="products">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="product-menu">
-                                <div class="menu-title">
-                                    <h2>Best seller <strong>Products</strong></h2>
-                                </div>
-                                <div class="side-menu">
-                                     <!-- Nav tabs -->
-                                    <ul class="nav tab-navigation" role="tablist">
-                                        <li role="presentation">
-                                            <a class="active" href="#tab1" aria-controls="tab1" role="tab" data-bs-toggle="tab">Women</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab2" aria-controls="tab2" role="tab" data-bs-toggle="tab">men</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab3" aria-controls="tab3" role="tab" data-bs-toggle="tab">Footwear</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab4" aria-controls="tab4" role="tab" data-bs-toggle="tab">Jewelry</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab5" aria-controls="tab5" role="tab" data-bs-toggle="tab">Accessories</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab6" aria-controls="tab6" role="tab" data-bs-toggle="tab">Dresses</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab7" aria-controls="tab7" role="tab" data-bs-toggle="tab">shoes</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab8" aria-controls="tab8" role="tab" data-bs-toggle="tab">Handbags</a>
-                                        </li>
-                                        <li><img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/banner-5.jpg" alt=""></li>
-                                    </ul>
-                                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="single-service">
+                            <div class="sirvice-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/service/icon-1.png" alt="">
+                            </div>
+                            <div class="service-info">
+                                <h3>FREE SHIPPING</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
                             </div>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="row">
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade show active" id="tab1">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab2">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab3">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/24.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab4">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab5">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="img/product/14.png" alt="" class="primary-img">
-                                                            <img src="img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19
-                                                            .png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab6">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab7">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="tab8">
-                                        <div class="product-slider carousel-margin">
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$170.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="single-product">
-                                                    <div class="level-pro-sale">
-                                                        <span>sale</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="single-product.html">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="secondary-img">
-                                                        </a>
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                                    </div>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-service">
+                            <div class="sirvice-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/service/icon-1.png" alt="">
+                            </div>
+                            <div class="service-info">
+                                <h3>FREE SHIPPING</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-service">
+                            <div class="sirvice-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/service/icon-1.png" alt="">
+                            </div>
+                            <div class="service-info">
+                                <h3>FREE SHIPPING</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- products area end -->
+        <!-- service area end -->
+        <!-- sell area start -->
+        <div class="sell-area home2">
+            <div class="sell-heading">
+                <h2>Best seller</h2>
+                <p>Subcribe to the Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat</p>
+            </div>
+            <div class="sell-slider">
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-product">
+                    <div class="level-pro-new">
+                        <span>new</span>
+                    </div>
+                    <div class="product-img">
+                        <a href="single-product.html">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                        <ul class="add-to-link">
+                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product-price">
+                        <div class="product-name">
+                            <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                        </div>
+                        <div class="price-rating">
+                            <span>$170.00</span>
+                            <div class="ratings">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sell area end -->
         <!-- feature products area start -->
-        <div class="features-product-area">
+        <div class="features-product home2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="section-heading">
-                            <h2>FEATURED PRODUCTS</h2>
+                        <div class="product-title">
+                            <h2>featured products</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="feature-product-slider carousel-margin">
+                    <div class="features-home2-slider">
                         <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="single-product">
                                 <div class="level-pro-new">
                                     <span>new</span>
@@ -3265,20 +858,6 @@
                                         <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
                                     </a>
                                 </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
                                 <div class="actions">
                                     <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
                                     <ul class="add-to-link">
@@ -3287,142 +866,20 @@
                                         <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
                                     </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -3433,23 +890,9 @@
                                 </div>
                                 <div class="product-img">
                                     <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/24.png" alt="" class="secondary-img">
                                     </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
                                 </div>
                                 <div class="actions">
                                     <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
@@ -3459,12 +902,131 @@
                                         <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
                                     </ul>
                                 </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
                                 </div>
                                 <div class="product-img">
                                     <a href="single-product.html">
@@ -3472,20 +1034,6 @@
                                         <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
                                     </a>
                                 </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
                                 <div class="actions">
                                     <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
                                     <ul class="add-to-link">
@@ -3493,30 +1041,32 @@
                                         <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
                                         <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
                                     </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
                             <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
                                 <div class="product-img">
                                     <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
                                     </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
                                 </div>
                                 <div class="actions">
                                     <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
@@ -3526,37 +1076,20 @@
                                         <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
                                     </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3571,19 +1104,39 @@
                                         <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
                                     </a>
                                 </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
                                 </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
                                     </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
+                                    </a>
                                 </div>
                                 <div class="actions">
                                     <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
@@ -3593,6 +1146,231 @@
                                         <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
                                     </ul>
                                 </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/7.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3600,6 +1378,594 @@
             </div>
         </div>
         <!-- feature products area end -->
+        <!-- sell off product area start -->
+        <div class="sell-off-product home2">
+            <div class="product-title">
+                <h2>sale off</h2>
+            </div>
+            <div class="container-fluid">
+                <div class="sell-off-slider">
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                                <span>$170.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/24.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-product">
+                        <div class="level-pro-sale">
+                            <span>sale</span>
+                        </div>
+                        <div class="product-img">
+                            <a href="single-product.html">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="" class="primary-img">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/10.png" alt="" class="secondary-img">
+                            </a>
+                        </div>
+                        <div class="actions">
+                            <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                            <ul class="add-to-link">
+                                <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <div class="product-name">
+                                <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                            </div>
+                            <div class="price-rating">
+                                <span>$170.00</span>
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- sell off product area end -->
+        <!-- new products area start -->
+        <div class="new-product home2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-title">
+                            <h2>new products</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="features-home2-slider">
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/24.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/15.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/16.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/13.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/14.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="single-product">
+                                <div class="level-pro-new">
+                                    <span>new</span>
+                                </div>
+                                <div class="product-img">
+                                    <a href="single-product.html">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/11.png" alt="" class="primary-img">
+                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/12.png" alt="" class="secondary-img">
+                                    </a>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                    <ul class="add-to-link">
+                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$170.00</span>
+                                        <div class="ratings">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-half-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- new products area end -->
         <!-- another banner area start -->
         <div class="another-banner-area">
             <div class="container">
@@ -3615,342 +1981,8 @@
             </div>
         </div>
         <!-- another banner area end -->
-        <!-- new products area start -->
-        <div class="new-products-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-heading">
-                            <h2>NEW PRODUCTS</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="new-product-slider carousel-margin">
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-new">
-                                    <span>new</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/25.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/26.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/17.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/18.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-new">
-                                    <span>new</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/19.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/20.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-sale">
-                                    <span>sale</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/21.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/22.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="product-img">
-                                    <a href="single-product.html">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/23.png" alt="" class="primary-img">
-                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/24.png" alt="" class="secondary-img">
-                                    </a>
-                                </div>
-                                <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam">Fusce aliquam</a>
-                                </div>
-                                <div class="price-rating">
-                                    <span class="old-price">$700.00</span>
-                                    <span>$800.00</span>
-                                    <div class="ratings">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- new products area end -->
-        <!-- testimonial area start -->
-        <div class="testimonial-area">
-            <div class="container">
-                <div class="row">
-                    <div class="testimonial-slider">
-                        <div class="single-testimonial">
-                            <div class="spech">
-                                <a href="#">“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat ”</a>
-                            </div>
-                            <div class="avater">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/testimonial/1.jpg" alt="">
-                            </div>
-                            <div class="post-by">
-                                <span>Salim Rana</span>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <div class="spech">
-                                <a href="#">“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat ”</a>
-                            </div>
-                            <div class="avater">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/testimonial/2.jpg" alt="">
-                            </div>
-                            <div class="post-by">
-                                <span>Hridoy Roy</span>
-                            </div>
-                        </div>
-                        <div class="single-testimonial">
-                            <div class="spech">
-                                <a href="#">“ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat ”</a>
-                            </div>
-                            <div class="avater">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/testimonial/3.jpg" alt="">
-                            </div>
-                            <div class="post-by">
-                                <span>themesplaza</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- testimonial area end -->
         <!-- blog area start -->
-        <div class="blog-area">
+        <div class="blog-area home2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -3960,12 +1992,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="blog-post">
-                        <div class="single-blog-post">
+                    <div class="col-md-6">
+                        <div class="single-home2-blog-post">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/1.jpg" alt="">
+                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/5.jpg" alt="">
+                                    <i class="fa fa-file-photo-o"></i>
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -3975,37 +2007,13 @@
                                 <a href="blog-details.html" class="readmore">read more ></a>
                             </div>
                         </div>
-                            <div class="single-blog-post">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="single-home2-blog-post">
                             <div class="blog-img">
                                 <a href="blog-details.html">
-                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <a href="blog-details.html" class="blog-title">Lorem ipsum dolor sit amet</a>
-                                <span><a href="#">By plaza themes - </a>17 Aug 2015 ( 0 comments )</span>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna...</p>
-                                <a href="blog-details.html" class="readmore">read more ></a>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="single-blog-post">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/3.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <a href="blog-details.html" class="blog-title">Lorem ipsum dolor sit amet</a>
-                                <span><a href="#">By plaza themes - </a>17 Aug 2015 ( 0 comments )</span>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna...</p>
-                                <a href="blog-details.html" class="readmore">read more ></a>
-                            </div>
-                        </div>
-                        <div class="single-blog-post">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/1.jpg" alt="">
+                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/6.jpg" alt="">
+                                    <i class="fa fa-file-photo-o"></i>
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -4224,7 +2232,6 @@
             </div>
         </div>
         <!-- quickview product start -->
-
         <!-- jquery
         ============================================ -->
         <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/jquery-1.12.4.min.js"></script>
@@ -4261,5 +2268,5 @@
         <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
     </body>
 
-<!-- Mirrored from htmldemo.net/james/james/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:19:50 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:04 GMT -->
 </html>

@@ -28,7 +28,7 @@
             $result = mysqli_query($this->con, $qr);
             return $result;
         }
-
+        
         public function getSanphamByID($id){
             $query = "SELECT * FROM sanpham WHERE id = $id";
             $result = mysqli_query($this->con, $query);

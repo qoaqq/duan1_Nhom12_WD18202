@@ -172,14 +172,13 @@
             }
         }
 
-        public function delSP_byId(){
-            $id = null;
+        public function delSP_byId($id){
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
-                $this->sanphamModel->getSanphamByID((int)$id);
+                $this->sanphamModel->getSanphamByID($id);
             }
 
-            $this->sanphamModel->deleteSanpham((int)$id);
+            $this->sanphamModel->deleteSanpham($id);
             header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
             exit();
         }
