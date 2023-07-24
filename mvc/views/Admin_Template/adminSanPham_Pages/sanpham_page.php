@@ -45,21 +45,21 @@
     </table>
     <div class="text-center" >
         <?php
-        if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
-            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
-        }
-
-        for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
-            if ($i == $data['pagiNation']['current_page']) {
-                echo '<span>' . $i . '</span> | ';
-            } else {
-                echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . $i . '">' . $i . '</a> | ';
+            if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
+                echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
             }
-        }
 
-        if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
-            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
-        }
+            for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
+                if ($i == $data['pagiNation']['current_page']) {
+                    echo '<span>' . $i . '</span> | ';
+                } else {
+                    echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . $i . '">' . $i . '</a> | ';
+                }
+            }
+
+            if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
+                echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
+            }
         ?>
     </div>
 </form>

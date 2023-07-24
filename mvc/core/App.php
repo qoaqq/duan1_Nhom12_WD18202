@@ -38,17 +38,10 @@ class App{
                 $this->controller="kh_Home";
             }
         }
-
-        // echo "<pre>";
-        // print_r($arr);
-        // echo "</pre>";
-
-        
-
         $this->controller = new $this->controller;
 
         //Action
-        if(!empty($arr[0]) && $arr[0]="admin"){
+        if(!empty($arr[0]) && $arr[0]=="admin"){
             $action=!empty($arr[2]) ? $arr[2] : "Theme";
             if( method_exists( $this->controller , $action) ){
                 $this->action = $action;
