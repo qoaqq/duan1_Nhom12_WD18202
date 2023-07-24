@@ -40,6 +40,13 @@
                return mysqli_query($this->con, $qr);
           }
 
+          public function insertUserByRole0($tenkh, $sdt, $diachi, $email, $password, $anh) {
+               $qr = "INSERT INTO `khachhang`(`tenkh`, `sdt`, `diachi`, `email`, `password`, `anh`, `vaitro`) VALUES 
+               ('$tenkh', $sdt, '$diachi', '$email', '$password', '$anh', b'0')";
+               echo $qr;
+               return mysqli_query($this->con, $qr);
+          }
+
           public function updateUserByIdRole($id, $tenkh, $sdt, $diachi, $email, $password, $anh){
                $qr = "UPDATE `khachhang` SET `tenkh`='$tenkh',`sdt`='$sdt',`diachi`='$diachi',`email`='$email',`password`='$password',`anh`='$anh' 
                WHERE `vaitro`=b'0' AND `id`=$id";

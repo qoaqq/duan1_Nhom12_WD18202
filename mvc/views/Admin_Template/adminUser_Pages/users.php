@@ -1,4 +1,5 @@
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/deleteFeatureByCheckBox" method="post">
+<a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/insertTheme"><button type="button" id="deselect-all" class="btn btn-danger">Thêm khách hàng</button></a>
 <button type="button" id="select-all" class="btn btn-success">Chọn tất cả</button>
 <button type="button" id="deselect-all" class="btn btn-danger">Bỏ chọn tất cả</button>
 <button type="submit" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-warning">Xóa theo mục đã chọn</button>

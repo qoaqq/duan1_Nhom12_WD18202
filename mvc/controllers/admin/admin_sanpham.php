@@ -67,6 +67,7 @@
             if($soluong <= 0 && (empty($soluong))){ 
                 $errors['soluong'] = "Vui lòng nhập số lượng";
             }
+            
             if ($file['size'] <= 0) {
                 $errors['anh'] = "Bạn cần nhập ảnh";
             } else {
