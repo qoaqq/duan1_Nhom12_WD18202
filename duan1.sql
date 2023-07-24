@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 22, 2023 lúc 07:45 PM
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th7 24, 2023 lúc 07:27 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -29,12 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bill` (
   `id` int(11) NOT NULL,
-  `ten_khachhang` varchar(200) NOT NULL,
-  `diachi` text NOT NULL,
-  `sdt` int(20) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `ten_sanpham` varchar(200) NOT NULL,
-  `gia` float NOT NULL,
   `id_khachhang` int(11) NOT NULL,
   `id_sanpham` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -49,8 +43,7 @@ CREATE TABLE `chitietbill` (
   `id_sanpham` int(11) NOT NULL,
   `id_danhmuc` int(11) NOT NULL,
   `id_loaihang` int(11) NOT NULL,
-  `id_bill` int(11) NOT NULL,
-  `ma_donhang` varchar(200) NOT NULL
+  `id_bill` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -61,10 +54,10 @@ CREATE TABLE `chitietbill` (
 
 CREATE TABLE `chitietsp` (
   `id` int(11) NOT NULL,
-  `ma_sanpham` varchar(50) NOT NULL,
   `ten_sanpham` varchar(200) NOT NULL,
   `anh` text NOT NULL,
   `mota` text NOT NULL,
+  `id_sanpham` int(11) NOT NULL,
   `id_tag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -111,7 +104,8 @@ CREATE TABLE `khachhang` (
 
 INSERT INTO `khachhang` (`id`, `tenkh`, `sdt`, `diachi`, `email`, `password`, `anh`, `vaitro`) VALUES
 (84, 'Tôn Quyên', '0123456789', 'to 32427', 'q.duoc5@gmail.com', '$2y$10$K5Mf/KgMCxzeMf.RgYYGh.Zz6Bw5UTM/SZ5YPRmn85v.2TYhFAOnC', 'thumbnail.png', b'1'),
-(85, 'sdfljkhasdlkfj', '456465445', 'ewrewrwetrge', 'q.duoc5asdfasdf@gmail.com', '$2y$10$5TXhEdePCjwYqUJTMshWt.Mb5rNiLu/cOk.9.bDTxqURgrbz..Cvy', '278646164_1339768013203249_8219283401960079602_n.jpg', b'0');
+(85, 'sdfd333', '456465445', 'ewrewrwetrge', 'q.duoc5asdfasdf@gmail.com', '$2y$10$fDU/TMT.gN0hTF7YCOZe2eQi8eZ6nQun5ZRQ4EhYxA7wll8FbGzFW', '278646164_1339768013203249_8219283401960079602_n.jpg', b'0'),
+(86, 'duong lam', '0347073713', 'to 7,phan dinh phung', 'q.duoc5@gmail.com', '$2y$10$vVH/PAhEhkeQRgh.CydY4OCLUhusIF.48n0EiiR1mq1yJ1XX1.W2.', 'Picture5.png', b'0');
 
 -- --------------------------------------------------------
 
@@ -233,7 +227,8 @@ ALTER TABLE `bill`
 -- Chỉ mục cho bảng `chitietsp`
 --
 ALTER TABLE `chitietsp`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_chitietSp_sanpham` (`id_sanpham`);
 
 --
 -- Chỉ mục cho bảng `danhmuc`
@@ -293,7 +288,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT cho bảng `loaihang`
@@ -305,7 +300,7 @@ ALTER TABLE `loaihang`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT cho bảng `tag`
@@ -316,6 +311,12 @@ ALTER TABLE `tag`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `chitietsp`
+--
+ALTER TABLE `chitietsp`
+  ADD CONSTRAINT `fk_chitietSp_sanpham` FOREIGN KEY (`id_sanpham`) REFERENCES `sanpham` (`id`);
 
 --
 -- Các ràng buộc cho bảng `danhmuc`
