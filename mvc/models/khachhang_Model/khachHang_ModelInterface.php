@@ -46,4 +46,14 @@ class khachHang_ModelInterface extends DB{
         $qr = "SELECT * FROM sanpham ORDER BY random_number LIMIT 8";
         return mysqli_query($this->con, $qr);
     }
+
+    public function selectAllDanhMuc(){
+        $qr = "SELECT * FROM danhmuc";
+        return mysqli_query($this->con, $qr);
+    }
+
+    public function selectAll_loaiHang(){
+        $qr = "SELECT * FROM loaihang";
+        return mysqli_query($this->con, $qr);
+    }
 }

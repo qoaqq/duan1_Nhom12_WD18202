@@ -180,46 +180,19 @@
                                 <nav>
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
-
-                                        <li class="mega-men"><a href="shop.html">Women</a>
-                                            <div class="mega-menu men">
-                                                <span>
-                                                    <a href="#">Bags</a>
-                                                    <a href="#">Bootees  Bags</a>
-                                                    <a href="#">Blazers</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">Clothing</a>
-                                                    <a href="#">coats</a>
-                                                    <a href="#">T-shirts</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">Lingerie</a>
-                                                    <a href="#">Bands</a>
-                                                    <a href="#">Furniture</a>
-                                                </span>
-                                            </div>
-                                        </li>
-
-                                        <li class="mega-men"><a href="shop.html">Men</a>
-                                            <div class="mega-menu men">
-                                                <span>
-                                                    <a href="#">Bags</a>
-                                                    <a href="#">Bootees  Bags</a>
-                                                    <a href="#">Blazers</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">Clothing</a>
-                                                    <a href="#">coats</a>
-                                                    <a href="#">T-shirts</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">Lingerie</a>
-                                                    <a href="#">Bands</a>
-                                                    <a href="#">Furniture</a>
-                                                </span>
-                                            </div>
-                                        </li>
+                                        
+                                        <?php foreach($data['danhmuc'] as $dm) :?>
+                                            <li class="mega-men"><a href="shop.html"><?= $dm['ten_danhmuc'] ?></a>
+                                                <div class="mega-menu men">
+                                                    <span>
+                                                        <a href="#">Shoes</a>
+                                                        <?php foreach($data['loaihang'] as $lh) : ?>
+                                                            <a href="#"><?= $lh['ten_loaihang'] ?></a>
+                                                        <?php endforeach ?>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        <?php endforeach ?>
 
                                         <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
                                         

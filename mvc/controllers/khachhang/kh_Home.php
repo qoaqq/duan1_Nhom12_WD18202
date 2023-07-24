@@ -18,13 +18,22 @@
            $this->khachHang_Model->updateRandomNumber();
            $random_new8sp = $this->khachHang_Model->select8RandomNewProducts();
            
+           //SELECT 4 SP
            $select_4sp = $this->khachHang_Model->select4Products();
+
+           //SELECT ALL DANH MUC
+           $danhmuc = $this->khachHang_Model->selectAllDanhMuc();
+
+           //SELECT ALL LOAI HANG
+           $loaihang = $this->khachHang_Model->selectAll_loaiHang();
            
            $this->view_Khachhang("khachhang_Home", [
                 'random_5sp' => $random_5sp,
                 'select_4sp' => $select_4sp,
                 'random_8sp' => $random_8sp,
-                'random_new8sp' => $random_new8sp
+                'random_new8sp' => $random_new8sp,
+                'danhmuc' => $danhmuc,
+                'loaihang' => $loaihang
            ]);
         }
 
