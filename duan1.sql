@@ -2,8 +2,13 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Máy chủ: 127.0.0.1
 -- Thời gian đã tạo: Th7 24, 2023 lúc 10:55 PM
+=======
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th7 24, 2023 lúc 07:27 PM
+>>>>>>> 4bcfed5d17e11596b91fd3fdd2b8a3ef08871c93
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -42,11 +47,18 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `chitietbill` (
+<<<<<<< HEAD
   `id` int(11) NOT NULL,
   `id_bill` int(11) NOT NULL,
   `id_sanpham` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
   `total_price` bigint(20) NOT NULL
+=======
+  `id_sanpham` int(11) NOT NULL,
+  `id_danhmuc` int(11) NOT NULL,
+  `id_loaihang` int(11) NOT NULL,
+  `id_bill` int(11) NOT NULL
+>>>>>>> 4bcfed5d17e11596b91fd3fdd2b8a3ef08871c93
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -332,6 +344,7 @@ ALTER TABLE `tag`
 --
 
 --
+<<<<<<< HEAD
 -- Các ràng buộc cho bảng `bill`
 --
 ALTER TABLE `bill`
@@ -345,6 +358,8 @@ ALTER TABLE `chitietbill`
   ADD CONSTRAINT `fl_sp_chitietbill` FOREIGN KEY (`id_sanpham`) REFERENCES `sanpham` (`id`);
 
 --
+=======
+>>>>>>> 4bcfed5d17e11596b91fd3fdd2b8a3ef08871c93
 -- Các ràng buộc cho bảng `chitietsp`
 --
 ALTER TABLE `chitietsp`
