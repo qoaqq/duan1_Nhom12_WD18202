@@ -181,18 +181,25 @@
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
                                         
-                                        <?php foreach($data['danhmuc'] as $dm) :?>
-                                            <li class="mega-men"><a href="shop.html"><?= $dm['ten_danhmuc'] ?></a>
-                                                <div class="mega-menu men">
+                                            <li class="mega-men"><a href="shop.html"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a>
+                                                <div class="sub-menu pages">
                                                     <span>
-                                                        <a href="#">Shoes</a>
-                                                        <?php foreach($data['loaihang'] as $lh) : ?>
-                                                            <a href="#"><?= $lh['ten_loaihang'] ?></a>
+                                                        <?php foreach($data['loaihang_men'] as $lh) : ?>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/<?= $lh['id_loaihang'] ?>"><?= $lh['ten_loaihang'] ?></a>
                                                         <?php endforeach ?>
                                                     </span>
                                                 </div>
                                             </li>
-                                        <?php endforeach ?>
+
+                                            <li class="mega-men"><a href="shop.html"><?= $data['danhmuc_women']['ten_danhmuc'] ?></a>
+                                                <div class="sub-menu pages">
+                                                    <span>
+                                                        <?php foreach($data['loaihang_women'] as $lh) : ?>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/<?= $lh['id_loaihang'] ?>"><?= $lh['ten_loaihang'] ?></a>
+                                                        <?php endforeach ?>
+                                                    </span>
+                                                </div>
+                                            </li>
 
                                         <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
                                         

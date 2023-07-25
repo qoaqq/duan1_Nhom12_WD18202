@@ -53,6 +53,10 @@ class App{
             }
         }
 
+        // echo "<pre>";
+        // print_r($arr);
+        // echo "</pre>";
+
         if(!empty($arr[0]) && $arr[0]="admin"){
             unset($arr[0]);
             unset($arr[1]);
@@ -66,7 +70,6 @@ class App{
         $this->params = $arr?array_values($arr):[];
 
         call_user_func_array([$this->controller, $this->action], $this->params );
-
     }
 
     function UrlProcess(){

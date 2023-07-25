@@ -6,8 +6,8 @@
             return mysqli_query($this->con, $qr);
         }
 
-        public function selectAll_loaiHang(){
-            $qr = "SELECT * FROM loaihang";
+        public function selectAll_gioitinhLoaiHang(){
+            $qr = "SELECT * FROM gioitinh_loaihang";
             return mysqli_query($this->con, $qr);
         }
 

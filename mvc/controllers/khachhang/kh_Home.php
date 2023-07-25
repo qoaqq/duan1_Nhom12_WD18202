@@ -21,19 +21,27 @@
            //SELECT 4 SP
            $select_4sp = $this->khachHang_Model->select4Products();
 
-           //SELECT ALL DANH MUC
-           $danhmuc = $this->khachHang_Model->selectAllDanhMuc();
+           //SELECT DANH MUC NAM
+           $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
 
-           //SELECT ALL LOAI HANG
-           $loaihang = $this->khachHang_Model->selectAll_loaiHang();
+           //SELECT DANH MUC NU
+           $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+           //SELECT LOAI HANG NAM
+           $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+           //SELECT LOAI HANG NU
+           $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
            
            $this->view_Khachhang("khachhang_Home", [
                 'random_5sp' => $random_5sp,
                 'select_4sp' => $select_4sp,
                 'random_8sp' => $random_8sp,
                 'random_new8sp' => $random_new8sp,
-                'danhmuc' => $danhmuc,
-                'loaihang' => $loaihang
+                'danhmuc_men' => $danhmuc_men,
+                'danhmuc_women' => $danhmuc_women,
+                'loaihang_men' => $loaihang_men,
+                'loaihang_women' => $loaihang_women
            ]);
         }
 
@@ -65,7 +73,8 @@
             ]);
         }
 
-        public function cartTheme(){
-            $this->view_Khachhang("khachhang_Cart");
+        public function khachhang_Loaihang(){
+            // echo $id;
+            $this->view_Khachhang("khachhang_Loaihang");
         }
 }

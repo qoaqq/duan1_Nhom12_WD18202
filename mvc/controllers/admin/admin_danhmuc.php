@@ -21,12 +21,12 @@
         }
 
         public function addDM_Theme(){  
-            $loaiHang = $this->danhmucModel->selectAll_loaiHang();      
+            $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();      
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $this->view_admin("admin_danhMuc", [
                 'page' => 'add_danhmuc',
                 'users' => $users,
-                'loaiHang' => $loaiHang
+                'gioitinh_loaiHang' => $gioitinh_loaiHang
             ]);
         }
 
@@ -54,7 +54,7 @@
         }
 
         public function editDM_Feature($id){
-            $loaiHang = $this->danhmucModel->selectAll_loaiHang();
+            $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             $dm = $this->danhmucModel->getDanhmucById($id);
             $this->view_admin("admin_danhMuc", [
@@ -62,7 +62,7 @@
                 'dm' => $dm,
                 'id' => $id,
                 'users' => $users,
-                'loaiHang' => $loaiHang
+                'gioitinh_loaiHang' => $gioitinh_loaiHang
             ]);
         }
 

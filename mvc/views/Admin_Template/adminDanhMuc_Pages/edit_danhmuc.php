@@ -9,9 +9,9 @@
         <div class="form-group">
             <label for="idloaihang">ID loại hàng</label>
             <select name="idlh">
-                <?php foreach ($data['loaiHang'] as $cate) : ?>
-                    <option value="<?= $cate['id'] ?>" <?= ($cate['id'] == $data['dm']['id_loaihang']) ? 'selected' : '' ?>>
-                        <?= $cate['ten_loaihang'] ?>
+                <?php foreach ($data['gioitinh_loaiHang'] as $cate) : ?>
+                    <option value="<?= $cate['id'] ?>" <?= ($cate['id'] == $data['dm']['id_gioitinhLoaihang']) ? 'selected' : '' ?>>
+                        <?= $cate['id'] ?>
                     </option>
                 <?php endforeach ?>
             </select>

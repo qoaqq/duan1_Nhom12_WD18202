@@ -25,7 +25,7 @@
                                 <td><input type="checkbox" name="ids[]" value="<?= $row['id'] ?>"></td>
                                 <td><?= $row['id'] ?></td>
                                 <td><?= $row['ten_danhmuc'] ?></td>
-                                <td><?= $row['id_loaihang'] ?></td>
+                                <td><?= $row['id_gioitinhLoaihang'] ?></td>
                                 <td>
                                     <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/editDM_Feature/<?= $row['id'] ?>">Sửa</a>
                                     <a class="btn btn-danger" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byId/&id=<?= $row['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa dữ liệu?')">Xóa</a>

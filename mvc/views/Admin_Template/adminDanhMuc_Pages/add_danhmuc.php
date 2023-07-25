@@ -8,9 +8,9 @@
     <div class="form-group">
     <label for="idloaihang">ID loại hàng</label>
         <select name="idlh" id="">
-            <?php foreach ($data['loaiHang'] as $cate) : ?>
+            <?php foreach ($data['gioitinh_loaiHang'] as $cate) : ?>
                 <option value="<?= $cate['id'] ?>">
-                    <?= $cate['ten_loaihang'] ?>
+                    <?= $cate['id'] ?>
                 </option>
             <?php endforeach ?>
         </select>

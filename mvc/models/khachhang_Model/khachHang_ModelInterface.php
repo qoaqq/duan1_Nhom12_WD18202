@@ -47,13 +47,27 @@ class khachHang_ModelInterface extends DB{
         return mysqli_query($this->con, $qr);
     }
 
-    public function selectAllDanhMuc(){
-        $qr = "SELECT * FROM danhmuc";
+    public function selectDanhMucByMen(){
+        $qr = "SELECT ten_danhmuc FROM `danhmuc` WHERE ten_danhmuc = 'Nam'";
+        return mysqli_fetch_assoc(mysqli_query($this->con, $qr));
+    }
+
+    public function selectDanhMucByWomen(){
+        $qr = "SELECT ten_danhmuc FROM `danhmuc` WHERE ten_danhmuc = 'Nữ'";
+        return mysqli_fetch_assoc(mysqli_query($this->con, $qr));
+    }
+
+    public function selectDanhmuc_loaiHangMen(){
+        $qr = "SELECT gioitinh_loaihang.id_gioitinh, gioitinh_loaihang.id_loaihang, loaihang.ten_loaihang FROM `gioitinh_loaihang` 
+        INNER JOIN loaihang ON gioitinh_loaihang.id_loaihang = loaihang.id 
+        WHERE gioitinh_loaihang.id_gioitinh = 1";
         return mysqli_query($this->con, $qr);
     }
 
-    public function selectAll_loaiHang(){
-        $qr = "SELECT * FROM loaihang";
+    public function selectDanhmuc_loaiHangWomen(){
+        $qr = "SELECT gioitinh_loaihang.id_gioitinh, gioitinh_loaihang.id_loaihang, loaihang.ten_loaihang FROM `gioitinh_loaihang` 
+        INNER JOIN loaihang ON gioitinh_loaihang.id_loaihang = loaihang.id 
+        WHERE gioitinh_loaihang.id_gioitinh = 2";
         return mysqli_query($this->con, $qr);
     }
 }
