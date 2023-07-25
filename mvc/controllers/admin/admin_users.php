@@ -75,7 +75,6 @@ class admin_users extends Controller{
         }
 
         if(empty($errors)){
-            echo "121121";
             if(isset($_POST['btn_insertUser'])){
                 echo "222222";
                 $this->admin_users->insertUserByRole0($fullname, $phonenumber, $address, $email, $hashPass, $img);

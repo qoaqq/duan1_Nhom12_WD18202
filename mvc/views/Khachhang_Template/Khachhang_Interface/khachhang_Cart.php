@@ -11,7 +11,7 @@
 
         <!-- favicon
         ============================================ -->
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/favicon.ico">
 
         <!-- Google Fonts
         ============================================ -->
@@ -21,46 +21,46 @@
 
         <!-- Bootstrap CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/bootstrap.min.css">
         <!-- Bootstrap CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/font-awesome.min.css">
         <!-- owl.carousel CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/owl.theme.css">
-        <link rel="stylesheet" href="css/owl.transitions.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/owl.carousel.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/owl.theme.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/owl.transitions.css">
         <!-- jquery-ui CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/jquery-ui.css">
         <!-- meanmenu CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/meanmenu.min.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/meanmenu.min.css">
         <!-- nivoslider CSS
         ============================================ -->
-        <link rel="stylesheet" href="lib/css/nivo-slider.css">
-        <link rel="stylesheet" href="lib/css/preview.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/lib/css/nivo-slider.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/lib/css/preview.css">
         <!-- animate CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/animate.css">
         <!-- magic CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/magic.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/magic.css">
         <!-- normalize CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/normalize.css">
         <!-- main CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/main.css">
         <!-- style CSS
         ============================================ -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/style.css">
         <!-- responsive CSS
         ============================================ -->
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/css/responsive.css">
         <!-- modernizr JS
         ============================================ -->
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -128,12 +128,12 @@
                                 </div>
                                 <div class="cart-menu">
                                     <ul>
-                                        <li><a href="#"> <img src="img/icon-cart.png" alt=""> <span>2</span> </a>
+                                        <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
                                             <div class="cart-info">
                                                 <ul>
                                                     <li>
                                                         <div class="cart-img">
-                                                            <img src="img/cart/1.png" alt="">
+                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/1.png" alt="">
                                                         </div>
                                                         <div class="cart-details">
                                                             <a href="#">Fusce aliquam</a>
@@ -144,7 +144,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="cart-img">
-                                                            <img src="img/cart/2.png" alt="">
+                                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/2.png" alt="">
                                                         </div>
                                                         <div class="cart-details">
                                                             <a href="#">Fusce aliquam</a>
@@ -171,7 +171,7 @@
                         <div class="col-lg-3">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/logo.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                                                 </div>
                                                 <div class="part-2">
                                                     <a href="#">
-                                                        <img src="img/banner/menu-banner.png" alt="">
+                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/banner/menu-banner.png" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -458,70 +458,11 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
+                                    
                                     <tr>
                                         <td class="cart-item-img">
                                             <a href="single-product.html">
-                                                <img src="img/cart/3.png" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="cart-product-name">
-                                            <a href="single-product.html">Cras neque metus</a>
-                                        </td>
-                                        <td class="edit">
-                                            <a href="#">Edit</a>
-                                        </td>
-                                        <td class="move-wishlist">
-                                            <a href="#">Move</a>
-                                        </td>
-                                        <td class="unit-price">
-                                            <span>$174.00</span>
-                                        </td>
-                                        <td class="quantity">
-                                            <span>1</span>
-                                        </td>
-                                        <td class="subtotal">
-                                            <span>$174.00</span>
-                                        </td>
-                                        <td class="remove-icon">
-                                            <a href="#">
-                                                <img src="img/cart/btn_remove.png" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-item-img">
-                                            <a href="single-product.html">
-                                                <img src="img/cart/4.png" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="cart-product-name">
-                                            <a href="single-product.html">Cras neque metus</a>
-                                        </td>
-                                        <td class="edit">
-                                            <a href="#">Edit</a>
-                                        </td>
-                                        <td class="move-wishlist">
-                                            <a href="#">Move</a>
-                                        </td>
-                                        <td class="unit-price">
-                                            <span>$174.00</span>
-                                        </td>
-                                        <td class="quantity">
-                                            <span>1</span>
-                                        </td>
-                                        <td class="subtotal">
-                                            <span>$174.00</span>
-                                        </td>
-                                        <td class="remove-icon">
-                                            <a href="#">
-                                                <img src="img/cart/btn_remove.png" alt="">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-item-img">
-                                            <a href="single-product.html">
-                                                <img src="img/cart/5.png" alt="">
+                                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/5.png" alt="">
                                             </a>
                                         </td>
                                         <td class="cart-product-name">
@@ -544,7 +485,7 @@
                                         </td>
                                         <td class="remove-icon">
                                             <a href="#">
-                                                <img src="img/cart/btn_remove.png" alt="">
+                                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/btn_remove.png" alt="">
                                             </a>
                                         </td>
                                     </tr>
@@ -650,7 +591,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
-                            <img src="img/logo-white.png" alt="">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/logo-white.png" alt="">
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
                             <ul class="address">
                                 <li>
@@ -677,7 +618,7 @@
                                 <div class="twitter-article">
                                     <div class="twitter-img">
                                         <a href="#">
-                                            <img src="img/twitter/twitter-1.png" alt="">
+                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/twitter/twitter-1.png" alt="">
                                         </a>
                                     </div>
                                     <div class="twitter-text">
@@ -691,7 +632,7 @@
                                 <div class="twitter-article">
                                     <div class="twitter-img">
                                         <a href="#">
-                                            <img src="img/twitter/twitter-1.png" alt="">
+                                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/twitter/twitter-1.png" alt="">
                                         </a>
                                     </div>
                                     <div class="twitter-text">
@@ -752,7 +693,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="payment-icon">
-                            <img src="img/payment.png" alt="">
+                            <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/payment.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -762,38 +703,38 @@
         <!-- footer area end -->
         <!-- jquery
         ============================================ -->
-        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- bootstrap JS
         ============================================ -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/bootstrap.min.js"></script>
         <!-- wow JS
         ============================================ -->
-        <script src="js/wow.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/wow.min.js"></script>
         <!-- price-slider JS
         ============================================ -->
-        <script src="js/jquery-price-slider.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/jquery-price-slider.js"></script>
         <!-- nivoslider JS
         ============================================ -->
-        <script src="lib/js/jquery.nivo.slider.js"></script>
-        <script src="lib/home.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/lib/js/jquery.nivo.slider.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/lib/home.js"></script>
         <!-- meanmenu JS
         ============================================ -->
-        <script src="js/jquery.meanmenu.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/jquery.meanmenu.js"></script>
         <!-- owl.carousel JS
         ============================================ -->
-        <script src="js/owl.carousel.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/owl.carousel.min.js"></script>
         <!-- elevatezoom JS
         ============================================ -->
-        <script src="js/jquery.elevatezoom.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/jquery.elevatezoom.js"></script>
         <!-- scrollUp JS
         ============================================ -->
-        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/jquery.scrollUp.min.js"></script>
         <!-- plugins JS
         ============================================ -->
-        <script src="js/plugins.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/plugins.js"></script>
         <!-- main JS
         ============================================ -->
-        <script src="js/main.js"></script>
+        <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
     </body>
 
 <!-- Mirrored from htmldemo.net/james/james/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:00 GMT -->

@@ -64,4 +64,8 @@
                 'result' => $result
             ]);
         }
+
+        public function cartTheme(){
+            $this->view_Khachhang("khachhang_Cart");
+        }
 }
