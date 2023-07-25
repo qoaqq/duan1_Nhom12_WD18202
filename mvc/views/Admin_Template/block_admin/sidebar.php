@@ -26,36 +26,9 @@
           <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>Sản phẩm</a></li>
     <li class="nav-title">Components</li>
-    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
-        </svg> Forms</a>
-      <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="forms/form-control.html"> Form Control</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/select.html"> Select</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"> Checks and radios</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/range.html"> Range</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/input-group.html"> Input group</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/floating-labels.html"> Floating labels</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/layout.html"> Layout</a></li>
-        <li class="nav-item"><a class="nav-link" href="forms/validation.html"> Validation</a></li>
-      </ul>
-    </li>
-    <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-        </svg> Icons</a>
-      <ul class="nav-group-items">
-        <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-free.html"> CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-brand.html"> CoreUI Icons - Brand</a></li>
-        <li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
-      </ul>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-calculator"></use>
-        </svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-    <li class="nav-divider"></li>
+   
+    
+    
     <li class="nav-title">Extras</li>
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
         <svg class="nav-icon">
@@ -70,26 +43,10 @@
             <svg class="nav-icon">
               <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
             </svg> Register</a></li>
-        <li class="nav-item"><a class="nav-link" href="404.html" target="_top">
-            <svg class="nav-icon">
-              <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
-            </svg> Error 404</a></li>
-        <li class="nav-item"><a class="nav-link" href="500.html" target="_top">
-            <svg class="nav-icon">
-              <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
-            </svg> Error 500</a></li>
+        
       </ul>
     </li>
-    <li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-description"></use>
-        </svg> Docs</a></li>
-    <li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
-        <svg class="nav-icon">
-          <use xlink:href="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
-        </svg> Try CoreUI
-        <div class="fw-semibold">PRO</div>
-      </a></li>
+   
   </ul>
   <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
 </div>
