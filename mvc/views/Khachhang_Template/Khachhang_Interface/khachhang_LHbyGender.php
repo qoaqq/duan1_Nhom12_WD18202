@@ -505,15 +505,15 @@
                                 <div role="tabpanel" class="tab-pane active fade show home2" id="gird">
                                     <div class="row">
 
-                                        <?php foreach ($data['loaihang'] as $lh) : ?>
+                                        <?php foreach ($data['sanpham'] as $sp) : ?>
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="single-product">
                                                     <div class="level-pro-new">
                                                         <span>new</span>
                                                     </div>
                                                     <div class="product-img">
-                                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $lh['id'] ?>">
-                                                            <img src="/duan1_Nhom12_WD18202/public/img/<?= $lh['anh'] ?>" alt="" width="" class="">
+                                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>">
+                                                            <img src="/duan1_Nhom12_WD18202/public/img/<?= $sp['anh'] ?>" alt="" width="" class="">
                                                         </a>
                                                     </div>
                                                     <div class="actions">
@@ -526,10 +526,10 @@
                                                     </div>
                                                     <div class="product-price">
                                                         <div class="product-name">
-                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $lh['id'] ?>" title="Fusce aliquam"><?= $lh['ten_sanpham'] ?></a>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
                                                         </div>
                                                         <div class="price-rating">
-                                                            <span><?= $lh['gia'] ?>$</span>
+                                                            <span><?= $sp['gia'] ?>$</span>
                                                             <div class="ratings">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -713,23 +713,44 @@
                         </div>
                         <div class="col-md-12">
                             <div class="toolbar-bottom">
-                                <!-- <?php
-                                        if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
-                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
-                                        }
+                                <?php
+                                $currentURL = $_SERVER['REQUEST_URI'];
+                                if (strpos($currentURL, "/khachhang/khachhang_sanPhamByGender/1") !== false) {
+                                    $genderId = $data['danhmuc_men']['id_gioitinh'];
+                                    if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
+                                    }
 
-                                        for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
-                                            if ($i == $data['pagiNation']['current_page']) {
-                                                echo '<span>' . $i . '</span> | ';
-                                            } else {
-                                                echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . $i . '">' . $i . '</a> | ';
-                                            }
+                                    for ($i = 1; $i < 4; $i++) {
+                                        if ($i == $data['pagiNation']['current_page']) {
+                                            echo '<span>' . $i . '</span> | ';
+                                        } else {
+                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . $i . '">' . $i . '</a> | ';
                                         }
+                                    }
 
-                                        if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
-                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
+                                    if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
+                                    }
+                                } elseif (strpos($currentURL, "/khachhang/khachhang_sanPhamByGender/2") !== false) {
+                                    $genderId = $data['danhmuc_women']['id_gioitinh'];
+                                    if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
+                                    }
+
+                                    for ($i = 1; $i < 3; $i++) {
+                                        if ($i == $data['pagiNation']['current_page']) {
+                                            echo '<span>' . $i . '</span> | ';
+                                        } else {
+                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . $i . '">' . $i . '</a> | ';
                                         }
-                                        ?> -->
+                                    }
+
+                                    if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/' . $genderId . '&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<!-- Mirrored from htmldemo.net/james/james/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:04 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/single-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:08 GMT -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Shop || James </title>
+    <title>Single Shop || James </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -202,6 +202,7 @@
                                             </span>
                                         </div>
                                     </li>
+
                                     <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
                                     <li><a href="#">Pages</a>
                                         <div class="sub-menu pages">
@@ -364,372 +365,301 @@
         </div>
     </header>
     <!-- header area end -->
-    <!-- product items banner start -->
-    <div class="product-banner">
-        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/banner.jpg" alt="">
-    </div>
-    <!-- product items banner end -->
-    <!-- product main items area start -->
-    <div class="product-main-items">
+    <!-- single product area start -->
+    <div class="Single-product-location home2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="location">
                         <ul>
                             <li><a href="index.html" title="go to homepage">Home<span>/</span></a> </li>
-                            <li><strong> shop</strong></li>
+                            <li><strong> <?= $data['detailSP']['ten_sanpham'] ?></strong></li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- single product area end -->
+    <!-- single product details start -->
+    <div class="single-product-details">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="product-sidebar">
-                        <div class="sidebar-title">
-                            <h2>Shopping Options</h2>
+                <div class="col-lg-6">
+                    <div class="single-product-img tab-content">
+                        <div class="single-pro-main-image tab-pane active" id="pro-large-img-1">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="optima" /></a>
                         </div>
-                        <div class="single-sidebar">
-                            <div class="single-sidebar-title">
-                                <h3>Category</h3>
-                            </div>
-                            <div class="single-sidebar-content">
-                                <ul>
-                                    <li><a href="#">Dresses (4)</a></li>
-                                    <li><a href="#">shoes (6)</a></li>
-                                    <li><a href="#">Handbags (1)</a></li>
-                                    <li><a href="#">Clothing (3)</a></li>
-                                </ul>
-                            </div>
+                        <div class="single-pro-main-image tab-pane" id="pro-large-img-2">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="optima" /></a>
                         </div>
-                        <div class="single-sidebar">
-                            <div class="single-sidebar-title">
-                                <h3>Color</h3>
-                            </div>
-                            <div class="single-sidebar-content">
-                                <ul>
-                                    <li><a href="#">Black (2)</a></li>
-                                    <li><a href="#">Blue (2)</a></li>
-                                    <li><a href="#">Green (4)</a></li>
-                                    <li><a href="#">Grey (2)</a></li>
-                                    <li><a href="#">Red (2)</a></li>
-                                    <li><a href="#">White (2)</a></li>
-                                </ul>
-                            </div>
+                        <div class="single-pro-main-image tab-pane" id="pro-large-img-3">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="optima" /></a>
                         </div>
-                        <div class="single-sidebar">
-                            <div class="single-sidebar-title">
-                                <h3>Manufacturer</h3>
-                            </div>
-                            <div class="single-sidebar-content">
-                                <ul>
-                                    <li><a href="#">Calvin Klein (2)</a></li>
-                                    <li><a href="#">Diesel (2)</a></li>
-                                    <li><a href="#">option value (1)</a></li>
-                                    <li><a href="#">Polo (2)</a></li>
-                                    <li><a href="#">store view (4)</a></li>
-                                    <li><a href="#">Tommy Hilfiger (2)</a></li>
-                                    <li><a href="#">will be used (1)</a></li>
-                                </ul>
-                            </div>
+                        <div class="single-pro-main-image tab-pane" id="pro-large-img-4">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="optima" /></a>
                         </div>
-                        <div class="single-sidebar price">
-                            <div class="single-sidebar-title">
-                                <h3>Price</h3>
-                            </div>
-                            <div class="single-sidebar-content">
-                                <div class="price-range">
-                                    <div class="price-filter">
-                                        <div id="slider-range"></div>
-                                        <div class="price-slider-amount">
-                                            <input type="text" id="amount" name="price" placeholder="Add Your Price" />
-                                        </div>
-                                    </div>
-                                    <button type="submit"> <span>search</span> </button>
-                                </div>
-                            </div>
+                        <div class="single-pro-main-image tab-pane" id="pro-large-img-5">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="optima" /></a>
                         </div>
-                        <div class="banner-left">
-                            <a href="#">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/banner_left.jpg" alt="">
+                    </div>
+                    <div class="nav product-page-slider">
+                        <div class="single-product-slider">
+                            <a class="active" href="#pro-large-img-1" data-bs-toggle="tab">
+                                <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="">
+                            </a>
+                        </div>
+                        <div class="single-product-slider">
+                            <a href="#pro-large-img-2" data-bs-toggle="tab">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/30.png" alt="">
+                            </a>
+                        </div>
+                        <div class="single-product-slider">
+                            <a href="#pro-large-img-3" data-bs-toggle="tab">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/29.png" alt="">
+                            </a>
+                        </div>
+                        <div class="single-product-slider">
+                            <a href="#pro-large-img-4" data-bs-toggle="tab">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/31.png" alt="">
+                            </a>
+                        </div>
+                        <div class="single-product-slider">
+                            <a href="#pro-large-img-5" data-bs-toggle="tab">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/29.png" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="product-bar">
-                        <ul class="nav product-navigation justify-content-center" role="tablist">
-                            <li role="presentation" class="gird">
-                                <a class="active" href="#gird" aria-controls="gird" role="tab" data-bs-toggle="tab">
-                                    <span>
-                                        <img class="primary" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/grid-primary.png" alt="">
-                                        <img class="secondary" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/grid-secondary.png" alt="">
-                                    </span>
-                                    Gird
-                                </a>
-                            </li>
-                            <li role="presentation" class="list">
-                                <a href="#list" aria-controls="list" role="tab" data-bs-toggle="tab">
-                                    <span>
-                                        <img class="primary" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/list-primary.png" alt="">
-                                        <img class="secondary" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/list-secondary.png" alt="">
-                                    </span>
-                                    List
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="sort-by">
-                            <label>Sort By</label>
-                            <select name="sort">
-                                <option value="#" selected>Position</option>
-                                <option value="#">Name</option>
-                                <option value="#">Price</option>
-                            </select>
-                            <a href="#" title="Set Descending Direction">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/i_asc_arrow.gif" alt="">
-                            </a>
+                <div class="col-lg-6">
+                    <div class="single-product-details">
+                        <a href="#" class="product-name"><?= $data['detailSP']['ten_sanpham'] ?></a>
+                        <div class="list-product-info">
+                            <div class="price-rating">
+                                <div class="ratings">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <a href="#" class="review">1 Review(s)</a>
+                                    <a href="#" class="add-review">Add Your Review</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="limit-product">
-                            <label>Show</label>
-                            <select name="show">
-                                <option value="#" selected>9</option>
-                                <option value="#">12</option>
-                                <option value="#">24</option>
-                                <option value="#">36</option>
-                            </select>
-                            per page
+                        <div class="avalable">
+                            <p>Availability:<span> In stock</span></p>
+                        </div>
+                        <div class="item-price">
+                            <span>$<?= $data['detailSP']['gia'] ?></span>
+                        </div>
+                        <div class="single-product-info">
+                            <p><?= $data['detailSP']['mota'] ?></p>
+                            <div class="share">
+                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/share.png" alt="">
+                            </div>
+                        </div>
+                        <div class="action">
+                            <ul class="add-to-links">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-refresh"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select-catagory">
+                            <div class="color-select">
+                                <label class="required">
+                                    <em>*</em> Color
+                                </label>
+                                <div class="input-box">
+                                    <select id="select-1">
+                                        <option value="">-- Please Select --</option>
+                                        <option value="">black</option>
+                                        <option value="">blue</option>
+                                        <option value="">yellow</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="size-select">
+                                <label class="required">
+                                    <em>*</em> Size
+                                </label>
+                                <div class="input-box">
+                                    <select id="select-2">
+                                        <option value="">-- Please Select --</option>
+                                        <option value="">36</option>
+                                        <option value="">37</option>
+                                        <option value="">38</option>
+                                        <option value="">39</option>
+                                        <option value="">40</option>
+                                        <option value="">41</option>
+                                        <option value="">42</option>
+                                        <option value="">43</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 col-6">
+                            <button class="btn btn-outline-danger" type="button">ADD TO CART</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="product-content">
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active fade show home2" id="gird">
-                                    <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- single product details end -->
+    <!-- single product tab start -->
+    <div class="single-product-tab-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="single-product-tab">
+                        <ul class="nav single-product-tab-navigation" role="tablist">
+                            <li role="presentation">
+                                <a class="active" href="#tab1" aria-controls="tab1" role="tab" data-bs-toggle="tab">Product Description</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab2" aria-controls="tab2" role="tab" data-bs-toggle="tab">reviews</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab3" aria-controls="tab3" role="tab" data-bs-toggle="tab">product tag</a>
+                            </li>
+                        </ul>
 
-                                        <?php foreach ($data['loaihang'] as $lh) : ?>
-                                            <div class="col-lg-4 col-md-6">
-                                                <div class="single-product">
-                                                    <div class="level-pro-new">
-                                                        <span>new</span>
-                                                    </div>
-                                                    <div class="product-img">
-                                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $lh['id'] ?>">
-                                                            <img src="/duan1_Nhom12_WD18202/public/img/<?= $lh['anh'] ?>" alt="" width="" class="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
-                                                        <ul class="add-to-link">
-                                                            <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                                            <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="product-price">
-                                                        <div class="product-name">
-                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $lh['id'] ?>" title="Fusce aliquam"><?= $lh['ten_sanpham'] ?></a>
-                                                        </div>
-                                                        <div class="price-rating">
-                                                            <span><?= $lh['gia'] ?>$</span>
-                                                            <div class="ratings">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-half-o"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <?php endforeach ?>
-
-                                    </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content single-product-page">
+                            <div role="tabpanel" class="tab-pane fade show active" id="tab1">
+                                <div class="single-p-tab-content">
+                                    <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis. </p>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade home2" id="list">
-                                    <div class="product-catagory">
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab2">
+                                <div class="single-p-tab-content">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="product-review">
+                                                <p> <a href="#"> plaza</a> <span>Review by</span> plaza </p>
+                                                <div class="product-rating-info">
+                                                    <p>value</p>
+                                                    <div class="ratings">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="">
-                                                    </a>
+                                                <div class="product-rating-info">
+                                                    <p>Quality</p>
+                                                    <div class="ratings">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
+                                                <div class="product-rating-info">
+                                                    <p>Price</p>
+                                                    <div class="ratings">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
+                                                </div>
+                                                <div class="review-date">
+                                                    <p>plaza <em> (Posted on 8/27/2015)</em></p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="">
-                                                    </a>
+                                        <div class="col-md-7">
+                                            <div class="rate-product hidden-xs">
+                                                <div class="rate-product-heading">
+                                                    <h3>You're reviewing: Fusce aliquam</h3>
+                                                    <h3>How do you rate this product? <em>*</em></h3>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
+                                                <form action="#">
+                                                    <table class="product-review-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th>1 star</th>
+                                                                <th>2 star</th>
+                                                                <th>3 star</th>
+                                                                <th>4 star</th>
+                                                                <th>5 star</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Price</th>
+                                                                <td> <input type="radio" class="radio" name="ratings[1]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[1]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[1]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[1]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[1]"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Value</th>
+                                                                <td> <input type="radio" class="radio" name="ratings[2]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[2]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[2]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[2]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[2]"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Quality</th>
+                                                                <td> <input type="radio" class="radio" name="ratings[3]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[3]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[3]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[3]"> </td>
+                                                                <td> <input type="radio" class="radio" name="ratings[3]"> </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <ul class="form-list">
+                                                        <li>
+                                                            <label> nickname <em>*</em> </label>
+                                                            <input type="text">
+                                                        </li>
+                                                        <li>
+                                                            <label> Summary of Your Review <em>*</em> </label>
+                                                            <input type="text">
+                                                        </li>
+                                                        <li>
+                                                            <label> Review <em>*</em> </label>
+                                                            <textarea cols="3" rows="5"></textarea>
+                                                        </li>
+                                                    </ul>
+                                                    <button type="submit"> submit review</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="toolbar-bottom">
-                                <!-- <?php
-                                        if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
-                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
-                                        }
-
-                                        for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
-                                            if ($i == $data['pagiNation']['current_page']) {
-                                                echo '<span>' . $i . '</span> | ';
-                                            } else {
-                                                echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . $i . '">' . $i . '</a> | ';
-                                            }
-                                        }
-
-                                        if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
-                                            echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
-                                        }
-                                        ?> -->
+                            <div role="tabpanel" class="tab-pane fade" id="tab3">
+                                <div class="single-p-tab-content">
+                                    <div class="add-tab-title">
+                                        <p> your tag </p>
+                                    </div>
+                                    <div><?= $data['detailSP']['tags'] ?></div>
+                                    <p class="tag-rules">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -737,8 +667,48 @@
             </div>
         </div>
     </div>
-    <!-- product main items area end -->
-
+    <!-- single product tab end -->
+    <!-- upsell product area start-->
+    
+    <!-- upsell product area end-->
+    <!-- related product area start-->
+    <div class="related-product home2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-title">
+                        <h2>related products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="related-slider">
+                    
+                    <?php foreach($data['random_8sp'] as $sp) : ?>
+                        <div class="col-md-12">
+                        <div class="single-product">
+                            <div class="product-img">
+                                <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>">
+                                    <img src="/duan1_Nhom12_WD18202/public/img/<?= $sp['anh'] ?>" alt="" class="">
+                                </a>
+                            </div>
+                            <div class="product-price">
+                                <div class="product-name">
+                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
+                                </div>
+                                <div class="price-rating">
+                                    <span>$<?= $sp['gia'] ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach ?>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- related product area end-->
     <!-- footer top area start -->
     <div class="footer-top-area">
         <div class="container">
@@ -855,62 +825,7 @@
         <a href="#" id="scrollUp"><i class="fa fa fa-arrow-up"></i></a>
     </footer>
     <!-- footer area end -->
-    <!-- quickview product start -->
-    <div id="quickview-wrapper">
-        <!-- Modal -->
-        <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-product">
-                            <div class="product-images">
-                                <div class="main-image images">
-                                    <img alt="" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/quick-view.jpg">
-                                </div>
-                            </div>
 
-                            <div class="product-info">
-                                <h1>Diam quis cursus</h1>
-                                <div class="price-box">
-                                    <p class="price"><span class="special-price"><span class="amount">$132.00</span></span></p>
-                                </div>
-                                <a href="shop.html" class="see-all">See all features</a>
-                                <div class="quick-add-to-cart">
-                                    <form method="post" class="cart">
-                                        <div class="numbers-row">
-                                            <input type="number" id="french-hens" value="3">
-                                        </div>
-                                        <button class="single_add_to_cart_button" type="submit">Add to cart</button>
-                                    </form>
-                                </div>
-                                <div class="quick-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
-                                </div>
-                                <div class="share-post">
-                                    <div class="share-title">
-                                        <h3>share this product</h3>
-                                    </div>
-                                    <div class="share-social">
-                                        <ul>
-                                            <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                            <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                            <li><a href="#"> <i class="fa fa-pinterest"></i> </a></li>
-                                            <li><a href="#"> <i class="fa fa-google-plus"></i> </a></li>
-                                            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- quickview product start -->
     <!-- jquery
         ============================================ -->
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/jquery-1.12.4.min.js"></script>
@@ -947,6 +862,6 @@
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
 </body>
 
-<!-- Mirrored from htmldemo.net/james/james/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:06 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/single-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:10 GMT -->
 
 </html>

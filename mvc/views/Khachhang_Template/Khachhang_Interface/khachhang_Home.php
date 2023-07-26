@@ -181,7 +181,7 @@
                                     <ul>
                                         <li><a href="index.html">Home</a></li>
                                         
-                                            <li class="mega-men"><a href="shop.html"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a>
+                                            <li class="mega-men"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_men']['id_gioitinh'] ?>"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a>
                                                 <div class="sub-menu pages">
                                                     <span>
                                                         <?php foreach($data['loaihang_men'] as $lh) : ?>
@@ -191,7 +191,7 @@
                                                 </div>
                                             </li>
 
-                                            <li class="mega-men"><a href="shop.html"><?= $data['danhmuc_women']['ten_danhmuc'] ?></a>
+                                            <li class="mega-men"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_women']['id_gioitinh'] ?>"><?= $data['danhmuc_women']['ten_danhmuc'] ?></a>
                                                 <div class="sub-menu pages">
                                                     <span>
                                                         <?php foreach($data['loaihang_women'] as $lh) : ?>
@@ -455,7 +455,7 @@
                             <span>new</span>
                         </div>
                         <div class="product-img">
-                            <a href="single-product.html">
+                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_5sp['id'] ?>">
                                 <img src="/duan1_Nhom12_WD18202/public/img/<?= $rd_5sp['anh'] ?>" alt="" class="">
                             </a>
                         </div>
@@ -468,7 +468,7 @@
                         </div>
                         <div class="product-price">
                             <div class="product-name">
-                                <a href="single-product.html" title="Fusce aliquam"><?= $rd_5sp['ten_sanpham'] ?></a>
+                                <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_5sp['id'] ?>" title="Fusce aliquam"><?= $rd_5sp['ten_sanpham'] ?></a>
                             </div>
                             <div class="price-rating">
                                 <span>$<?= $rd_5sp['gia'] ?></span>
@@ -506,7 +506,7 @@
                                         <span>new</span>
                                     </div>
                                     <div class="product-img">
-                                        <a href="single-product.html">
+                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>">
                                             <img src="/duan1_Nhom12_WD18202/public/img/<?= $rd_8sp['anh'] ?>" alt="" class="">
                                         </a>
                                     </div>
@@ -520,7 +520,7 @@
                                     </div>
                                     <div class="product-price">
                                         <div class="product-name">
-                                            <a href="single-product.html" title="Fusce aliquam"><?= $rd_8sp['ten_sanpham'] ?></a>
+                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>" title="Fusce aliquam"><?= $rd_8sp['ten_sanpham'] ?></a>
                                         </div>
                                         <div class="price-rating">
                                             <span>$<?= $rd_8sp['gia'] ?></span>
@@ -557,7 +557,7 @@
                                 <span>sale</span>
                             </div>
                             <div class="product-img">
-                                <a href="single-product.html">
+                                <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $slt_4sp['id'] ?>">
                                     <img src="/duan1_Nhom12_WD18202/public/img/<?= $slt_4sp['anh'] ?>" alt="" class="">
                                 </a>
                             </div>
@@ -571,7 +571,7 @@
                             </div>
                             <div class="product-price">
                                 <div class="product-name">
-                                    <a href="single-product.html" title="Fusce aliquam"><?= $slt_4sp['ten_sanpham'] ?></a>
+                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $slt_4sp['id'] ?>" title="Fusce aliquam"><?= $slt_4sp['ten_sanpham'] ?></a>
                                 </div>
                                 <div class="price-rating">
                                     <span>$<?= $slt_4sp['gia'] ?></span>
@@ -611,7 +611,7 @@
                                         <span>new</span>
                                     </div>
                                     <div class="product-img">
-                                        <a href="single-product.html">
+                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>">
                                             <img src="/duan1_Nhom12_WD18202/public/img/<?= $rd_8sp['anh'] ?>" alt="" class="">
                                         </a>
                                     </div>
@@ -625,7 +625,7 @@
                                     </div>
                                     <div class="product-price">
                                         <div class="product-name">
-                                            <a href="single-product.html" title="Fusce aliquam"><?= $rd_8sp['ten_sanpham'] ?></a>
+                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>" title="Fusce aliquam"><?= $rd_8sp['ten_sanpham'] ?></a>
                                         </div>
                                         <div class="price-rating">
                                             <span>$<?= $rd_8sp['gia'] ?></span>

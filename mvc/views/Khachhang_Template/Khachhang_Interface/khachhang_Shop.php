@@ -183,46 +183,27 @@
                                 <ul>
                                     <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/">Home</a></li>
 
-                                    <li class="mega-men"><a href="shop.html">Women</a>
-                                        <div class="mega-menu men">
+                                    <li class="mega-men"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_men']['id_gioitinh'] ?>"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a>
+                                        <div class="sub-menu pages">
                                             <span>
-                                                <a href="#">Bags</a>
-                                                <a href="#">Bootees Bags</a>
-                                                <a href="#">Blazers</a>
-                                            </span>
-                                            <span>
-                                                <a href="#">Clothing</a>
-                                                <a href="#">coats</a>
-                                                <a href="#">T-shirts</a>
-                                            </span>
-                                            <span>
-                                                <a href="#">Lingerie</a>
-                                                <a href="#">Bands</a>
-                                                <a href="#">Furniture</a>
+                                                <?php foreach ($data['loaihang_men'] as $lh) : ?>
+                                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/<?= $lh['id_loaihang'] ?>"><?= $lh['ten_loaihang'] ?></a>
+                                                <?php endforeach ?>
                                             </span>
                                         </div>
                                     </li>
 
-                                    <li class="mega-men"><a href="shop.html">Men</a>
-                                        <div class="mega-menu men">
+                                    <li class="mega-men"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_women']['id_gioitinh'] ?>"><?= $data['danhmuc_women']['ten_danhmuc'] ?></a>
+                                        <div class="sub-menu pages">
                                             <span>
-                                                <a href="#">Bags</a>
-                                                <a href="#">Bootees Bags</a>
-                                                <a href="#">Blazers</a>
-                                            </span>
-                                            <span>
-                                                <a href="#">Clothing</a>
-                                                <a href="#">coats</a>
-                                                <a href="#">T-shirts</a>
-                                            </span>
-                                            <span>
-                                                <a href="#">Lingerie</a>
-                                                <a href="#">Bands</a>
-                                                <a href="#">Furniture</a>
+                                                <?php foreach ($data['loaihang_women'] as $lh) : ?>
+                                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/<?= $lh['id_loaihang'] ?>"><?= $lh['ten_loaihang'] ?></a>
+                                                <?php endforeach ?>
                                             </span>
                                         </div>
                                     </li>
-                                    <li><a href="shop.html">Shop</a></li>
+                                    
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
                                     <li><a href="#">Pages</a>
                                         <div class="sub-menu pages">
                                             <span>
@@ -532,7 +513,7 @@
                                                         <span>new</span>
                                                     </div>
                                                     <div class="product-img">
-                                                        <a href="single-product.html">
+                                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>">
                                                             <img src="/duan1_Nhom12_WD18202/public/img/<?= $sp['anh'] ?>" alt="" width="" class="">
                                                         </a>
                                                     </div>
@@ -546,10 +527,10 @@
                                                     </div>
                                                     <div class="product-price">
                                                         <div class="product-name">
-                                                            <a href="single-product.html" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
                                                         </div>
                                                         <div class="price-rating">
-                                                            <span><?= $sp['gia'] ?>$</span>
+                                                            <span>$<?= $sp['gia'] ?></span>
                                                             <div class="ratings">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
