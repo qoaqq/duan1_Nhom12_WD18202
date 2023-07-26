@@ -57,7 +57,8 @@ class App{
         // print_r($arr);
         // echo "</pre>";
 
-        if(!empty($arr[0]) && $arr[0]="admin"){
+    
+        if(!empty($arr[0]) && $arr[0]=="admin"){
             unset($arr[0]);
             unset($arr[1]);
             unset($arr[2]);

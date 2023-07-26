@@ -73,7 +73,7 @@
             ]);
         }
 
-        public function khachhang_Loaihang(){
+        public function khachhang_Loaihang($id){
             // echo $id;
             $this->view_Khachhang("khachhang_Loaihang");
         }
