@@ -409,26 +409,14 @@
                                 <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="">
                             </a>
                         </div>
-                        <div class="single-product-slider">
-                            <a href="#pro-large-img-2" data-bs-toggle="tab">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/30.png" alt="">
-                            </a>
-                        </div>
-                        <div class="single-product-slider">
-                            <a href="#pro-large-img-3" data-bs-toggle="tab">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/29.png" alt="">
-                            </a>
-                        </div>
-                        <div class="single-product-slider">
-                            <a href="#pro-large-img-4" data-bs-toggle="tab">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/31.png" alt="">
-                            </a>
-                        </div>
-                        <div class="single-product-slider">
-                            <a href="#pro-large-img-5" data-bs-toggle="tab">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/29.png" alt="">
-                            </a>
-                        </div>
+
+                        <?php foreach ($data['detail_img'] as $img) : ?>
+                            <div class="single-product-slider">
+                                <a href="#pro-large-img-<?= $img['id_sanpham'] ?>" data-bs-toggle="tab">
+                                    <img src="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" alt="">
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -669,7 +657,7 @@
     </div>
     <!-- single product tab end -->
     <!-- upsell product area start-->
-    
+
     <!-- upsell product area end-->
     <!-- related product area start-->
     <div class="related-product home2">
@@ -683,27 +671,27 @@
             </div>
             <div class="row">
                 <div class="related-slider">
-                    
-                    <?php foreach($data['random_8sp'] as $sp) : ?>
+
+                    <?php foreach ($data['random_8sp'] as $sp) : ?>
                         <div class="col-md-12">
-                        <div class="single-product">
-                            <div class="product-img">
-                                <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>">
-                                    <img src="/duan1_Nhom12_WD18202/public/img/<?= $sp['anh'] ?>" alt="" class="">
-                                </a>
-                            </div>
-                            <div class="product-price">
-                                <div class="product-name">
-                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
+                            <div class="single-product">
+                                <div class="product-img">
+                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>">
+                                        <img src="/duan1_Nhom12_WD18202/public/img/<?= $sp['anh'] ?>" alt="" class="">
+                                    </a>
                                 </div>
-                                <div class="price-rating">
-                                    <span>$<?= $sp['gia'] ?></span>
+                                <div class="product-price">
+                                    <div class="product-name">
+                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $sp['id'] ?>" title="Fusce aliquam"><?= $sp['ten_sanpham'] ?></a>
+                                    </div>
+                                    <div class="price-rating">
+                                        <span>$<?= $sp['gia'] ?></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php endforeach ?>
-                    
+
                 </div>
             </div>
         </div>

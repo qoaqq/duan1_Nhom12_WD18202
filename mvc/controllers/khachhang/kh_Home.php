@@ -179,13 +179,16 @@ class kh_Home extends Controller
 
         $detailSP = $this->khachHang_Model->selectDetailProductById($id_sanpham);
 
+        $detail_img = $this->khachHang_Model->selectImgSanPham($id_sanpham);
+
         $this->view_Khachhang("khachhang_chitietsp", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'detailSP' => $detailSP,
-            'random_8sp' => $random_8sp
+            'random_8sp' => $random_8sp,
+            'detail_img' => $detail_img
         ]);
     }
 }

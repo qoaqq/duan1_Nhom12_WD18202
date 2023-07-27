@@ -116,4 +116,13 @@ class khachHang_ModelInterface extends DB
       ";
       return mysqli_fetch_assoc(mysqli_query($this->con, $qr));
    }
+
+   public function selectImgSanPham($id_sanpham)
+   {
+      $qr = "SELECT anh_sanpham.ten_anh, anh_sanpham.id_sanpham, anh_sanpham.id
+      FROM `anh_sanpham` 
+      INNER JOIN sanpham ON sanpham.id = anh_sanpham.id_sanpham 
+      WHERE sanpham.id = $id_sanpham";
+      return mysqli_query($this->con, $qr);
+   }
 }
