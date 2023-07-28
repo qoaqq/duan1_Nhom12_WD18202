@@ -62,6 +62,45 @@
     <!-- modernizr JS
         ============================================ -->
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
+
+    <style>
+        /* body{
+  background:#ccc;
+}
+.main {
+  font-family:Arial;
+  width:500px;
+  display:block;
+  margin:0 auto;
+}
+h3 {
+    background: #fff;
+    color: #3498db;
+    font-size: 36px;
+    line-height: 100px;
+    margin: 10px;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+}
+.action{
+  display:block;
+  margin:100px auto;
+  width:100%;
+  text-align:center;
+}
+.action a {
+  display:inline-block;
+  padding:5px 10px; 
+  background:#f30;
+  color:#fff;
+  text-decoration:none;
+}
+.action a:hover{
+  background:#000;
+} */
+    </style>
 </head>
 
 <body>
@@ -388,21 +427,15 @@
                 <div class="col-lg-6">
                     <div class="single-product-img tab-content">
                         <div class="single-pro-main-image tab-pane active" id="pro-large-img-1">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="optima" /></a>
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="optima" ></a>
                         </div>
-                        <div class="single-pro-main-image tab-pane" id="pro-large-img-2">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/2.png" alt="optima" /></a>
-                        </div>
-                        <div class="single-pro-main-image tab-pane" id="pro-large-img-3">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/8.png" alt="optima" /></a>
-                        </div>
-                        <div class="single-pro-main-image tab-pane" id="pro-large-img-4">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="optima" /></a>
-                        </div>
-                        <div class="single-pro-main-image tab-pane" id="pro-large-img-5">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" data-zoom-image="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/9.png" alt="optima" /></a>
-                        </div>
+                        <?php foreach ($data['detail_img'] as $img) : ?>
+                            <div class="single-pro-main-image tab-pane" id="pro-large-img-<?= $img['id_sanpham'] ?>">
+                                <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" alt="optima" ></a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
+
                     <div class="nav product-page-slider">
                         <div class="single-product-slider">
                             <a class="active" href="#pro-large-img-1" data-bs-toggle="tab">
@@ -418,6 +451,7 @@
                             </div>
                         <?php endforeach ?>
                     </div>
+
                 </div>
                 <div class="col-lg-6">
                     <div class="single-product-details">
@@ -853,3 +887,25 @@
 <!-- Mirrored from htmldemo.net/james/james/single-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:10 GMT -->
 
 </html>
+<script>
+//      $('.slider-for').slick({
+//    slidesToShow: 1,
+//    slidesToScroll: 1,
+//    arrows: false,
+//    fade: true,
+//    asNavFor: '.slider-nav'
+//  });
+//  $('.slider-nav').slick({
+//    slidesToShow: 3,
+//    slidesToScroll: 1,
+//    asNavFor: '.slider-for',
+//    dots: true,
+//    focusOnSelect: true
+//  });
+
+//  $('a[data-slide]').click(function(e) {
+//    e.preventDefault();
+//    var slideno = $(this).data('slide');
+//    $('.slider-nav').slick('slickGoTo', slideno - 1);
+//  });
+</script>
