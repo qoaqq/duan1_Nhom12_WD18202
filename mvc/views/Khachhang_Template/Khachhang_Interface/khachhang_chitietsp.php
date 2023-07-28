@@ -63,44 +63,6 @@
         ============================================ -->
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
-
-    <style>
-        /* body{
-  background:#ccc;
-}
-.main {
-  font-family:Arial;
-  width:500px;
-  display:block;
-  margin:0 auto;
-}
-h3 {
-    background: #fff;
-    color: #3498db;
-    font-size: 36px;
-    line-height: 100px;
-    margin: 10px;
-    padding: 2%;
-    position: relative;
-    text-align: center;
-}
-.action{
-  display:block;
-  margin:100px auto;
-  width:100%;
-  text-align:center;
-}
-.action a {
-  display:inline-block;
-  padding:5px 10px; 
-  background:#f30;
-  color:#fff;
-  text-decoration:none;
-}
-.action a:hover{
-  background:#000;
-} */
-    </style>
 </head>
 
 <body>
@@ -211,7 +173,7 @@ h3 {
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/">
                                 <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/logo.png" alt="">
                             </a>
                         </div>
@@ -426,33 +388,32 @@ h3 {
             <div class="row">
                 <div class="col-lg-6">
                     <div class="single-product-img tab-content">
-                        <div class="single-pro-main-image tab-pane active" id="pro-large-img-1">
-                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="optima" ></a>
+                        <div class="single-pro-main-image tab-pane active" id="pro-large-img-<?= $data['detailSP']['id'] ?>">
+                            <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="optima"></a>
                         </div>
                         <?php foreach ($data['detail_img'] as $img) : ?>
-                            <div class="single-pro-main-image tab-pane" id="pro-large-img-<?= $img['id_sanpham'] ?>">
-                                <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" alt="optima" ></a>
+                            <div class="single-pro-main-image tab-pane" id="pro-large-img-<?= $img['id'] ?>">
+                                <a href="#"><img class="optima_zoom" src="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" data-zoom-image="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" alt="optima"></a>
                             </div>
                         <?php endforeach ?>
                     </div>
-
                     <div class="nav product-page-slider">
                         <div class="single-product-slider">
-                            <a class="active" href="#pro-large-img-1" data-bs-toggle="tab">
+                            <a class="active" href="#pro-large-img-<?= $data['detailSP']['id'] ?>" data-bs-toggle="tab">
                                 <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['detailSP']['anh'] ?>" alt="">
                             </a>
                         </div>
 
                         <?php foreach ($data['detail_img'] as $img) : ?>
                             <div class="single-product-slider">
-                                <a href="#pro-large-img-<?= $img['id_sanpham'] ?>" data-bs-toggle="tab">
+                                <a href="#pro-large-img-<?= $img['id'] ?>" data-bs-toggle="tab">
                                     <img src="/duan1_Nhom12_WD18202/public/img/<?= $img['ten_anh'] ?>" alt="">
                                 </a>
                             </div>
                         <?php endforeach ?>
                     </div>
-
                 </div>
+
                 <div class="col-lg-6">
                     <div class="single-product-details">
                         <a href="#" class="product-name"><?= $data['detailSP']['ten_sanpham'] ?></a>
@@ -888,24 +849,24 @@ h3 {
 
 </html>
 <script>
-//      $('.slider-for').slick({
-//    slidesToShow: 1,
-//    slidesToScroll: 1,
-//    arrows: false,
-//    fade: true,
-//    asNavFor: '.slider-nav'
-//  });
-//  $('.slider-nav').slick({
-//    slidesToShow: 3,
-//    slidesToScroll: 1,
-//    asNavFor: '.slider-for',
-//    dots: true,
-//    focusOnSelect: true
-//  });
+    //      $('.slider-for').slick({
+    //    slidesToShow: 1,
+    //    slidesToScroll: 1,
+    //    arrows: false,
+    //    fade: true,
+    //    asNavFor: '.slider-nav'
+    //  });
+    //  $('.slider-nav').slick({
+    //    slidesToShow: 3,
+    //    slidesToScroll: 1,
+    //    asNavFor: '.slider-for',
+    //    dots: true,
+    //    focusOnSelect: true
+    //  });
 
-//  $('a[data-slide]').click(function(e) {
-//    e.preventDefault();
-//    var slideno = $(this).data('slide');
-//    $('.slider-nav').slick('slickGoTo', slideno - 1);
-//  });
+    //  $('a[data-slide]').click(function(e) {
+    //    e.preventDefault();
+    //    var slideno = $(this).data('slide');
+    //    $('.slider-nav').slick('slickGoTo', slideno - 1);
+    //  });
 </script>

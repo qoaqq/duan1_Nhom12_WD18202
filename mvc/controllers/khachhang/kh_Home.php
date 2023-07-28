@@ -191,4 +191,8 @@ class kh_Home extends Controller
             'detail_img' => $detail_img
         ]);
     }
+
+    public function khachhang_cart(){
+        $this->view_Khachhang("khachhang_Cart");
+    }
 }

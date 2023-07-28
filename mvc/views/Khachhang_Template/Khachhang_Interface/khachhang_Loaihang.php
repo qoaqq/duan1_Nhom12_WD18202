@@ -172,7 +172,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/">
                                 <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/logo.png" alt="">
                             </a>
                         </div>
