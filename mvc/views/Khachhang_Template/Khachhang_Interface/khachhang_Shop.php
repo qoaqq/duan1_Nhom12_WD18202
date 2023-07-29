@@ -130,7 +130,7 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
                                         <div class="cart-info">
                                             <ul>
                                                 <li>
@@ -202,7 +202,7 @@
                                             </span>
                                         </div>
                                     </li>
-                                    
+
                                     <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
                                     <li><a href="#">Pages</a>
                                         <div class="sub-menu pages">
@@ -500,6 +500,7 @@
                             per page
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="product-content">
                             <div class="tab-content">
@@ -507,6 +508,7 @@
                                     <div class="row">
 
                                         <?php foreach ($data['result'] as $sp) : ?>
+
                                             <div class="col-lg-4 col-md-6">
                                                 <div class="single-product">
                                                     <div class="level-pro-new">
@@ -518,7 +520,10 @@
                                                         </a>
                                                     </div>
                                                     <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                                        <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart" style="width: 250px" method="post">
+                                                            <input type="hidden" name="product_id" value="<?= $sp['id'] ?>">
+                                                            <button type="submit" class="cart-btn" name="btn_addToCart" title="Add to cart">add to cart</button>
+                                                        </form>
                                                         <ul class="add-to-link">
                                                             <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
                                                             <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
@@ -546,170 +551,7 @@
 
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade home2" id="list">
-                                    <div class="product-catagory">
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/1.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/6.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/3.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/4.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="single-list-product row">
-                                            <div class="col-md-4">
-                                                <div class="list-product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/product/5.png" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="list-product-info">
-                                                    <a href="single-product.html" class="list-product-name"> Cras neque metus</a>
-                                                    <div class="price-rating">
-                                                        <span class="old-price">$700.00</span>
-                                                        <span>$800.00</span>
-                                                        <div class="ratings">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                            <a href="#" class="review">1 Review(s)</a>
-                                                            <a href="#" class="add-review">Add Your Review</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-product-details">
-                                                        <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nul
-                                                            <a href="single-product.html">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -734,6 +576,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -946,7 +789,10 @@
     <!-- main JS
         ============================================ -->
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
+
 </body>
+
+
 
 <!-- Mirrored from htmldemo.net/james/james/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:06 GMT -->
 

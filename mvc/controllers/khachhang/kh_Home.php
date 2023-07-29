@@ -193,6 +193,43 @@ class kh_Home extends Controller
     }
 
     public function khachhang_cart(){
-        $this->view_Khachhang("khachhang_Cart");
+        //SELECT DANH MUC NAM
+        $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
+
+        //SELECT DANH MUC NU
+        $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+        //SELECT LOAI HANG NAM
+        $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+        //SELECT LOAI HANG NU
+        $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+
+        if (!isset($_SESSION['product']) || !is_array($_SESSION['product'])) {
+            $_SESSION['product'] = array();
+        }
+
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1; 
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop");
+        }
+        $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+// session_unset();
+        $this->view_Khachhang("khachhang_Cart", [
+            'danhmuc_men' => $danhmuc_men,
+            'danhmuc_women' => $danhmuc_women,
+            'loaihang_men' => $loaihang_men,
+            'loaihang_women' => $loaihang_women,
+            'select_session' => $select_session
+        ]);
     }
 }

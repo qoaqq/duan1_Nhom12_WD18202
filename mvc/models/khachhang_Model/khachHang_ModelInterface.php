@@ -125,4 +125,28 @@ class khachHang_ModelInterface extends DB
       WHERE sanpham.id = $id_sanpham";
       return mysqli_query($this->con, $qr);
    }
+
+   public function selectSanPhamBySession($idArray)
+   {
+      if (empty($idArray) || !is_array($idArray)) {
+         return array(); // Trả về mảng rỗng nếu không có ID sản phẩm
+      }
+
+      // Xử lý danh sách các ID sản phẩm thành chuỗi dạng '12, 13, 14, 90'
+      $idList = implode(',', array_keys($idArray));
+
+      // Thực hiện truy vấn dựa trên danh sách các ID sản phẩm
+      $qr = "SELECT `id`, `ten_sanpham`, `gia`, `anh`, `soluong` FROM `sanpham` WHERE id IN ($idList)";
+      $queryResult = mysqli_query($this->con, $qr);
+
+      $result = array();
+      if ($queryResult && mysqli_num_rows($queryResult) > 0) {
+         // Duyệt qua các kết quả truy vấn và lưu vào mảng kết quả
+         while ($row = mysqli_fetch_assoc($queryResult)) {
+            $result[] = $row;
+         }
+      }
+
+      return $result;
+   }
 }
