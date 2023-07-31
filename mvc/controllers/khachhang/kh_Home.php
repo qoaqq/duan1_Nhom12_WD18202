@@ -222,7 +222,11 @@ class kh_Home extends Controller
             }
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop");
         }
-        $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        }else{
+            $select_session = [];
+        }
 // session_unset();
         $this->view_Khachhang("khachhang_Cart", [
             'danhmuc_men' => $danhmuc_men,

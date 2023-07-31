@@ -179,7 +179,7 @@
                             <div class="mainmenu">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="">Home</a></li>
                                         
                                             <li class="mega-men"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_men']['id_gioitinh'] ?>"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a>
                                                 <div class="sub-menu pages">

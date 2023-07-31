@@ -408,15 +408,15 @@
 
                                         <td class="unit-price">
                                             <span>$</span>
-                                            <input type="number" class="" id="price" value="<?= $select['gia'] ?>" style="border: none; background: none;" disabled>
+                                            <input type="number" class="price-input" value="<?= $select['gia'] ?>" style="border: none; background: none;" disabled>
                                         </td>
                                         <td class="quantity">
                                             <span></span>
-                                            <input type="number" class="input-group-text" id="quantity" min="0" value="1">
+                                            <input type="number" class="quantity-input" min="0" value="1">
                                         </td>
                                         <td class="subtotal">
                                             <span>$</span>
-                                            <input type="number" value="<?= $select['gia'] ?>" style="width: 100px; border: none; background: none;" disabled>
+                                            <input type="number" class="subtotal-input" value="<?= $select['gia'] ?>" style="width: 100px; border: none; background: none;" disabled>
                                         </td>
                                         <td class="remove-icon">
                                             <a href="#">
@@ -425,9 +425,6 @@
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
-                                <td colspan="6" class="text-end"><strong>Total:</strong></td>
-                                <td class="text-center"><span id="total">$0.00</span></td>
-
                             </tbody>
                         </table>
 
@@ -479,32 +476,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-box">
-                                <div class="form-name">
-                                    <label> State/Province </label>
-                                    <select>
-                                        <option value="1">Please select region, state or province</option>
-                                        <option value="1">Arizona</option>
-                                        <option value="1">Armed Forces Africa</option>
-                                        <option value="1">California</option>
-                                        <option value="1">Florida</option>
-                                        <option value="1">Indiana</option>
-                                        <option value="1">Marshall Islands</option>
-                                        <option value="1">Minnesota</option>
-                                        <option value="1">New Mexico</option>
-                                        <option value="1">Utah</option>
-                                        <option value="1">Virgin Islands</option>
-                                        <option value="1">West Virginia</option>
-                                        <option value="1">Wyoming</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-box">
-                                <div class="form-name">
-                                    <label> Zip/Postal Code </label>
-                                    <input type="text">
-                                </div>
-                            </div>
+                            <!-- Rest of the form elements... -->
                             <div class="shopping-button">
                                 <button type="submit">get a quote</button>
                             </div>
@@ -513,8 +485,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="totals">
-                        <p>subtotal <span>$1,540.00</span> </p>
-                        <h3>Grand Total <span>$1,540.00</span></h3>
+                        <h3>Grand Total <span id="cartTotal">$0.00</span></h3>
                         <div class="shopping-button">
                             <button type="submit">proceed to checkout</button>
                         </div>
@@ -522,6 +493,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- cart item area end -->
@@ -676,24 +648,71 @@
         ============================================ -->
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
 
-    <script>
-        const quantityInputs = document.querySelectorAll('.quantity input');
-        quantityInputs.forEach(input => {
+
+
+
+</body>
+<!-- Your table code here -->
+
+<!-- Your table code here -->
+
+<!-- Bảng sản phẩm -->
+<table class="table-bordered table table-hover">
+    <!-- ... (code HTML đã cung cấp) ... -->
+</table>
+
+<script>
+    const priceInputs = document.querySelectorAll('.price-input');
+    const quantityInputs = document.querySelectorAll('.quantity-input');
+    const subtotalInputs = document.querySelectorAll('.subtotal-input');
+
+    if (priceInputs.length !== quantityInputs.length || priceInputs.length !== subtotalInputs.length) {
+        console.error('Number of price inputs, quantity inputs, or subtotal inputs does not match.');
+    } else {
+        priceInputs.forEach(input => {
             input.addEventListener('change', updateSubtotal);
         });
 
-        function updateSubtotal() {
-            const productRow = this.closest('tr');
-            const price = parseFloat(productRow.querySelector('.unit-price input').value);
-            const quantity = parseFloat(this.value);
-            const subtotal = price * quantity;
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', updateSubtotal);
+        });
+    }
 
-            productRow.querySelector('.subtotal input').value = subtotal.toFixed(2);
-        }
+    function updateSubtotal() {
+        const productRows = document.querySelectorAll('tbody tr');
+        let total = 0;
 
-        updateSubtotal();
-    </script>
+        productRows.forEach((row, index) => {
+            const priceInput = row.querySelector('.price-input');
+            const quantityInput = row.querySelector('.quantity-input');
+            const subtotalInput = row.querySelector('.subtotal-input');
 
-</body>
+            const price = parseFloat(priceInput?.value || 0);
+            const quantity = parseFloat(quantityInput?.value || 0);
+
+            if (subtotalInput) {
+                const subtotal = price * quantity;
+                subtotalInput.value = subtotal.toFixed(2);
+                total += subtotal;
+            }
+        });
+
+        const cartTotal = document.getElementById('cartTotal');
+        cartTotal.textContent = "$" + total.toFixed(2);
+    }
+
+    const removeButtons = document.querySelectorAll('.remove-icon a');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', removeProduct);
+    });
+
+    function removeProduct(event) {}
+
+    updateSubtotal();
+</script>
+
+
+
+
 
 </html>
