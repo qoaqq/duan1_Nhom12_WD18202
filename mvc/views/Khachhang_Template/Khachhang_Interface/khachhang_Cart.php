@@ -419,7 +419,7 @@
                                             <input type="number" class="subtotal-input" value="<?= $select['gia'] ?>" style="width: 100px; border: none; background: none;" disabled>
                                         </td>
                                         <td class="remove-icon">
-                                            <a href="/duan1_Nhom12_WD18202/khachhang/khachhang_cart/<?= $select['id'] ?>">
+                                            <a href="/duan1_Nhom12_WD18202/khachhang/khachhang_cart&remove=<?= $select['id'] ?>">
                                                 <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/btn_remove.png" alt="">
                                             </a>
                                         </td>

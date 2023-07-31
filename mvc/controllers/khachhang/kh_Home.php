@@ -207,6 +207,7 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         if (isset($_GET['remove'])) {
+            echo "2222222222";
             $id_remove = $_GET['remove'];
             unset($_SESSION['product']['id'][$id_remove]);
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
