@@ -386,7 +386,7 @@
                                 <tr>
                                     <th class="">ID</th>
                                     <th class="cart-product-name">Product Name</th>
-                                    <th class="cart-item-img">IMG</th>
+                                    <th class="cart-item-img">Image</th>
                                     <th class="unit-price">Price</th>
                                     <th class="quantity">Qty</th>
                                     <th class="subtotal">Total</th>
@@ -662,6 +662,7 @@
 </table>
 
 <script>
+    // JavaScript code here
     const priceInputs = document.querySelectorAll('.price-input');
     const quantityInputs = document.querySelectorAll('.quantity-input');
     const subtotalInputs = document.querySelectorAll('.subtotal-input');
@@ -706,7 +707,33 @@
         button.addEventListener('click', removeProduct);
     });
 
-    function removeProduct(event) {}
+    function removeProduct(event) {
+        event.preventDefault();
+
+        const row = event.target.closest('tr');
+        const productId = row.querySelector('td:first-child').textContent;
+
+        // Xây dựng URL xóa sản phẩm đã được rewrite.
+        const url = `/duan1_Nhom12_WD18202/khachhang/khachhang_cart/remove/${productId}`;
+
+        // Gửi yêu cầu xóa sản phẩm đến URL đã được rewrite (sử dụng fetch API hoặc các phương thức gửi yêu cầu HTTP khác).
+        fetch(url, {
+                method: 'GET'
+            })
+            .then(response => response.json()) // Chúng ta sẽ xử lý phản hồi dưới định dạng JSON
+            .then(data => {
+                if (data.success) {
+                    row.remove(); // Xóa dòng sản phẩm trên giao diện người dùng nếu xóa thành công
+                    updateSubtotal(); // Cập nhật tổng giá trị sau khi xóa
+                } else {
+                    alert('Không thể xóa sản phẩm khỏi giỏ hàng.');
+                }
+            })
+            .catch(error => {
+                console.error('Lỗi:', error);
+            });
+    }
+
 
     updateSubtotal();
 </script>

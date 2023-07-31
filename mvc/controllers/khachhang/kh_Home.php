@@ -192,7 +192,8 @@ class kh_Home extends Controller
         ]);
     }
 
-    public function khachhang_cart(){
+    public function khachhang_cart()
+    {
         //SELECT DANH MUC NAM
         $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
 
@@ -205,6 +206,20 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
+        // Inside the 'if' block for removing the product
+        if (isset($_GET['action']) && $_GET['action'] === 'remove' && isset($_GET['product_id'])) {
+            $product_id = $_GET['product_id'];
+            if (isset($_SESSION['product']['id'][$product_id])) {
+                unset($_SESSION['product']['id'][$product_id]);
+                header('Content-Type: application/json'); // Đảm bảo định dạng của phản hồi là JSON
+                echo json_encode(['success' => true]); // Trả về phản hồi JSON để xác nhận rằng xóa thành công
+                exit();
+            } else {
+                header('Content-Type: application/json'); // Đảm bảo định dạng của phản hồi là JSON
+                echo json_encode(['success' => false]); // Trả về phản hồi JSON để xác nhận rằng không tìm thấy sản phẩm
+                exit();
+            }
+        }
 
         if (!isset($_SESSION['product']) || !is_array($_SESSION['product'])) {
             $_SESSION['product'] = array();
@@ -216,18 +231,18 @@ class kh_Home extends Controller
                 $_SESSION['product']['id'] = array();
             }
             if (!isset($_SESSION['product']['id'][$product_id])) {
-                $_SESSION['product']['id'][$product_id] = 1; 
+                $_SESSION['product']['id'][$product_id] = 1;
             } else {
                 $_SESSION['product']['id'][$product_id]++;
             }
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop");
         }
-        if(isset($_SESSION['product']['id'])){
+        if (isset($_SESSION['product']['id'])) {
             $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
-        }else{
+        } else {
             $select_session = [];
         }
-// session_unset();
+        // session_unset();
         $this->view_Khachhang("khachhang_Cart", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
