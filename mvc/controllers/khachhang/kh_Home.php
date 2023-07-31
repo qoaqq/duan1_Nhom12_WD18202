@@ -206,19 +206,11 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
-        // Inside the 'if' block for removing the product
-        if (isset($_GET['action']) && $_GET['action'] === 'remove' && isset($_GET['product_id'])) {
-            $product_id = $_GET['product_id'];
-            if (isset($_SESSION['product']['id'][$product_id])) {
-                unset($_SESSION['product']['id'][$product_id]);
-                header('Content-Type: application/json'); // Đảm bảo định dạng của phản hồi là JSON
-                echo json_encode(['success' => true]); // Trả về phản hồi JSON để xác nhận rằng xóa thành công
-                exit();
-            } else {
-                header('Content-Type: application/json'); // Đảm bảo định dạng của phản hồi là JSON
-                echo json_encode(['success' => false]); // Trả về phản hồi JSON để xác nhận rằng không tìm thấy sản phẩm
-                exit();
-            }
+        if (isset($_GET['remove'])) {
+            $id_remove = $_GET['remove'];
+            unset($_SESSION['product']['id'][$id_remove]);
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
+            exit();
         }
 
         if (!isset($_SESSION['product']) || !is_array($_SESSION['product'])) {
