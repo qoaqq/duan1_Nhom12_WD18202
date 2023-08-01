@@ -147,6 +147,27 @@ class khachHang_ModelInterface extends DB
       return $result;
    }
 
+   public function selectSanPhamBySessionLimit($idArray)
+   {
+      if (empty($idArray) || !is_array($idArray)) {
+         return array();
+      }
+
+      $idList = implode(',', array_keys($idArray));
+
+      $qr = "SELECT `id`, `ten_sanpham`, `gia`, `anh`, `soluong` FROM `sanpham` WHERE id IN ($idList) LIMIT 3";
+      $queryResult = mysqli_query($this->con, $qr);
+
+      $result = array();
+      if ($queryResult && mysqli_num_rows($queryResult) > 0) {
+         while ($row = mysqli_fetch_assoc($queryResult)) {
+            $result[] = $row;
+         }
+      }
+
+      return $result;
+   }
+
    public function selectKhachHang($id)
    {
       $qr = "SELECT `id`, `tenkh`, `sdt`, `diachi`, `email` FROM `khachhang` WHERE id = $id";
@@ -166,5 +187,25 @@ class khachHang_ModelInterface extends DB
    {
       $qr = "INSERT INTO `chitietbill`(`id`, `id_bill`, `id_sanpham`, `soluong`, `total_price`) VALUES (null, $id_bill, $id_sanpham, $soluong, $total_price)";
       return mysqli_query($this->con, $qr);
+   }
+
+   public function selectCountProductsById($idArray){
+      if (empty($idArray) || !is_array($idArray)) {
+         return array();
+      }
+
+      $idList = implode(',', array_keys($idArray));
+
+      $qr = "SELECT COUNT(sanpham.id) FROM `sanpham` WHERE id IN ($idList)";
+      $queryResult = mysqli_query($this->con, $qr);
+
+      $result = array();
+      if ($queryResult && mysqli_num_rows($queryResult) > 0) {
+         while ($row = mysqli_fetch_assoc($queryResult)) {
+            $result[] = $row;
+         }
+      }
+
+      return $result;
    }
 }

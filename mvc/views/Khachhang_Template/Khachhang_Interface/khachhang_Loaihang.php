@@ -2,7 +2,6 @@
 <html class="no-js" lang="">
 
 <!-- Mirrored from htmldemo.net/james/james/shop.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:04 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -130,34 +129,35 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span><?php echo $data['count_sp'][0]['COUNT(sanpham.id)'] ?></span> </a>
                                         <div class="cart-info">
                                             <ul>
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/1.png" alt="">
-                                                    </div>
-                                                    <div class="cart-details">
-                                                        <a href="#">Fusce aliquam</a>
-                                                        <p>1 x $174.00</p>
-                                                    </div>
-                                                    <div class="btn-edit"></div>
-                                                    <div class="btn-remove"></div>
-                                                </li>
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/2.png" alt="">
-                                                    </div>
-                                                    <div class="cart-details">
-                                                        <a href="#">Fusce aliquam</a>
-                                                        <p>1 x $777.00</p>
-                                                    </div>
-                                                    <div class="btn-edit"></div>
-                                                    <div class="btn-remove"></div>
-                                                </li>
+                                                <?php
+                                                if (isset($_SESSION['product']['id']) && is_array($_SESSION['product']['id'])) {
+                                                    $ids = $_SESSION['product']['id'];
+                                                }
+                                                ?>
+                                                <?php foreach ($data['select_session'] as $select) : ?>
+                                                    <li>
+                                                        <div class="cart-img">
+                                                            <img src="/duan1_Nhom12_WD18202/public/img/<?= $select['anh'] ?>" width="80" alt="">
+                                                        </div>
+                                                        <div class="cart-details">
+                                                            <a href="#"><?= $select['ten_sanpham'] ?></a>
+                                                            <?php
+                                                            if (isset($ids[$select['id']])) {
+                                                                $quantity = $ids[$select['id']];
+                                                            } else {
+                                                                $quantity = 1;
+                                                            }
+                                                            ?>
+                                                            <p>x<?= $quantity ?></p>
+                                                        </div>
+                                                    </li>
+                                                <?php endforeach ?>
+
                                             </ul>
-                                            <h3>Subtotal: <span> $951.00</span></h3>
-                                            <a href="checkout.html" class="checkout">checkout</a>
+                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart" class="checkout">go to cart</a>
                                         </div>
                                     </li>
                                 </ul>

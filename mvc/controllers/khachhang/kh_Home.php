@@ -49,6 +49,14 @@ class kh_Home extends Controller
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang");
         }
 
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+
         $this->view_Khachhang("khachhang_Home", [
             'random_5sp' => $random_5sp,
             'select_4sp' => $select_4sp,
@@ -57,7 +65,9 @@ class kh_Home extends Controller
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
-            'loaihang_women' => $loaihang_women
+            'loaihang_women' => $loaihang_women,
+            'select_session' => $select_session,
+            'count_sp' => $count_sp
         ]);
     }
 
@@ -93,6 +103,26 @@ class kh_Home extends Controller
             'total_page' => $total_page
         ];
 
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1;
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop");
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
 
         $this->view_Khachhang("khachhang_Shop", [
             'pagiNation' => $pagiNation,
@@ -100,7 +130,9 @@ class kh_Home extends Controller
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
-            'loaihang_women' => $loaihang_women
+            'loaihang_women' => $loaihang_women,
+            'count_sp' => $count_sp,
+            'select_session' => $select_session
         ]);
     }
 
@@ -134,12 +166,22 @@ class kh_Home extends Controller
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/".$id);
         }
 
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+
         $this->view_Khachhang("khachhang_Loaihang", [
             'loaihang' => $loaihang,
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
-            'loaihang_women' => $loaihang_women
+            'loaihang_women' => $loaihang_women,
+            'count_sp' => $count_sp,
+            'select_session' => $select_session
         ]);
     }
 
@@ -188,6 +230,14 @@ class kh_Home extends Controller
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/".$id_gioitinh);
         }
 
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+
         $this->view_Khachhang("khachhang_LHbyGender", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
@@ -195,6 +245,8 @@ class kh_Home extends Controller
             'loaihang_women' => $loaihang_women,
             'sanpham' => $sanpham,
             'pagiNation' => $pagiNation,
+            'count_sp' => $count_sp,
+            'select_session' => $select_session
         ]);
     }
 
@@ -233,6 +285,14 @@ class kh_Home extends Controller
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/".$id_sanpham);
         }
 
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+
         $this->view_Khachhang("khachhang_chitietsp", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
@@ -240,7 +300,9 @@ class kh_Home extends Controller
             'loaihang_women' => $loaihang_women,
             'detailSP' => $detailSP,
             'random_8sp' => $random_8sp,
-            'detail_img' => $detail_img
+            'detail_img' => $detail_img,
+            'count_sp' => $count_sp,
+            'select_session' => $select_session
         ]);
     }
 
@@ -286,13 +348,23 @@ class kh_Home extends Controller
         } else {
             $select_session = [];
         }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session_limit = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session_limit = [];
+        }
+
+        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
         // session_unset();
         $this->view_Khachhang("khachhang_Cart", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
-            'select_session' => $select_session
+            'select_session' => $select_session,
+            'select_session_limit' => $select_session_limit,
+            'count_sp' => $count_sp
         ]);
     }
 
