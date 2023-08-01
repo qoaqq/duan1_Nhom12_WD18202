@@ -366,136 +366,118 @@
     </header>
     <!-- header area end -->
     <!-- cart item area start -->
-    <div class="shopping-cart">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="location">
-                        <ul>
-                            <li><a href="index.html" title="go to homepage">Home<span>/</span></a> </li>
-                            <li><strong> Shopping cart</strong></li>
-                        </ul>
+    <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_checkout" method="post">
+        <div class="shopping-cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="location">
+                            <ul>
+                                <li><a href="index.html" title="go to homepage">Home<span>/</span></a> </li>
+                                <li><strong> Shopping cart</strong></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table-bordered table table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="">ID</th>
-                                    <th class="cart-product-name">Product Name</th>
-                                    <th class="cart-item-img">Image</th>
-                                    <th class="unit-price">Price</th>
-                                    <th class="quantity">Qty</th>
-                                    <th class="subtotal">Total</th>
-                                    <th class="remove-icon"></th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <?php foreach ($data['select_session'] as $select) : ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table-bordered table table-hover">
+                                <thead>
                                     <tr>
-                                        <td><?= $select['id'] ?></td>
-                                        <td class="cart-product-name">
-                                            <a href="single-product.html"><?= $select['ten_sanpham'] ?></a>
-                                        </td>
-                                        <td class="cart-item-img">
-                                            <a href="single-product.html">
-                                                <img src="/duan1_Nhom12_WD18202/public/img/<?= $select['anh'] ?>" width="200" alt="">
-                                            </a>
-                                        </td>
-
-                                        <td class="unit-price">
-                                            <span>$</span>
-                                            <input type="number" class="price-input" value="<?= $select['gia'] ?>" style="border: none; background: none;" disabled>
-                                        </td>
-                                        <td class="quantity">
-                                            <span></span>
-                                            <input type="number" class="quantity-input" min="0" value="1">
-                                        </td>
-                                        <td class="subtotal">
-                                            <span>$</span>
-                                            <input type="number" class="subtotal-input" value="<?= $select['gia'] ?>" style="width: 100px; border: none; background: none;" disabled>
-                                        </td>
-                                        <td class="remove-icon">
-                                            <a href="/duan1_Nhom12_WD18202/khachhang/khachhang_cart&remove=<?= $select['id'] ?>">
-                                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/btn_remove.png" alt="">
-                                            </a>
-                                        </td>
+                                        <th class="">ID</th>
+                                        <th class="cart-product-name">Product Name</th>
+                                        <th class="cart-item-img">Image</th>
+                                        <th class="unit-price">Price</th>
+                                        <th class="quantity">Qty</th>
+                                        <th class="subtotal">Total</th>
+                                        <th class="remove-icon"></th>
                                     </tr>
-                                <?php endforeach ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody class="text-center">
+                                    <?php
+                                    if (isset($_SESSION['product']['id']) && is_array($_SESSION['product']['id'])) {
+                                        $ids = $_SESSION['product']['id'];
+                                    }
+                                    ?>
 
-                        <div class="shopping-button">
-                            <div class="continue-shopping">
-                                <button type="submit">continue shopping</button>
-                            </div>
-                            <div class="shopping-cart-left">
-                                <button type="submit">Clear Shopping Cart</button>
-                                <button type="submit">Update Shopping Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="discount-code">
-                        <h3>Discount Codes</h3>
-                        <p>Enter your coupon code if you have one.</p>
-                        <input type="text">
-                        <div class="shopping-button">
-                            <button type="submit">apply coupon</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="estimate-shipping">
-                        <h3>Estimate Shipping and Tax</h3>
-                        <p>Enter your destination to get a shipping estimate.</p>
-                        <form action="#">
-                            <div class="form-box">
-                                <div class="form-name">
-                                    <label> country <em>*</em> </label>
-                                    <select>
-                                        <option value="1">Afghanistan</option>
-                                        <option value="1">Algeria</option>
-                                        <option value="1">American Samoa</option>
-                                        <option value="1">Australia</option>
-                                        <option value="1">Bangladesh</option>
-                                        <option value="1">Belgium</option>
-                                        <option value="1">Bosnia and Herzegovina</option>
-                                        <option value="1">Chile</option>
-                                        <option value="1">China</option>
-                                        <option value="1">Egypt</option>
-                                        <option value="1">Finland</option>
-                                        <option value="1">France</option>
-                                        <option value="1">United State</option>
-                                    </select>
+                                    <?php foreach ($data['select_session'] as $index => $select) : ?>
+                                        <tr>
+                                            <td><?= $select['id'] ?>
+                                                <input type="hidden" value="<?= $select['id'] ?>" name="products[<?= $index ?>][id]">
+                                            </td>
+                                            <td class="cart-product-name">
+                                                <a href="single-product.html"><?= $select['ten_sanpham'] ?></a>
+                                                <input type="hidden" value="<?= $select['ten_sanpham'] ?>" name="products[<?= $index ?>][ten_sanpham]">
+                                            </td>
+                                            <td class="cart-item-img">
+                                                <a href="single-product.html">
+                                                    <img src="/duan1_Nhom12_WD18202/public/img/<?= $select['anh'] ?>" width="200" alt="">
+                                                    <input type="hidden" value="<?= $select['anh'] ?>" name="products[<?= $index ?>][img]">
+                                                </a>
+                                            </td>
+
+                                            <td class="unit-price">
+                                                <span>$</span>
+                                                <input type="number" class="price-input" value="<?= $select['gia'] ?>" style="border: none; background: none;" readonly name="products[<?= $index ?>][price]">
+                                            </td>
+                                            <td class="quantity">
+                                                <span></span>
+                                                <?php
+                                                if (isset($ids[$select['id']])) {
+                                                    $quantity = $ids[$select['id']];
+                                                } else {
+                                                    $quantity = 1;
+                                                }
+                                                ?>
+                                                <input type="number" class="quantity-input" min="1" value="<?= $quantity ?>" name="products[<?= $index ?>][quantity]">
+                                            </td>
+                                            <td class="subtotal">
+                                                <span>$</span>
+                                                <input type="number" class="subtotal-input" value="<?= $select['gia'] ?>" style="width: 100px; border: none; background: none;" readonly name="products[<?= $index ?>][total_price]">
+                                            </td>
+                                            <td class="remove-icon">
+                                                <a href="/duan1_Nhom12_WD18202/khachhang/khachhang_cart&remove=<?= $select['id'] ?>">
+                                                    <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/btn_remove.png" alt="">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </tbody>
+                            </table>
+
+                            <div class="shopping-button">
+                                <div class="continue-shopping">
+                                    <button type="submit">continue shopping</button>
+                                </div>
+                                <div class="shopping-cart-left">
+                                    <button type="submit">Clear Shopping Cart</button>
+                                    <button type="submit">Update Shopping Cart</button>
                                 </div>
                             </div>
-                            <!-- Rest of the form elements... -->
-                            <div class="shopping-button">
-                                <button type="submit">get a quote</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="totals">
-                        <h3>Grand Total <span id="cartTotal">$0.00</span></h3>
-                        <div class="shopping-button">
-                            <button type="submit">proceed to checkout</button>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="totals">
+                            <h3>Grand Total <span id="grandTotalSpan">$0.00</span></h3>
+                            <input type="hidden" id="grandTotalInput" value="0.00" readonly name="grand_price">
+                            <div class="shopping-button">
+                                <button type="submit">proceed to checkout</button>
+                            </div>
+                            <a href="#">Checkout with Multiple Addresses</a>
                         </div>
-                        <a href="#">Checkout with Multiple Addresses</a>
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
+    </form>
     <!-- cart item area end -->
     <!-- footer top area start -->
     <div class="footer-top-area">
@@ -652,14 +634,6 @@
 
 
 </body>
-<!-- Your table code here -->
-
-<!-- Your table code here -->
-
-<!-- Bảng sản phẩm -->
-<table class="table-bordered table table-hover">
-    <!-- ... (code HTML đã cung cấp) ... -->
-</table>
 
 <script>
     // JavaScript code here
@@ -698,8 +672,11 @@
             }
         });
 
-        const cartTotal = document.getElementById('cartTotal');
-        cartTotal.textContent = "$" + total.toFixed(2);
+        const grandTotalSpan = document.getElementById('grandTotalSpan');
+        const grandTotalInput = document.getElementById('grandTotalInput');
+
+        grandTotalSpan.textContent = "$" + total.toFixed(2);
+        grandTotalInput.value = total.toFixed(2);
     }
 
     const removeButtons = document.querySelectorAll('.remove-icon a');
@@ -708,7 +685,10 @@
     });
 
     function removeProduct(event) {
+        // Code xử lý xóa sản phẩm trong giỏ hàng
     }
+
+    // Gọi hàm updateSubtotal() lần đầu để cập nhật giá trị ban đầu
     updateSubtotal();
 </script>
 

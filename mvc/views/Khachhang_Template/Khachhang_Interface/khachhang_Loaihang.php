@@ -130,7 +130,7 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
                                         <div class="cart-info">
                                             <ul>
                                                 <li>
@@ -517,7 +517,10 @@
                                                         </a>
                                                     </div>
                                                     <div class="actions">
-                                                        <button type="submit" class="cart-btn" title="Add to cart">add to cart</button>
+                                                        <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/<?= $lh['id_loaihang'] ?>" style="width: 250px" method="post">
+                                                            <input type="hidden" name="product_id" value="<?= $lh['id'] ?>">
+                                                            <button type="submit" class="cart-btn" name="btn_addToCart" title="Add to cart">add to cart</button>
+                                                        </form>
                                                         <ul class="add-to-link">
                                                             <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
                                                             <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>

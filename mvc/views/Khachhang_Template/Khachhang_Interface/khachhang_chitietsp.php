@@ -130,7 +130,7 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
                                         <div class="cart-info">
                                             <ul>
                                                 <li>
@@ -460,41 +460,11 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="select-catagory">
-                            <div class="color-select">
-                                <label class="required">
-                                    <em>*</em> Color
-                                </label>
-                                <div class="input-box">
-                                    <select id="select-1">
-                                        <option value="">-- Please Select --</option>
-                                        <option value="">black</option>
-                                        <option value="">blue</option>
-                                        <option value="">yellow</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="size-select">
-                                <label class="required">
-                                    <em>*</em> Size
-                                </label>
-                                <div class="input-box">
-                                    <select id="select-2">
-                                        <option value="">-- Please Select --</option>
-                                        <option value="">36</option>
-                                        <option value="">37</option>
-                                        <option value="">38</option>
-                                        <option value="">39</option>
-                                        <option value="">40</option>
-                                        <option value="">41</option>
-                                        <option value="">42</option>
-                                        <option value="">43</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2 col-6">
-                            <button class="btn btn-outline-danger" type="button">ADD TO CART</button>
+                        <div class="d-grid gap-2 col-6" style="margin-top: 20px;">
+                            <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $data['detailSP']['id'] ?>" style="width: 250px" method="post">
+                                <input type="hidden" name="product_id" value="<?= $data['detailSP']['id'] ?>">
+                                <button type="submit" class="btn btn-outline-danger" name="btn_addToCart" title="Add to cart">Add To Cart</button>
+                            </form>
                         </div>
                     </div>
                 </div>

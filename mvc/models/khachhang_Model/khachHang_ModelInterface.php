@@ -129,24 +129,42 @@ class khachHang_ModelInterface extends DB
    public function selectSanPhamBySession($idArray)
    {
       if (empty($idArray) || !is_array($idArray)) {
-         return array(); // Trả về mảng rỗng nếu không có ID sản phẩm
+         return array();
       }
 
-      // Xử lý danh sách các ID sản phẩm thành chuỗi dạng '12, 13, 14, 90'
       $idList = implode(',', array_keys($idArray));
 
-      // Thực hiện truy vấn dựa trên danh sách các ID sản phẩm
       $qr = "SELECT `id`, `ten_sanpham`, `gia`, `anh`, `soluong` FROM `sanpham` WHERE id IN ($idList)";
       $queryResult = mysqli_query($this->con, $qr);
 
       $result = array();
       if ($queryResult && mysqli_num_rows($queryResult) > 0) {
-         // Duyệt qua các kết quả truy vấn và lưu vào mảng kết quả
          while ($row = mysqli_fetch_assoc($queryResult)) {
             $result[] = $row;
          }
       }
 
       return $result;
+   }
+
+   public function selectKhachHang($id)
+   {
+      $qr = "SELECT `id`, `tenkh`, `sdt`, `diachi`, `email` FROM `khachhang` WHERE id = $id";
+      return mysqli_fetch_assoc(mysqli_query($this->con, $qr));
+   }
+
+   public function insertBill($id_khachhang, $total)
+   {
+      $qr = "INSERT INTO `bill`(`id`, `id_khachhang`, `total`, `ngay_tao`, `status`) VALUES (null, $id_khachhang, $total, NOW(), 'Chưa thanh toán')";
+      mysqli_query($this->con, $qr);
+
+      // Lấy ID vừa insert và trả về
+      return mysqli_insert_id($this->con);
+   }
+
+   public function insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price)
+   {
+      $qr = "INSERT INTO `chitietbill`(`id`, `id_bill`, `id_sanpham`, `soluong`, `total_price`) VALUES (null, $id_bill, $id_sanpham, $soluong, $total_price)";
+      return mysqli_query($this->con, $qr);
    }
 }

@@ -36,6 +36,19 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1;
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang");
+        }
+
         $this->view_Khachhang("khachhang_Home", [
             'random_5sp' => $random_5sp,
             'select_4sp' => $select_4sp,
@@ -108,6 +121,19 @@ class kh_Home extends Controller
         //SELECT LOAI HANG BY ID
         $loaihang = $this->khachHang_Model->select_LoaihangById($id);
 
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1;
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_Loaihang/".$id);
+        }
+
         $this->view_Khachhang("khachhang_Loaihang", [
             'loaihang' => $loaihang,
             'danhmuc_men' => $danhmuc_men,
@@ -149,6 +175,19 @@ class kh_Home extends Controller
             'total_page' => $total_page
         ];
 
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1;
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/".$id_gioitinh);
+        }
+
         $this->view_Khachhang("khachhang_LHbyGender", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
@@ -181,6 +220,19 @@ class kh_Home extends Controller
 
         $detail_img = $this->khachHang_Model->selectImgSanPham($id_sanpham);
 
+        if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
+            $product_id = $_POST['product_id'];
+            if (!isset($_SESSION['product']['id'])) {
+                $_SESSION['product']['id'] = array();
+            }
+            if (!isset($_SESSION['product']['id'][$product_id])) {
+                $_SESSION['product']['id'][$product_id] = 1;
+            } else {
+                $_SESSION['product']['id'][$product_id]++;
+            }
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/".$id_sanpham);
+        }
+
         $this->view_Khachhang("khachhang_chitietsp", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
@@ -207,7 +259,6 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         if (isset($_GET['remove'])) {
-            echo "2222222222";
             $id_remove = $_GET['remove'];
             unset($_SESSION['product']['id'][$id_remove]);
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
@@ -242,6 +293,81 @@ class kh_Home extends Controller
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'select_session' => $select_session
+        ]);
+    }
+
+    public function khachhang_checkout()
+    {
+        //SELECT DANH MUC NAM
+        $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
+
+        //SELECT DANH MUC NU
+        $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+        //SELECT LOAI HANG NAM
+        $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+        //SELECT LOAI HANG NU
+        $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        $detail_bill = $_POST;
+
+        $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+      
+        $this->view_Khachhang("khachhang_Checkout", [
+            'danhmuc_men' => $danhmuc_men,
+            'danhmuc_women' => $danhmuc_women,
+            'loaihang_men' => $loaihang_men,
+            'loaihang_women' => $loaihang_women,
+            'detail_bill' => $detail_bill,
+            'user' => $user
+        ]);
+    }
+
+    public function orderSuccess()
+    {
+
+        $id_user = $_SESSION['id'];
+        $grand_total = $_POST['grand_total'];
+
+        if(isset($_POST['btn_checkOut'])){
+            $id_bill = $this->khachHang_Model->insertBill($id_user, $grand_total);
+
+            if ($id_bill) {
+                $products = $_POST['products'];
+                foreach ($products as $product) {
+                    $id_sanpham = $product['id'];
+                    $soluong = $product['quantity'];
+                    $total_price = $product['total_price'];
+                    $this->khachHang_Model->insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price);
+                }
+            } else {
+                echo "Insert bill failed.";
+            }
+            unset($_SESSION['product']['id']);
+            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/notificationOrder");
+            exit;
+        }
+    }
+
+    public function notificationOrder(){
+        //SELECT DANH MUC NAM
+        $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
+
+        //SELECT DANH MUC NU
+        $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+        //SELECT LOAI HANG NAM
+        $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+        //SELECT LOAI HANG NU
+        $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        $this->view_Khachhang("khachhang_Success", [
+            'danhmuc_men' => $danhmuc_men,
+            'danhmuc_women' => $danhmuc_women,
+            'loaihang_men' => $loaihang_men,
+            'loaihang_women' => $loaihang_women,
         ]);
     }
 }
