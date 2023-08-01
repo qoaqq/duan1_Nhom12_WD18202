@@ -421,7 +421,7 @@
                 </div>
                 <div class="col-lg-9 text-center">
                     <h1>Order Success</h1>
-                    <button class="btn btn-dark"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/"style="color: white;">Go home</a></button>
+                    <button class="btn btn-dark"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/Theme" style="color: white;">Go home</a></button>
                 </div>
             </div>
         </div>

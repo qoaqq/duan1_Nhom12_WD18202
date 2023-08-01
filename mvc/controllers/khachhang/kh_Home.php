@@ -55,7 +55,11 @@ class kh_Home extends Controller
             $select_session = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
 
         $this->view_Khachhang("khachhang_Home", [
             'random_5sp' => $random_5sp,
@@ -122,7 +126,11 @@ class kh_Home extends Controller
             $select_session = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
 
         $this->view_Khachhang("khachhang_Shop", [
             'pagiNation' => $pagiNation,
@@ -172,7 +180,11 @@ class kh_Home extends Controller
             $select_session = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
 
         $this->view_Khachhang("khachhang_Loaihang", [
             'loaihang' => $loaihang,
@@ -236,7 +248,11 @@ class kh_Home extends Controller
             $select_session = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
 
         $this->view_Khachhang("khachhang_LHbyGender", [
             'danhmuc_men' => $danhmuc_men,
@@ -291,7 +307,11 @@ class kh_Home extends Controller
             $select_session = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
 
         $this->view_Khachhang("khachhang_chitietsp", [
             'danhmuc_men' => $danhmuc_men,
@@ -355,7 +375,12 @@ class kh_Home extends Controller
             $select_session_limit = [];
         }
 
-        $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        if(isset($_SESSION['product']['id'])){
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
+
         // session_unset();
         $this->view_Khachhang("khachhang_Cart", [
             'danhmuc_men' => $danhmuc_men,
@@ -366,6 +391,12 @@ class kh_Home extends Controller
             'select_session_limit' => $select_session_limit,
             'count_sp' => $count_sp
         ]);
+    }
+
+    public function clearCart(){
+        unset($_SESSION['product']['id']);
+        header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
+        exit;
     }
 
     public function khachhang_checkout()
@@ -382,9 +413,17 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
-        $detail_bill = $_POST;
+        if(isset($_POST)){
+            $detail_bill = $_POST;
+        } else {
+            $detail_bill = [];
+        }
 
-        $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+        if(isset($_SESSION['id'])){
+            $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+        } else {
+            $user = [];
+        }
       
         $this->view_Khachhang("khachhang_Checkout", [
             'danhmuc_men' => $danhmuc_men,
@@ -398,7 +437,6 @@ class kh_Home extends Controller
 
     public function orderSuccess()
     {
-
         $id_user = $_SESSION['id'];
         $grand_total = $_POST['grand_total'];
 
@@ -406,12 +444,16 @@ class kh_Home extends Controller
             $id_bill = $this->khachHang_Model->insertBill($id_user, $grand_total);
 
             if ($id_bill) {
-                $products = $_POST['products'];
-                foreach ($products as $product) {
-                    $id_sanpham = $product['id'];
-                    $soluong = $product['quantity'];
-                    $total_price = $product['total_price'];
-                    $this->khachHang_Model->insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price);
+                if(isset($_POST['products'])){
+                    $products = $_POST['products'];
+                    foreach ($products as $product) {
+                        $id_sanpham = $product['id'];
+                        $soluong = $product['quantity'];
+                        $total_price = $product['total_price'];
+                        $this->khachHang_Model->insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price);
+                    }
+                } else {
+                    $products = [];
                 }
             } else {
                 echo "Insert bill failed.";

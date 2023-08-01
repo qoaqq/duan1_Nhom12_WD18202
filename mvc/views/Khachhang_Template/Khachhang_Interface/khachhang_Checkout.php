@@ -451,25 +451,28 @@
                                                                 <th>Total</th>
                                                             </tr>
                                                         </thead>
-                                                        <?php foreach ($data['detail_bill']['products'] as $detail_bill) : ?>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <a href="#"><?= $detail_bill['ten_sanpham'] ?></a>
-                                                                    </td>
-                                                                    <td><?= $detail_bill['quantity'] ?></td>
-                                                                    <td><?= $detail_bill['price'] ?></td>
-                                                                    <td><?= $detail_bill['total_price'] ?></td>
-                                                                </tr>
-                                                                <!-- Khởi tạo các input ẩn để lưu thông tin sản phẩm -->
-                                                                <input type="hidden" name="products[<?= $detail_bill['id'] ?>][id]" value="<?= $detail_bill['id'] ?>">
-                                                                <input type="hidden" name="products[<?= $detail_bill['id'] ?>][ten_sanpham]" value="<?= $detail_bill['ten_sanpham'] ?>">
-                                                                <input type="hidden" name="products[<?= $detail_bill['id'] ?>][quantity]" value="<?= $detail_bill['quantity'] ?>">
-                                                                <input type="hidden" name="products[<?= $detail_bill['id'] ?>][price]" value="<?= $detail_bill['price'] ?>">
-                                                                <input type="hidden" name="products[<?= $detail_bill['id'] ?>][total_price]" value="<?= $detail_bill['total_price'] ?>">
-                                                            </tbody>
-                                                        <?php endforeach ?>
-
+                                                        <?php if (isset($data['detail_bill']['products'])) { ?>
+                                                            <?php foreach ($data['detail_bill']['products'] as $detail_bill) : ?>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a href="#"><?= $detail_bill['ten_sanpham'] ?></a>
+                                                                        </td>
+                                                                        <td><?= $detail_bill['quantity'] ?></td>
+                                                                        <td><?= $detail_bill['price'] ?></td>
+                                                                        <td><?= $detail_bill['total_price'] ?></td>
+                                                                    </tr>
+                                                                    <!-- Khởi tạo các input ẩn để lưu thông tin sản phẩm -->
+                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][id]" value="<?= $detail_bill['id'] ?>">
+                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][ten_sanpham]" value="<?= $detail_bill['ten_sanpham'] ?>">
+                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][quantity]" value="<?= $detail_bill['quantity'] ?>">
+                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][price]" value="<?= $detail_bill['price'] ?>">
+                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][total_price]" value="<?= $detail_bill['total_price'] ?>">
+                                                                </tbody>
+                                                            <?php endforeach ?>
+                                                        <?php } else { ?>
+                                                            <?php $data['detail_bill']['products'] = []; ?>
+                                                        <?php } ?>
                                                         <tfoot>
                                                             <tr>
                                                                 <td class="text-right" colspan="3">

@@ -130,7 +130,14 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span><?php echo $data['count_sp'][0]['COUNT(sanpham.id)'] ?></span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt="">
+                                            <span><?php
+                                                    if (isset($data['count_sp'][0]['COUNT(sanpham.id)'])) {
+                                                        echo $data['count_sp'][0]['COUNT(sanpham.id)'];
+                                                    } else {
+                                                        $data['count_sp'][0] = [];
+                                                    }
+                                                    ?></span> </a>
                                         <div class="cart-info">
                                             <ul>
                                                 <?php
@@ -452,8 +459,12 @@
                                     <button type="submit">continue shopping</button>
                                 </div>
                                 <div class="shopping-cart-left">
-                                    <button type="submit">Clear Shopping Cart</button>
-                                    <button type="submit">Update Shopping Cart</button>
+                                    <a href="" method="post">
+                                        <button type="button" name="btn_clearAll">Update Shopping Cart</button>
+                                    </a>
+                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/clearCart" method="post">
+                                        <button type="button" name="btn_clearAll">Clear Shopping Cart</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -466,7 +477,7 @@
                     <div class="col-md-4">
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="position: relative; bottom: 15px;">
                         <div class="totals">
                             <h3>Grand Total <span id="grandTotalSpan">$0.00</span></h3>
                             <input type="hidden" id="grandTotalInput" value="0.00" readonly name="grand_price">
@@ -685,9 +696,9 @@
         button.addEventListener('click', removeProduct);
     });
 
-    function removeProduct(event) {
-    }
+    function removeProduct(event) {}
 
     updateSubtotal();
 </script>
+
 </html>
