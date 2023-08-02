@@ -604,63 +604,7 @@
     </div>
     <!-- sell off product area end -->
     <!-- new products area start -->
-    <div class="new-product home2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-title">
-                        <h2>new products</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="features-home2-slider">
-
-                    <?php foreach ($data['random_8sp'] as $rd_8sp) : ?>
-                        <div class="col">
-                            <div class="single-product">
-                                <div class="level-pro-new">
-                                    <span>new</span>
-                                </div>
-                                <div class="product-img">
-                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>">
-                                        <img src="/duan1_Nhom12_WD18202/public/img/<?= $rd_8sp['anh'] ?>" alt="" class="">
-                                    </a>
-                                </div>
-                                <div class="actions">
-                                    <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/Theme" style="width: 250px" method="post">
-                                        <input type="hidden" name="product_id" value="<?= $rd_8sp['id'] ?>">
-                                        <button type="submit" class="cart-btn" name="btn_addToCart" title="Add to cart">add to cart</button>
-                                    </form>
-                                    <ul class="add-to-link">
-                                        <li><a class="modal-view" data-target="#productModal" data-bs-toggle="modal" href="#"> <i class="fa fa-search"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-heart-o"></i></a></li>
-                                        <li><a href="#"> <i class="fa fa-refresh"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-price">
-                                    <div class="product-name">
-                                        <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $rd_8sp['id'] ?>" title="Fusce aliquam"><?= $rd_8sp['ten_sanpham'] ?></a>
-                                    </div>
-                                    <div class="price-rating">
-                                        <span>$<?= $rd_8sp['gia'] ?></span>
-                                        <div class="ratings">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach ?>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- new products area end -->
     <!-- another banner area start -->
     <div class="another-banner-area">

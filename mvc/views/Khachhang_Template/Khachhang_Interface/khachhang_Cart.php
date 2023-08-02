@@ -459,9 +459,7 @@
                                     <button type="submit">continue shopping</button>
                                 </div>
                                 <div class="shopping-cart-left">
-                                    <a href="" method="post">
-                                        <button type="button" name="btn_clearAll">Update Shopping Cart</button>
-                                    </a>
+                                    <button type="submit" name="btn_updateCart">Update Shopping Cart</button>
                                     <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/clearCart" method="post">
                                         <button type="button" name="btn_clearAll">Clear Shopping Cart</button>
                                     </a>
@@ -482,7 +480,7 @@
                             <h3>Grand Total <span id="grandTotalSpan">$0.00</span></h3>
                             <input type="hidden" id="grandTotalInput" value="0.00" readonly name="grand_price">
                             <div class="shopping-button">
-                                <button type="submit">proceed to checkout</button>
+                                <button type="submit" name="btn_checkout">proceed to checkout</button>
                             </div>
                             <a href="#">Checkout with Multiple Addresses</a>
                         </div>
