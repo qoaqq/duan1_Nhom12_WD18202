@@ -1,19 +1,27 @@
 <?php
-class admin_profile extends Controller{
+class admin_profile extends Controller
+{
     public $admin_profile;
-    public function __construct(){
+    public function __construct()
+    {
         $this->admin_profile = $this->admin_Model("adminUser_Model");
     }
 
-    public function Theme(){
-        $users = $this->admin_profile->selectUserById($_SESSION['id']);
+    public function Theme()
+    {
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_profile->selectUserById($_SESSION['id']);
+        }
         $this->view_Admin("admin_profile", [
             'page' => 'profile',
             'users' => $users
         ]);
     }
 
-    public function updateAdminProfile($id){
+    public function updateAdminProfile($id)
+    {
         $fullname = $_POST['fullname'];
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
@@ -22,19 +30,19 @@ class admin_profile extends Controller{
         $img = $_POST['img'];
         $errors = array();
 
-        if(empty($fullname)) {
+        if (empty($fullname)) {
             $errors['fullname'] = "Vui lòng nhập tên";
         }
 
-        if(empty($phonenumber)){
+        if (empty($phonenumber)) {
             $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
         }
 
-        if(empty($address)){
+        if (empty($address)) {
             $errors['address'] = "Vui lòng nhập địa chỉ";
         }
 
-        if(empty($email)){
+        if (empty($email)) {
             $errors['email'] = "Vui lòng nhập email";
         }
 
@@ -47,15 +55,19 @@ class admin_profile extends Controller{
             }
         }
 
-        if(empty($errors)){
-            if(isset($_POST['btn_updateAdminProfile'])){
+        if (empty($errors)) {
+            if (isset($_POST['btn_updateAdminProfile'])) {
                 $this->admin_profile->updateAdminProdfileById($id, $fullname, $phonenumber, $address, $email, $img);
-                move_uploaded_file($file['tmp_name'], "./public/img/".$img);
-                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/".$id);
+                move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
+                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/" . $id);
                 exit();
             }
-        }else{
-            $users = $this->admin_profile->selectUserById($_SESSION['id']);
+        } else {
+            if (!isset($_SESSION['id'])) {
+                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+            } else {
+                $users = $this->admin_profile->selectUserById($_SESSION['id']);
+            }
             $this->view_Admin("admin_profile", [
                 'page' => 'profile',
                 'users' => $users,

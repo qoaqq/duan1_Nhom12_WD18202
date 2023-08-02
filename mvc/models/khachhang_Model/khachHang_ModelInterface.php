@@ -176,7 +176,7 @@ class khachHang_ModelInterface extends DB
 
    public function insertBill($id_khachhang, $total)
    {
-      $qr = "INSERT INTO `bill`(`id`, `id_khachhang`, `total`, `ngay_tao`, `status`) VALUES (null, $id_khachhang, $total, NOW(), 'Chưa thanh toán')";
+      $qr = "INSERT INTO `bill`(`id`, `id_khachhang`, `total`, `ngay_tao`, `status`) VALUES (null, $id_khachhang, $total, NOW(), 'Chưa trung chuyển')";
       mysqli_query($this->con, $qr);
 
       // Lấy ID vừa insert và trả về
@@ -189,7 +189,8 @@ class khachHang_ModelInterface extends DB
       return mysqli_query($this->con, $qr);
    }
 
-   public function selectCountProductsById($idArray){
+   public function selectCountProductsById($idArray)
+   {
       if (empty($idArray) || !is_array($idArray)) {
          return array();
       }
@@ -207,5 +208,13 @@ class khachHang_ModelInterface extends DB
       }
 
       return $result;
+   }
+
+   public function selectUserByIdSession($id)
+   {
+      $qr = "SELECT * FROM `khachhang` WHERE `id`=$id";
+      $result = mysqli_fetch_assoc(mysqli_query($this->con, $qr));
+      if (!empty($result)) return $result;
+      return '';
    }
 }

@@ -6,7 +6,11 @@ class admin_users extends Controller{
     }
 
     public function Theme(){
-        $users = $this->admin_users->selectUserById($_SESSION['id']);
+        if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
         $tableUsers = $this->admin_users->selectUserByRole();
         $this->view_Admin("admin_users", [
             'page' => 'users',
@@ -16,7 +20,11 @@ class admin_users extends Controller{
     }
 
     public function getIdUserUpdate($id){
-        $users = $this->admin_users->selectUserById($_SESSION['id']);
+        if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
         $updateTable = $this->admin_users->selectUserById($id);
         $this->view_Admin("admin_users", [
             'page' => 'updateUser',
@@ -26,7 +34,11 @@ class admin_users extends Controller{
     }
 
     public function insertTheme(){
-        $users = $this->admin_users->selectUserById($_SESSION['id']);
+        if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
         $this->view_Admin("admin_users", [
             'users' => $users,
             'page' => 'insertUser'

@@ -76,22 +76,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 offset-lg-3 col-md-9 d-none d-md-block">
-                        <div class="site-option">
-                            <ul>
-                                <li class="currency"><a href="#">USD <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">Eur</a></li>
-                                        <li><a href="#">Usd</a></li>
-                                    </ul>
-                                </li>
-                                <li class="language"><a href="#">English <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">English2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="call-support">
                             <p>Call support free: <span> (800) 123 456 789</span></p>
                         </div>
@@ -118,12 +102,23 @@
                                             <i class="fa fa-bars"></i>
                                         </a>
                                         <ul>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="wishlist.html">my wishlist</a></li>
-                                            <li><a href="cart.html">my cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="#">Log in</a></li>
+                                            <?php
+                                            if ($data['role']['vaitro'] == 1) {
+                                                echo '
+                                                        <li>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/admin">
+                                                            Admin
+                                                            </a>
+                                                        </li>
+                                                    ';
+                                            } elseif ($data['role']['vaitro'] == 0) {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            }
+                                            ?>
+                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
+                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -135,7 +130,7 @@
                                                     if (isset($data['count_sp'][0]['COUNT(sanpham.id)'])) {
                                                         echo $data['count_sp'][0]['COUNT(sanpham.id)'];
                                                     } else {
-                                                        $data['count_sp'][0] = [];
+                                                        echo $data['count_sp'][0] = 0;;
                                                     }
                                                     ?></span> </a>
                                         <div class="cart-info">
@@ -211,50 +206,7 @@
                                         </div>
                                     </li>
 
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <div class="sub-menu pages">
-                                            <span>
-                                                <a href="about-us.html">About us</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog.html">Blog</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </span>
-                                            <span>
-                                                <a href="cart.html">Cart</a>
-                                            </span>
-                                            <span>
-                                                <a href="checkout.html">Checkout</a>
-                                            </span>
-                                            <span>
-                                                <a href="contact.html">Contact</a>
-                                            </span>
-                                            <span>
-                                                <a href="my-account.html">My account</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop.html">Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop-list.html">Shop list</a>
-                                            </span>
-                                            <span>
-                                                <a href="single-product.html">Single Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="login.html">Login page</a>
-                                            </span>
-                                            <span>
-                                                <a href="register.html">Ragister page</a>
-                                            </span>
-                                            <span>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </span>
-                                        </div>
-                                    </li>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">All Products</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -375,7 +327,7 @@
     <!-- header area end -->
     <!-- cart item area start -->
     <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_checkout" method="post">
-        <div class="shopping-cart">
+        <div class="shopping-cart" style="padding: 0;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

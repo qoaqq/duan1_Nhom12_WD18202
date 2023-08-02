@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
 
 <!-- Mirrored from htmldemo.net/james/james/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:02 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -75,22 +76,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 offset-lg-3 col-md-9 d-none d-md-block">
-                        <div class="site-option">
-                            <ul>
-                                <li class="currency"><a href="#">USD <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">Eur</a></li>
-                                        <li><a href="#">Usd</a></li>
-                                    </ul>
-                                </li>
-                                <li class="language"><a href="#">English <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">English2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="call-support">
                             <p>Call support free: <span> (800) 123 456 789</span></p>
                         </div>
@@ -113,14 +98,25 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a >
                                             <i class="fa fa-bars"></i>
                                         </a>
                                         <ul>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="wishlist.html">my wishlist</a></li>
-                                            <li><a href="cart.html">my cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <?php
+                                                if($data['role']['vaitro'] == 1){
+                                                    echo '
+                                                        <li>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/admin">
+                                                            Admin
+                                                            </a>
+                                                        </li>
+                                                    ';
+                                                }elseif($data['role']['vaitro'] == 0){
+                                                    echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                                }
+                                            ?>
                                             <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
                                             <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
                                         </ul>
@@ -130,7 +126,16 @@
 
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span><?php echo $data['count_sp'][0]['COUNT(sanpham.id)'] ?></span> </a>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt="">
+                                            <span>
+                                                <?php
+                                                if (isset($data['count_sp'][0])) {
+                                                    echo $data['count_sp'][0]['COUNT(sanpham.id)'];
+                                                } else {
+                                                    echo $data['count_sp'][0] = 0;
+                                                }
+                                                ?>
+                                            </span> </a>
                                         <div class="cart-info">
                                             <ul>
                                                 <?php
@@ -204,51 +209,7 @@
                                         </div>
                                     </li>
 
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
-
-                                    <li><a href="#">Pages</a>
-                                        <div class="sub-menu pages">
-                                            <span>
-                                                <a href="about-us.html">About us</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog.html">Blog</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </span>
-                                            <span>
-                                                <a href="cart.html">Cart</a>
-                                            </span>
-                                            <span>
-                                                <a href="checkout.html">Checkout</a>
-                                            </span>
-                                            <span>
-                                                <a href="contact.html">Contact</a>
-                                            </span>
-                                            <span>
-                                                <a href="my-account.html">My account</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop.html">Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop-list.html">Shop list</a>
-                                            </span>
-                                            <span>
-                                                <a href="single-product.html">Single Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="login.html">Login page</a>
-                                            </span>
-                                            <span>
-                                                <a href="register.html">Ragister page</a>
-                                            </span>
-                                            <span>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </span>
-                                        </div>
-                                    </li>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">All Products</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -408,7 +369,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="single-service">
+                    <div class="single-service" style="visibility: hidden;">
                         <div class="sirvice-img">
                             <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/service/icon-1.png" alt="">
                         </div>
@@ -429,7 +390,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" style="visibility: hidden;">
                     <div class="single-service">
                         <div class="sirvice-img">
                             <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/service/icon-1.png" alt="">
@@ -604,7 +565,7 @@
     </div>
     <!-- sell off product area end -->
     <!-- new products area start -->
-    
+
     <!-- new products area end -->
     <!-- another banner area start -->
     <div class="another-banner-area">
@@ -622,51 +583,7 @@
     </div>
     <!-- another banner area end -->
     <!-- blog area start -->
-    <div class="blog-area home2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="blog-heading">
-                        <h2>From <strong> The Blog</strong></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="single-home2-blog-post">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/5.jpg" alt="">
-                                <i class="fa fa-file-photo-o"></i>
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <a href="blog-details.html" class="blog-title">Lorem ipsum dolor sit amet</a>
-                            <span><a href="#">By plaza themes - </a>17 Aug 2015 ( 0 comments )</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna...</p>
-                            <a href="blog-details.html" class="readmore">read more ></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="single-home2-blog-post">
-                        <div class="blog-img">
-                            <a href="blog-details.html">
-                                <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/blog/6.jpg" alt="">
-                                <i class="fa fa-file-photo-o"></i>
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <a href="blog-details.html" class="blog-title">Lorem ipsum dolor sit amet</a>
-                            <span><a href="#">By plaza themes - </a>17 Aug 2015 ( 0 comments )</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna...</p>
-                            <a href="blog-details.html" class="readmore">read more ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- blog area end -->
     <!-- newsleter area start -->
     <div class="newsleter-area">

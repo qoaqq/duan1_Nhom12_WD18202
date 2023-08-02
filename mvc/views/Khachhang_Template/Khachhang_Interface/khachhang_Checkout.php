@@ -76,22 +76,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 offset-lg-3 col-md-9 d-none d-md-block">
-                        <div class="site-option">
-                            <ul>
-                                <li class="currency"><a href="#">USD <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">Eur</a></li>
-                                        <li><a href="#">Usd</a></li>
-                                    </ul>
-                                </li>
-                                <li class="language"><a href="#">English <i class="fa fa-angle-down"></i> </a>
-                                    <ul class="sub-site-option">
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">English2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="call-support">
                             <p>Call support free: <span> (800) 123 456 789</span></p>
                         </div>
@@ -118,46 +102,66 @@
                                             <i class="fa fa-bars"></i>
                                         </a>
                                         <ul>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="wishlist.html">my wishlist</a></li>
-                                            <li><a href="cart.html">my cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="#">Log in</a></li>
+                                            <?php
+                                            if ($data['role']['vaitro'] == 1) {
+                                                echo '
+                                                        <li>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/admin">
+                                                            Admin
+                                                            </a>
+                                                        </li>
+                                                    ';
+                                            } elseif ($data['role']['vaitro'] == 0) {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            }
+                                            ?>
+                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
+                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt=""> <span>2</span> </a>
+                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt="">
+                                            <span>
+                                                <?php
+                                                if (isset($data['count_sp'][0])) {
+                                                    echo $data['count_sp'][0]['COUNT(sanpham.id)'];
+                                                } else {
+                                                    echo 0;
+                                                }
+                                                ?>
+                                            </span> </a>
                                         <div class="cart-info">
                                             <ul>
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/1.png" alt="">
-                                                    </div>
-                                                    <div class="cart-details">
-                                                        <a href="#">Fusce aliquam</a>
-                                                        <p>1 x $174.00</p>
-                                                    </div>
-                                                    <div class="btn-edit"></div>
-                                                    <div class="btn-remove"></div>
-                                                </li>
-                                                <li>
-                                                    <div class="cart-img">
-                                                        <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/cart/2.png" alt="">
-                                                    </div>
-                                                    <div class="cart-details">
-                                                        <a href="#">Fusce aliquam</a>
-                                                        <p>1 x $777.00</p>
-                                                    </div>
-                                                    <div class="btn-edit"></div>
-                                                    <div class="btn-remove"></div>
-                                                </li>
+                                                <?php
+                                                if (isset($_SESSION['product']['id']) && is_array($_SESSION['product']['id'])) {
+                                                    $ids = $_SESSION['product']['id'];
+                                                }
+                                                ?>
+                                                <?php foreach ($data['select_session'] as $select) : ?>
+                                                    <li>
+                                                        <div class="cart-img">
+                                                            <img src="/duan1_Nhom12_WD18202/public/img/<?= $select['anh'] ?>" width="80" alt="">
+                                                        </div>
+                                                        <div class="cart-details">
+                                                            <a href="#"><?= $select['ten_sanpham'] ?></a>
+                                                            <?php
+                                                            if (isset($ids[$select['id']])) {
+                                                                $quantity = $ids[$select['id']];
+                                                            } else {
+                                                                $quantity = 1;
+                                                            }
+                                                            ?>
+                                                            <p>x<?= $quantity ?></p>
+                                                        </div>
+                                                    </li>
+                                                <?php endforeach ?>
                                             </ul>
-                                            <h3>Subtotal: <span> $951.00</span></h3>
-                                            <a href="checkout.html" class="checkout">checkout</a>
+                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart" class="checkout">Go To Cart</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -203,50 +207,7 @@
                                         </div>
                                     </li>
 
-                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">Shop</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <div class="sub-menu pages">
-                                            <span>
-                                                <a href="about-us.html">About us</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog.html">Blog</a>
-                                            </span>
-                                            <span>
-                                                <a href="blog-details.html">Blog Details</a>
-                                            </span>
-                                            <span>
-                                                <a href="cart.html">Cart</a>
-                                            </span>
-                                            <span>
-                                                <a href="checkout.html">Checkout</a>
-                                            </span>
-                                            <span>
-                                                <a href="contact.html">Contact</a>
-                                            </span>
-                                            <span>
-                                                <a href="my-account.html">My account</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop.html">Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="shop-list.html">Shop list</a>
-                                            </span>
-                                            <span>
-                                                <a href="single-product.html">Single Shop</a>
-                                            </span>
-                                            <span>
-                                                <a href="login.html">Login page</a>
-                                            </span>
-                                            <span>
-                                                <a href="register.html">Ragister page</a>
-                                            </span>
-                                            <span>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </span>
-                                        </div>
-                                    </li>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop">All Products</a></li>
                                 </ul>
                             </nav>
                         </div>

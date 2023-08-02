@@ -11,7 +11,11 @@
         }
 
         public function Theme(){
+            if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
             $listdm = $this->danhmucModel->listDanhmuc();
             $this->view_admin("admin_danhMuc", [
                 'page' => 'danhmuc_page',
@@ -22,7 +26,11 @@
 
         public function addDM_Theme(){  
             $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();      
+            if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
             $this->view_admin("admin_danhMuc", [
                 'page' => 'add_danhmuc',
                 'users' => $users,
@@ -55,7 +63,11 @@
 
         public function editDM_Feature($id){
             $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();
+            if(!isset($_SESSION['id'])){
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
             $dm = $this->danhmucModel->getDanhmucById($id);
             $this->view_admin("admin_danhMuc", [
                 'page' => 'edit_danhmuc',
@@ -125,5 +137,3 @@
             
         }
     }
-
-?>

@@ -36,6 +36,9 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+
         if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
             $product_id = $_POST['product_id'];
             if (!isset($_SESSION['product']['id'])) {
@@ -71,7 +74,8 @@ class kh_Home extends Controller
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'select_session' => $select_session,
-            'count_sp' => $count_sp
+            'count_sp' => $count_sp,
+            'role' => $role,
         ]);
     }
 
@@ -88,6 +92,9 @@ class kh_Home extends Controller
 
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
         $totalRecords = $this->khachHang_Model->totalRecords();
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -140,7 +147,8 @@ class kh_Home extends Controller
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'count_sp' => $count_sp,
-            'select_session' => $select_session
+            'select_session' => $select_session,
+            'role' => $role
         ]);
     }
 
@@ -160,6 +168,9 @@ class kh_Home extends Controller
 
         //SELECT LOAI HANG BY ID
         $loaihang = $this->khachHang_Model->select_LoaihangById($id);
+
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
         if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
             $product_id = $_POST['product_id'];
@@ -193,7 +204,8 @@ class kh_Home extends Controller
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'count_sp' => $count_sp,
-            'select_session' => $select_session
+            'select_session' => $select_session,
+            'role' => $role
         ]);
     }
 
@@ -210,6 +222,9 @@ class kh_Home extends Controller
 
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
         $totalRecords = $this->khachHang_Model->totalRecords();
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -262,7 +277,8 @@ class kh_Home extends Controller
             'sanpham' => $sanpham,
             'pagiNation' => $pagiNation,
             'count_sp' => $count_sp,
-            'select_session' => $select_session
+            'select_session' => $select_session,
+            'role' => $role
         ]);
     }
 
@@ -283,6 +299,9 @@ class kh_Home extends Controller
 
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
         $detailSP = $this->khachHang_Model->selectDetailProductById($id_sanpham);
 
@@ -322,7 +341,8 @@ class kh_Home extends Controller
             'random_8sp' => $random_8sp,
             'detail_img' => $detail_img,
             'count_sp' => $count_sp,
-            'select_session' => $select_session
+            'select_session' => $select_session,
+            'role' => $role
         ]);
     }
 
@@ -339,6 +359,9 @@ class kh_Home extends Controller
 
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
         if (isset($_GET['remove'])) {
             $id_remove = $_GET['remove'];
@@ -363,6 +386,7 @@ class kh_Home extends Controller
             }
             header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop");
         }
+
         if (isset($_SESSION['product']['id'])) {
             $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
         } else {
@@ -389,7 +413,8 @@ class kh_Home extends Controller
             'loaihang_women' => $loaihang_women,
             'select_session' => $select_session,
             'select_session_limit' => $select_session_limit,
-            'count_sp' => $count_sp
+            'count_sp' => $count_sp,
+            'role' => $role
         ]);
     }
 
@@ -414,7 +439,26 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session_limit = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session_limit = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = 0;
+        }
 
         if (isset($_POST['btn_checkout'])) {
             if (isset($_POST)) {
@@ -443,7 +487,6 @@ class kh_Home extends Controller
                     }
                 }
             }
-    
             header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
             exit();
         }
@@ -454,7 +497,11 @@ class kh_Home extends Controller
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
             'detail_bill' => $detail_bill,
-            'user' => $user
+            'user' => $user,
+            'select_session' => $select_session,
+            'select_session_limit' => $select_session_limit,
+            'count_sp' => $count_sp,
+            'role' => $role
         ]);
     }
 
@@ -501,11 +548,36 @@ class kh_Home extends Controller
         //SELECT LOAI HANG NU
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
+        //SELECT ACCOUNT BY ROLE
+        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session_limit = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session_limit = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
+
         $this->view_Khachhang("khachhang_Success", [
             'danhmuc_men' => $danhmuc_men,
             'danhmuc_women' => $danhmuc_women,
             'loaihang_men' => $loaihang_men,
             'loaihang_women' => $loaihang_women,
+            'select_session' => $select_session,
+            'select_session_limit' => $select_session_limit,
+            'count_sp' => $count_sp,
+            'role' => $role
         ]);
     }
 }
