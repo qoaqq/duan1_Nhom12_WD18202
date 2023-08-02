@@ -417,38 +417,45 @@ class kh_Home extends Controller
 
 
         if (isset($_POST['btn_checkout'])) {
-            // if (isset($_POST)) {
-            //     $detail_bill = $_POST;
-            // } else {
-            //     $detail_bill = [];
-            // }
+            if (isset($_POST)) {
+                $detail_bill = $_POST;
+            } else {
+                $detail_bill = [];
+            }
 
-            // if (isset($_SESSION['id'])) {
-            //     $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
-            // } else {
-            //     $user = [];
-            // }
-            echo "1111111";
-            echo "btn_checkout";
-        }elseif(isset($_POST['btn_updateCart'])){
-            echo "btn_updateCart";
-            echo "<pre>";
-            print_r($_SESSION);
-            echo "</pre>";
-
-            echo "<pre>";
-            print_r($_POST);
-            echo "</pre>";
+            if (isset($_SESSION['id'])) {
+                $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+            } else {
+                $user = [];
+            }
+        }
+        
+        if (isset($_POST['btn_updateCart'])) {
+            if (isset($_POST['products'])) {
+                foreach ($_POST['products'] as $product) {
+                    $productId = $product['id'];
+                    $newQuantity = $product['quantity'];
+    
+                    if (isset($_SESSION['product']['id'][$productId])) {
+                        $_SESSION['product']['id'][$productId] = $newQuantity;
+                    } else {
+                        $_SESSION['product']['id'][$productId] = $newQuantity;
+                    }
+                }
+            }
+    
+            header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
+            exit();
         }
 
-        // $this->view_Khachhang("khachhang_Checkout", [
-        //     'danhmuc_men' => $danhmuc_men,
-        //     'danhmuc_women' => $danhmuc_women,
-        //     'loaihang_men' => $loaihang_men,
-        //     'loaihang_women' => $loaihang_women,
-        //     'detail_bill' => $detail_bill,
-        //     'user' => $user
-        // ]);
+        $this->view_Khachhang("khachhang_Checkout", [
+            'danhmuc_men' => $danhmuc_men,
+            'danhmuc_women' => $danhmuc_women,
+            'loaihang_men' => $loaihang_men,
+            'loaihang_women' => $loaihang_women,
+            'detail_bill' => $detail_bill,
+            'user' => $user
+        ]);
     }
 
     public function orderSuccess()
