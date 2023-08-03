@@ -37,9 +37,9 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        if(isset($_SESSION['id'])){
+        if (isset($_SESSION['id'])) {
             $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
-        }else {
+        } else {
             $role = [];
         }
 
@@ -100,19 +100,37 @@ class kh_Home extends Controller
         //SELECT ACCOUNT BY ROLE
         $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
 
-        $totalRecords = $this->khachHang_Model->totalRecords();
-        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit = 12;
-        $total_page = ceil($totalRecords / $limit);
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $key = $_GET['search'];
+            $totalRecords = $this->khachHang_Model->totalRecords();
+            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 12;
+            $total_page = ceil($totalRecords / $limit);
 
-        if ($current_page > $total_page) {
-            $current_page = $total_page;
-        } elseif ($current_page < 1) {
-            $current_page = 1;
+            if ($current_page > $total_page) {
+                $current_page = $total_page;
+            } elseif ($current_page < 1) {
+                $current_page = 1;
+            }
+
+            $start = ($current_page - 1) * $limit;
+            $result = $this->khachHang_Model->pagiNationSearchingLimit($key, $start, $limit);
+        } else {
+            $totalRecords = $this->khachHang_Model->totalRecords();
+            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 12;
+            $total_page = ceil($totalRecords / $limit);
+
+            if ($current_page > $total_page) {
+                $current_page = $total_page;
+            } elseif ($current_page < 1) {
+                $current_page = 1;
+            }
+
+            $start = ($current_page - 1) * $limit;
+            $result = $this->khachHang_Model->pagiNationLimit($start, $limit);
         }
 
-        $start = ($current_page - 1) * $limit;
-        $result = $this->khachHang_Model->pagiNationLimit($start, $limit);
         $pagiNation = [
             'current_page' => $current_page,
             'total_page' => $total_page
@@ -477,13 +495,13 @@ class kh_Home extends Controller
                 $user = [];
             }
         }
-        
+
         if (isset($_POST['btn_updateCart'])) {
             if (isset($_POST['products'])) {
                 foreach ($_POST['products'] as $product) {
                     $productId = $product['id'];
                     $newQuantity = $product['quantity'];
-    
+
                     if (isset($_SESSION['product']['id'][$productId])) {
                         $_SESSION['product']['id'][$productId] = $newQuantity;
                     } else {

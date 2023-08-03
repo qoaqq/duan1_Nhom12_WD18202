@@ -90,8 +90,8 @@
                                         </a>
                                         <ul class="search">
                                             <li>
-                                                <form action="#">
-                                                    <input type="text">
+                                                <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop" method="get">
+                                                    <input type="text" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; } ?>" name="search">
                                                     <button type="submit"> <i class="fa fa-search"></i> </button>
                                                 </form>
                                             </li>

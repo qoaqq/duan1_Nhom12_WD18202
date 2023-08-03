@@ -17,20 +17,41 @@ class admin_sanpham extends Controller
         } else {
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
         }
-        $listsp = $this->sanphamModel->listSanpham();
-        $totalRecords = $this->sanphamModel->totalRecords();
-        $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $limit = 5;
-        $total_page = ceil($totalRecords / $limit);
 
-        if ($current_page > $total_page) {
-            $current_page = $total_page;
-        } elseif ($current_page < 1) {
-            $current_page = 1;
+
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $key = $_GET['search'];
+            $listsp = $this->sanphamModel->listSanpham();
+            $totalRecords = $this->sanphamModel->totalRecords();
+            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 5;
+            $total_page = ceil($totalRecords / $limit);
+
+            if ($current_page > $total_page) {
+                $current_page = $total_page;
+            } elseif ($current_page < 1) {
+                $current_page = 1;
+            }
+
+            $start = ($current_page - 1) * $limit;
+            $result = $this->sanphamModel->pagiNationSearchingLimit($key, $start, $limit);
+        } else {
+            $listsp = $this->sanphamModel->listSanpham();
+            $totalRecords = $this->sanphamModel->totalRecords();
+            $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+            $limit = 5;
+            $total_page = ceil($totalRecords / $limit);
+
+            if ($current_page > $total_page) {
+                $current_page = $total_page;
+            } elseif ($current_page < 1) {
+                $current_page = 1;
+            }
+
+            $start = ($current_page - 1) * $limit;
+            $result = $this->sanphamModel->pagiNationLimit($start, $limit);
         }
-
-        $start = ($current_page - 1) * $limit;
-        $result = $this->sanphamModel->pagiNationLimit($start, $limit);
+        
         $pagiNation = [
             'current_page' => $current_page,
             'total_page' => $total_page

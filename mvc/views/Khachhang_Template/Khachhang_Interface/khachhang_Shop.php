@@ -90,8 +90,8 @@
                                         </a>
                                         <ul class="search">
                                             <li>
-                                                <form action="#">
-                                                    <input type="text">
+                                                <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop" method="get">
+                                                    <input type="text" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; } ?>" name="search">
                                                     <button type="submit"> <i class="fa fa-search"></i> </button>
                                                 </form>
                                             </li>
@@ -495,24 +495,28 @@
                         </div>
                         <div class="col-md-12">
                             <div class="toolbar-bottom">
-                                <?php
-                                if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
-                                    echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] - 1) . '">Prev</a> | ';
-                                }
-
-                                for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
-                                    if ($i == $data['pagiNation']['current_page']) {
-                                        echo '<span>' . $i . '</span> | ';
-                                    } else {
-                                        echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . $i . '">' . $i . '</a> | ';
+                                <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme" method="get">
+                                    <input type="hidden" name="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
+                                    <?php
+                                    if ($data['pagiNation']['current_page'] >= 1 && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<button type="submit" class="text-decoration-none btn btn-outline-primary" name="page" value="' . ($data['pagiNation']['current_page'] - 1) . '">Prev</button> | ';
                                     }
-                                }
 
-                                if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
-                                    echo '<a class="text-decoration-none btn btn-outline-primary" href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop/Theme&page=' . ($data['pagiNation']['current_page'] + 1) . '">Next</a> | ';
-                                }
-                                ?>
+                                    for ($i = 1; $i <= $data['pagiNation']['total_page']; $i++) {
+                                        if ($i == $data['pagiNation']['current_page']) {
+                                            echo '<span>' . $i . '</span> | ';
+                                        } else {
+                                            echo '<button type="submit" class="text-decoration-none btn btn-outline-primary" name="page" value="' . $i . '">' . $i . '</button> | ';
+                                        }
+                                    }
+
+                                    if ($data['pagiNation']['current_page'] <= $data['pagiNation']['total_page'] && $data['pagiNation']['total_page'] > 1) {
+                                        echo '<button type="submit" class="text-decoration-none btn btn-outline-primary" name="page" value="' . ($data['pagiNation']['current_page'] + 1) . '">Next</button> | ';
+                                    }
+                                    ?>
+                                </form>
                             </div>
+
                         </div>
                     </div>
 

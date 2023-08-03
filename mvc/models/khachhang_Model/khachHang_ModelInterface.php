@@ -27,6 +27,20 @@ class khachHang_ModelInterface extends DB
       return mysqli_query($this->con, $qr);
    }
 
+   public function pagiNationSearchingLimit($key, $start, $limit)
+   {
+      $qr = "SELECT * FROM sanpham WHERE 
+      id LIKE '%$key%' 
+      OR ten_sanpham LIKE '%$key%'
+      OR gia LIKE '%$key%'
+      OR anh LIKE '%$key%'
+      OR mota LIKE '%$key%'
+      OR soluong LIKE '%$key%'
+      OR id_loaihang LIKE '%$key%'
+      LIMIT $start, $limit";
+      return mysqli_query($this->con, $qr);
+   }
+
    public function addRandomNumberColumn()
    {
       $qr = "ALTER TABLE sanpham ADD random_number INT";

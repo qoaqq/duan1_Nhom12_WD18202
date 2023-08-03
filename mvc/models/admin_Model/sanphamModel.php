@@ -12,7 +12,8 @@
         }
 
         public function insertSanpham($tensp, $gia, $anh, $mota, $soluong, $loaihang){
-            $qr = "INSERT INTO sanpham VALUES (null, '$tensp', '$gia', '$anh', '$mota', '$soluong', $loaihang)";
+            $qr = "INSERT INTO `sanpham`(`ten_sanpham`, `gia`, `anh`, `mota`, `soluong`, `id_loaihang`)
+            VALUES ('$tensp', $gia, '$anh', '$mota', $soluong, $loaihang)";
             return mysqli_query($this->con, $qr);
         }
 
@@ -44,6 +45,19 @@
 
         public function pagiNationLimit($start, $limit){
             $qr = "SELECT * FROM sanpham LIMIT $start, $limit";
+            return mysqli_query($this->con, $qr);
+        }
+
+        public function pagiNationSearchingLimit($key ,$start, $limit){
+            $qr = "SELECT * FROM sanpham WHERE 
+            id LIKE '%$key%' 
+            OR ten_sanpham LIKE '%$key%'
+            OR gia LIKE '%$key%'
+            OR anh LIKE '%$key%'
+            OR mota LIKE '%$key%'
+            OR soluong LIKE '%$key%'
+            OR id_loaihang LIKE '%$key%'
+            LIMIT $start, $limit";
             return mysqli_query($this->con, $qr);
         }
     }
