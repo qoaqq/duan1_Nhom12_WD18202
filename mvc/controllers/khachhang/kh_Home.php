@@ -37,7 +37,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if(isset($_SESSION['id'])){
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        }else {
+            $role = [];
+        }
 
         if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
             $product_id = $_POST['product_id'];
@@ -488,6 +492,13 @@ class kh_Home extends Controller
                 }
             }
             header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
+            exit();
+        }
+
+        if (!isset($_POST['products'])) {
+            $msg = "Your Cart Is Empty";
+            $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart&msg=" . urlencode($msg);
+            header("Location: $url");
             exit();
         }
 

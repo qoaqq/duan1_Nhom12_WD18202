@@ -7,7 +7,7 @@
                 <div class="card col-md-7 p-4 mb-0">
                     <div class="card-body">
                     <h1>Login</h1>
-                    <p class="text-medium-emphasis">Don't have account?</p>
+                    <p class="text-medium-emphasis">Back <a href="http://localhost/duan1_Nhom12_WD18202/khachhang">Home</a></p>
                     <p class="text-medium-emphasis"><a class="text-decoration-none" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_register">Register</a>   Now</p>
                     
                     <p style="color: red;" ><?= $data['errors']['user'] ?? '' ?></p>
@@ -39,7 +39,6 @@
                     <div class="card-body text-center">
                     <div>
                         <h2>Sign up</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_register"><button class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</button></a>
                     </div>
                     </div>

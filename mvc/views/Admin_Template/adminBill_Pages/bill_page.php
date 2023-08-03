@@ -20,7 +20,7 @@
                     <td><?= $list['tenkh'] ?></td>
                     <td><?= $list['sdt'] ?></td>
                     <td><?= $list['diachi'] ?></td>
-                    <td><?= $list['total'] ?></td>
+                    <td>$<?= $list['total'] ?></td>
                     <td><?= $list['ngay_tao'] ?></td>
                     <td><?= $list['status'] ?></td>
                     <td>

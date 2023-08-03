@@ -103,22 +103,48 @@
                                         </a>
                                         <ul>
                                             <?php
-                                            if ($data['role']['vaitro'] == 1) {
-                                                echo '
-                                                        <li>
-                                                            <a href="http://localhost/duan1_Nhom12_WD18202/admin">
-                                                            Admin
-                                                            </a>
-                                                        </li>
-                                                    ';
-                                            } elseif ($data['role']['vaitro'] == 0) {
+                                            if (isset($_SESSION['id'])) {
+                                                if ($data['role']['vaitro'] == 1) {
+                                                    echo '
+                                                            <li>
+                                                                <a href="http://localhost/duan1_Nhom12_WD18202/admin">
+                                                                Admin
+                                                                </a>
+                                                            </li>
+                                                        ';
+                                                } elseif ($data['role']['vaitro'] == 0) {
+                                                    echo '
+                                                            <li style="display: none;"></li>
+                                                        ';
+                                                }
+                                            } else {
                                                 echo '
                                                         <li style="display: none;"></li>
                                                     ';
                                             }
                                             ?>
-                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
-                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            } else {
+                                                echo '
+                                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
+                                                    ';
+                                            }
+                                            ?>
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
+                                                    ';
+                                            } else {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            }
+                                            ?>
                                         </ul>
                                     </li>
                                 </ul>

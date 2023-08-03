@@ -103,22 +103,48 @@
                                         </a>
                                         <ul>
                                             <?php
-                                            if ($data['role']['vaitro'] == 1) {
-                                                echo '
-                                                        <li>
-                                                            <a href="http://localhost/duan1_Nhom12_WD18202/admin">
-                                                            Admin
-                                                            </a>
-                                                        </li>
-                                                    ';
-                                            } elseif ($data['role']['vaitro'] == 0) {
+                                            if (isset($_SESSION['id'])) {
+                                                if ($data['role']['vaitro'] == 1) {
+                                                    echo '
+                                                            <li>
+                                                                <a href="http://localhost/duan1_Nhom12_WD18202/admin">
+                                                                Admin
+                                                                </a>
+                                                            </li>
+                                                        ';
+                                                } elseif ($data['role']['vaitro'] == 0) {
+                                                    echo '
+                                                            <li style="display: none;"></li>
+                                                        ';
+                                                }
+                                            } else {
                                                 echo '
                                                         <li style="display: none;"></li>
                                                     ';
                                             }
                                             ?>
-                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
-                                            <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            } else {
+                                                echo '
+                                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Log in</a></li>
+                                                    ';
+                                            }
+                                            ?>
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li><a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login/logOutFeature">Log Out</a></li>
+                                                    ';
+                                            } else {
+                                                echo '
+                                                        <li style="display: none;"></li>
+                                                    ';
+                                            }
+                                            ?>
                                         </ul>
                                     </li>
                                 </ul>
@@ -339,6 +365,14 @@
                         </div>
                     </div>
                 </div>
+                <h4 class="text-center" style="color: red;">
+                    <?php
+                    if (isset($_GET['msg'])) {
+                        echo htmlspecialchars($_GET['msg']);
+                    }
+                    ?>
+                </h4>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
@@ -408,7 +442,7 @@
 
                             <div class="shopping-button">
                                 <div class="continue-shopping">
-                                    <button type="submit">continue shopping</button>
+                                    <a href="http://localhost/duan1_Nhom12_WD18202/khachhang"><button type="button">continue shopping</button></a>
                                 </div>
                                 <div class="shopping-cart-left">
                                     <button type="submit" name="btn_updateCart">Update Shopping Cart</button>
