@@ -16,7 +16,6 @@ class admin_login extends Controller
 
     public function loginFeature()
     {
-      
         if (isset($_POST['btn_login'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -30,32 +29,38 @@ class admin_login extends Controller
                 $errors['password'] = "Vui long nhap vao mat khau";
             }
 
-            if (!empty($email) && !empty($password)) {
-                $users = $this->admin_login->selectUserByEmail($email);
-                echo "<pre>";
-                print_r($users);
-                echo "</pre>";
-                if (!empty($users)) {
-                    if (password_verify($password, $users['password'])) {
-                        $checkLoggedIn = true;
-                        if ($checkLoggedIn == true) {
-                            $_SESSION['id'] = $users['id'];
-                            $this->admin_login->selectUserById($_SESSION['id']);
-                            header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/");
-                            exit;
+            if (empty($errors)) {
+                if (!empty($email) && !empty($password)) {
+                    $users = $this->admin_login->selectUserByEmail($email);
+                    if (!empty($users)) {
+                        if (password_verify($password, $users['password'])) {
+                            $checkLoggedIn = true;
+                            if ($checkLoggedIn == true) {
+                                $_SESSION['id'] = $users['id'];
+                                $this->admin_login->selectUserById($_SESSION['id']);
+                                header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/");
+                            }
+                        } else {
+                            $errors['user'] = "Email hoac mat khau khong chinh xac";
+                            $this->view_Admin("admin_login", [
+                                'page' => 'login',
+                                'errors' => $errors
+                            ]);
                         }
                     } else {
                         $errors['user'] = "Email hoac mat khau khong chinh xac";
+                        $this->view_Admin("admin_login", [
+                            'page' => 'login',
+                            'errors' => $errors
+                        ]);
                     }
                 }
+            } else {
+                $this->view_Admin("admin_login", [
+                    'page' => 'login',
+                    'errors' => $errors
+                ]);
             }
-        }
-       
-        if (!empty($errors)) {
-            $this->view_Admin("admin_login", [
-                'page' => 'login',
-                'errors' => $errors
-            ]);
         }
     }
 
