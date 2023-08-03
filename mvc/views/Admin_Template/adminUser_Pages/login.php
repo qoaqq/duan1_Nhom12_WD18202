@@ -7,8 +7,7 @@
                 <div class="card col-md-7 p-4 mb-0">
                     <div class="card-body">
                     <h1>Login</h1>
-                    <p class="text-medium-emphasis">Back <a href="http://localhost/duan1_Nhom12_WD18202/khachhang">Home</a></p>
-                    <p class="text-medium-emphasis"><a class="text-decoration-none" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_register">Register</a>   Now</p>
+                    <p class="text-medium-emphasis">Back <a class="text-decoration-none" href="http://localhost/duan1_Nhom12_WD18202/khachhang">Home</a></p>
                     
                     <p style="color: red;" ><?= $data['errors']['user'] ?? '' ?></p>
                     <div class="input-group mb-3"><span class="input-group-text">
@@ -37,8 +36,8 @@
                 </div>
                 <div class="card col-md-5 text-white bg-primary py-5">
                     <div class="card-body text-center">
-                    <div>
-                        <h2>Sign up</h2>
+                    <div style="position: relative; top: 30px">
+                        <h1>Sign up</h1>
                         <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_register"><button class="btn btn-lg btn-outline-light mt-3" type="button">Register Now!</button></a>
                     </div>
                     </div>
