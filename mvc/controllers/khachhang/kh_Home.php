@@ -38,7 +38,11 @@ class kh_Home extends Controller
 
         //SELECT ACCOUNT BY ROLE
         if (isset($_SESSION['id'])) {
+            if (isset($_SESSION['id'])) {
             $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
         } else {
             $role = [];
         }
@@ -98,7 +102,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         if (isset($_GET['search']) && !empty($_GET['search'])) {
             $key = $_GET['search'];
@@ -192,7 +200,11 @@ class kh_Home extends Controller
         $loaihang = $this->khachHang_Model->select_LoaihangById($id);
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         if (isset($_POST['btn_addToCart']) && isset($_POST['product_id'])) {
             $product_id = $_POST['product_id'];
@@ -246,7 +258,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         $totalRecords = $this->khachHang_Model->totalRecords();
         $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -323,7 +339,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         $detailSP = $this->khachHang_Model->selectDetailProductById($id_sanpham);
 
@@ -383,7 +403,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         if (isset($_GET['remove'])) {
             $id_remove = $_GET['remove'];
@@ -462,7 +486,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         if (isset($_SESSION['product']['id'])) {
             $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
@@ -578,7 +606,11 @@ class kh_Home extends Controller
         $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
 
         //SELECT ACCOUNT BY ROLE
-        $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
 
         if (isset($_SESSION['product']['id'])) {
             $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);

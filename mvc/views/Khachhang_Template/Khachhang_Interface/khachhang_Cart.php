@@ -91,7 +91,9 @@
                                         <ul class="search">
                                             <li>
                                                 <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop" method="get">
-                                                    <input type="text" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; } ?>" name="search">
+                                                    <input type="text" value="<?php if (isset($_GET['search'])) {
+                                                                                    echo $_GET['search'];
+                                                                                } ?>" name="search">
                                                     <button type="submit"> <i class="fa fa-search"></i> </button>
                                                 </form>
                                             </li>
@@ -365,14 +367,11 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="text-center" style="color: red;">
-                    <?php
-                    if (isset($_GET['msg'])) {
-                        echo htmlspecialchars($_GET['msg']);
-                    }
-                    ?>
-                </h4>
-
+                <?php
+                if (isset($_GET['msg'])) {
+                    echo '<h4 class="text-center" style="color: red;">' . htmlspecialchars($_GET['msg']) . '!</h4>';
+                }
+                ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
