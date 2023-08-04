@@ -8,24 +8,23 @@
                       <h1>Register</h1>
                       <p class="text-medium-emphasis">You Are Have Account?</p>
                       <p class="text-medium-emphasis"><a class="text-decoration-none" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_login">Login</a> Now</p>  
-                      
                       <div class="input-group mb-3"><span class="input-group-text">
                           <img src="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/user.png" alt="" class="icon">
                         </span>
-                        <input class="form-control" name="fullname" value="<?= $data['value']['fullname'] ?? '' ?>" type="text" placeholder="Họ và Tên">
+                        <input class="form-control" name="fullname" value="<?= $data['value']['fullname'] ?? '' ?>" type="text" placeholder="Full name">
                       </div>
                       <p style="color: red;" ><?= $data['errors']['fullname'] ?? '' ?></p>
 
                       <div class="input-group mb-3"><span class="input-group-text">
                           <img src="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/telephone.png" alt="" class="icon">
                     </span>
-                        <input class="form-control" name="phonenumber" value="<?= $data['value']['phonenumber'] ?? '' ?>" type="text" placeholder="Số Điện Thoại">
+                        <input class="form-control" name="phonenumber" value="<?= $data['value']['phonenumber'] ?? '' ?>" type="text" placeholder="Phonenumber">
                       </div>
                       <p style="color: red;" ><?= $data['errors']['phonenumber'] ?? '' ?></p>
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <img src="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/pin.png" alt="" class="icon"></span>
-                        <input class="form-control" name="address" value="<?= $data['value']['address'] ?? '' ?>" type="text" placeholder="Địa Chỉ">
+                        <input class="form-control" name="address" value="<?= $data['value']['address'] ?? '' ?>" type="text" placeholder="Address">
                       </div>
                       <p style="color: red;" ><?= $data['errors']['address'] ?? '' ?></p>
                       
@@ -43,13 +42,13 @@
 
                       <div class="input-group mb-4"><span class="input-group-text">
                           <img src="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/upload.png" alt="" class="icon"></span>
-                        <input class="form-control" name="img" type="file" placeholder="Ảnh">
+                        <input class="form-control" name="img" type="file" placeholder="Image">
                       </div>
                       <p style="color: red;" ><?= $data['errors']['img'] ?? '' ?></p>
                       
                       <div class="input-group mb-4"><span class="input-group-text">
                           <img src="/duan1_Nhom12_WD18202/public/admin/vendors/@coreui/icons/svg/rule.png" alt="" class="icon"></span>
-                        <input class="form-control" name="special" value="<?= $data['value']['active'] ?? '' ?>" type="number" placeholder="Vai Trò">
+                        <input class="form-control" name="special" value="<?= $data['value']['active'] ?? '' ?>" type="number" placeholder="Role">
                       </div>
                       <p style="color: red;" ><?= $data['errors']['active'] ?? '' ?></p>
                       <button class="btn btn-block btn-success" name="btn_insertUser" type="submit">Create Account</button>

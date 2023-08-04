@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="">
-
 <!-- Mirrored from htmldemo.net/james/james/single-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:08 GMT -->
 
 <head>
@@ -400,7 +399,7 @@
                         <?php endforeach ?>
                     </div>
                 </div>
-
+                
                 <div class="col-lg-6">
                     <div class="single-product-details">
                         <a href="#" class="product-name"><?= $data['detailSP']['ten_sanpham'] ?></a>
@@ -451,7 +450,7 @@
                         <div class="d-grid gap-2 col-6" style="margin-top: 20px;">
                             <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_chitietSP/<?= $data['detailSP']['id'] ?>" style="width: 250px" method="post">
                                 <input type="hidden" name="product_id" value="<?= $data['detailSP']['id'] ?>">
-                                <button type="submit" class="btn btn-outline-danger" name="btn_addToCart" title="Add to cart">Add To Cart</button>
+                                <button type="submit" class="btn btn-outline-danger" name="btn_addToCart" style="width: 200px; position: relative; right: 15px;" title="Add to cart">Add To Cart</button>
                             </form>
                         </div>
                     </div>
