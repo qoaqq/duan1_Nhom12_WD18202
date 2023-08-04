@@ -37,8 +37,12 @@ class admin_login extends Controller
                             $checkLoggedIn = true;
                             if ($checkLoggedIn == true) {
                                 $_SESSION['id'] = $users['id'];
-                                $this->admin_login->selectUserById($_SESSION['id']);
-                                header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/");
+                                $role = $this->admin_login->selectUserById($_SESSION['id']);
+                                if($role['vaitro'] == 1) {
+                                    header("Location: http://localhost/duan1_Nhom12_WD18202/admin/");
+                                } elseif($role['vaitro'] == 0) {
+                                    header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/");
+                                }
                             }
                         } else {
                             $errors['user'] = "Email hoac mat khau khong chinh xac";

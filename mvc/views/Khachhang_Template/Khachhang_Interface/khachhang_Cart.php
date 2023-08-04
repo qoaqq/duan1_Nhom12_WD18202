@@ -106,6 +106,22 @@
                                         <ul>
                                             <?php
                                             if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account">
+                                                            Profile
+                                                            </a>
+                                                        </li>
+                                                            ';
+                                            } else {
+                                                echo '
+                                                            <li style="display: none;"></li>
+                                                        ';
+                                            }
+                                            ?>
+
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
                                                 if ($data['role']['vaitro'] == 1) {
                                                     echo '
                                                             <li>
@@ -125,6 +141,7 @@
                                                     ';
                                             }
                                             ?>
+
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '
@@ -136,6 +153,8 @@
                                                     ';
                                             }
                                             ?>
+
+
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '

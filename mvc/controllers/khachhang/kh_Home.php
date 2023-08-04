@@ -39,10 +39,10 @@ class kh_Home extends Controller
         //SELECT ACCOUNT BY ROLE
         if (isset($_SESSION['id'])) {
             if (isset($_SESSION['id'])) {
-            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
-        } else {
-            $role = [];
-        }
+                $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+            } else {
+                $role = [];
+            }
         } else {
             $role = [];
         }
@@ -640,5 +640,173 @@ class kh_Home extends Controller
             'count_sp' => $count_sp,
             'role' => $role
         ]);
+    }
+
+    public function khachhang_account()
+    {
+        //SELECT DANH MUC NAM
+        $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
+
+        //SELECT DANH MUC NU
+        $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+        //SELECT LOAI HANG NAM
+        $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+        //SELECT LOAI HANG NU
+        $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session_limit = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session_limit = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
+
+        if(isset($_SESSION['id'])){
+            $bill = $this->khachHang_Model->selectBillForProfile($_SESSION['id']);
+        } else {
+            $bill = [];
+        }
+
+        $this->view_Khachhang("khachhang_Account", [
+            'danhmuc_men' => $danhmuc_men,
+            'danhmuc_women' => $danhmuc_women,
+            'loaihang_men' => $loaihang_men,
+            'loaihang_women' => $loaihang_women,
+            'select_session' => $select_session,
+            'select_session_limit' => $select_session_limit,
+            'count_sp' => $count_sp,
+            'role' => $role,
+            'bill' => $bill
+        ]);
+    }
+
+    public function updateKhachhangProfileFeature()
+    {
+        //SELECT DANH MUC NAM
+        $danhmuc_men = $this->khachHang_Model->selectDanhMucByMen();
+
+        //SELECT DANH MUC NU
+        $danhmuc_women = $this->khachHang_Model->selectDanhMucByWomen();
+
+        //SELECT LOAI HANG NAM
+        $loaihang_men = $this->khachHang_Model->selectDanhmuc_loaiHangMen();
+
+        //SELECT LOAI HANG NU
+        $loaihang_women = $this->khachHang_Model->selectDanhmuc_loaiHangWomen();
+
+        //SELECT ACCOUNT BY ROLE
+        if (isset($_SESSION['id'])) {
+            $role = $this->khachHang_Model->selectUserByIdSession($_SESSION['id']);
+        } else {
+            $role = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session = $this->khachHang_Model->selectSanPhamBySession($_SESSION['product']['id']);
+        } else {
+            $select_session = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $select_session_limit = $this->khachHang_Model->selectSanPhamBySessionLimit($_SESSION['product']['id']);
+        } else {
+            $select_session_limit = [];
+        }
+
+        if (isset($_SESSION['product']['id'])) {
+            $count_sp = $this->khachHang_Model->selectCountProductsById($_SESSION['product']['id']);
+        } else {
+            $count_sp = [];
+        }
+
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }
+        $fullname = $_POST['fullname'];
+        $phonenumber = $_POST['phonenumber'];
+        $address = $_POST['address'];
+        $email = $_POST['email'];
+        $city = $_POST['city'];
+        $post_code = $_POST['post_code'];
+        $file = $_FILES['img'];
+        $img = $_POST['img'];
+        $errors = array();
+
+        if (empty($fullname)) {
+            $errors['fullname'] = "Must fill the name";
+        }
+
+        if (empty($phonenumber)) {
+            $errors['phonenumber'] = "Must fill the phone number";
+        }
+
+        if (empty($address)) {
+            $errors['address'] = "Must fill the address";
+        }
+
+        if (empty($email)) {
+            $errors['email'] = "Must fill the email";
+        }
+
+        if ($file['size'] > 0) {
+            $image = ['jpg', 'png', 'gif'];
+            $img = $file['name'];
+            $ext = pathinfo($img, PATHINFO_EXTENSION);
+            if (!in_array($ext, $image)) {
+                $errors['image'] = "File không phải là ảnh";
+                $this->view_Khachhang("khachhang_Account", [
+                    'errors' => $errors,
+                    'danhmuc_men' => $danhmuc_men,
+                    'danhmuc_women' => $danhmuc_women,
+                    'loaihang_men' => $loaihang_men,
+                    'loaihang_women' => $loaihang_women,
+                    'select_session' => $select_session,
+                    'select_session_limit' => $select_session_limit,
+                    'count_sp' => $count_sp,
+                    'role' => $role
+                ]);
+            }
+        }
+
+        if (empty($errors)) {
+            if (isset($_POST['btn_updateProfileShop'])) {
+                $this->khachHang_Model->updateKhachhangProfile($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $img);
+                move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
+                header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account");
+                exit();
+            }
+        } else {
+            $this->view_Khachhang("khachhang_Account", [
+                'errors' => $errors,
+                'danhmuc_men' => $danhmuc_men,
+                'danhmuc_women' => $danhmuc_women,
+                'loaihang_men' => $loaihang_men,
+                'loaihang_women' => $loaihang_women,
+                'select_session' => $select_session,
+                'select_session_limit' => $select_session_limit,
+                'count_sp' => $count_sp,
+                'role' => $role
+            ]);
+        }
     }
 }

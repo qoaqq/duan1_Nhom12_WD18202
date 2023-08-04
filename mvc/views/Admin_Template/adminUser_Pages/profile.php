@@ -20,6 +20,16 @@
   </div>
   <p style="color: red;"><?= $data['errors']['email'] ?? '' ?></p>
   <div class="form-group">
+    <label for="formGroupExampleInput2">City:</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="city" value="<?= $data['users']['thanhpho'] ?? '' ?>">
+  </div>
+  <p style="color: red;"></p>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Post code:</label>
+    <input type="number" class="form-control" id="formGroupExampleInput2" name="post_code" value="<?= $data['users']['postcode'] ?? '' ?>">
+  </div>
+  <p style="color: red;"></p>
+  <div class="form-group">
     <label for="formGroupExampleInput2">Image</label>
     <input type="hidden" name="img" value="<?= $data['users']['anh'] ?>">
     <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['users']['anh'] ?>" width="200p" height="200" id="formGroupExampleInput2" alt="">

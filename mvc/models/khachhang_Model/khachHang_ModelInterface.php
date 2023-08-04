@@ -184,7 +184,7 @@ class khachHang_ModelInterface extends DB
 
    public function selectKhachHang($id)
    {
-      $qr = "SELECT `id`, `tenkh`, `sdt`, `diachi`, `email` FROM `khachhang` WHERE id = $id";
+      $qr = "SELECT `id`, `tenkh`, `sdt`, `diachi`, `email`, `thanhpho`, `postcode` FROM `khachhang` WHERE id = $id";
       return mysqli_fetch_assoc(mysqli_query($this->con, $qr));
    }
 
@@ -230,5 +230,20 @@ class khachHang_ModelInterface extends DB
       $result = mysqli_fetch_assoc(mysqli_query($this->con, $qr));
       if (!empty($result)) return $result;
       return '';
+   }
+
+   public function updateKhachhangProfile($id, $tentk, $sdt, $diachi, $email, $city, $postcode, $anh){
+      $qr = "UPDATE `khachhang` SET `tenkh`='$tentk' ,`sdt`='$sdt', `diachi`='$diachi', `email`='$email', `thanhpho`='$city', `postcode`='$postcode', `anh`='$anh' 
+      WHERE `id`=$id";
+      
+      return mysqli_query($this->con, $qr);
+   }
+
+   public function selectBillForProfile($id){
+      $qr = "SELECT bill.id, bill.total, bill.ngay_tao, bill.status, khachhang.tenkh, khachhang.sdt, khachhang.diachi 
+      FROM bill 
+      INNER JOIN khachhang ON bill.id_khachhang = khachhang.id 
+      WHERE bill.id_khachhang = $id";
+      return mysqli_query($this->con, $qr);
    }
 }

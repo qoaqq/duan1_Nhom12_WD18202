@@ -1,3 +1,14 @@
+<form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_bill/Theme" method="get">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_bill/Theme'">All Products</button>
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </div>
+        <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {
+                                                            echo $_GET['search'];
+                                                        } ?>" name="search" style="flex: none; width: 300px; margin-left: 5px;" placeholder="" aria-label="" aria-describedby="basic-addon1">
+    </div>
+</form>
 <h1 class="text-center">ADMIN BILL</h1>
 <section class="text-center">
     <table class="table">

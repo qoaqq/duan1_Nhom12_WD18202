@@ -1,13 +1,34 @@
+<form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme" method="get">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme'">All Products</button>
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+        </div>
+        <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {
+                                                            echo $_GET['search'];
+                                                        } ?>" name="search" style="flex: none; width: 300px; margin-left: 5px;" placeholder="" aria-label="" aria-describedby="basic-addon1">
+    </div>
+</form>
+
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byCheckBox" method="post">
     <h1 class="text-center">ADMIN CATEGORIES</h1>
     <br>
-    <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/addDM_Theme/">Add Categories</a>
-    <button id="checkAllBtn" onclick="checkAll()" class="btn btn-success" type="button">Select All</button>
-    <button id="uncheckAllBtn" onclick="uncheckAll()" class="btn btn-danger" type="button">Unselect All</button>
-    <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byCheckBox">
-        <button id="deleteAllBtn" class="btn btn-warning" name="btn_delByCheckBox" onclick="return confirm('Do you want to delete?')">
-            Delete By Checkbox
-        </button></a>
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+
+        <div class="col-md-6">
+            <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/addDM_Theme/">Add Categories</a>
+            <button id="checkAllBtn" onclick="checkAll()" class="btn btn-success" type="button">Select All</button>
+            <button id="uncheckAllBtn" onclick="uncheckAll()" class="btn btn-danger" type="button">Unselect All</button>
+            <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byCheckBox">
+                <button id="deleteAllBtn" class="btn btn-warning" name="btn_delByCheckBox" onclick="return confirm('Do you want to delete?')">
+                    Delete By Checkbox
+                </button>
+            </a>
+        </div>
+    </div>
     <table class="table">
         <table class="table">
             <thead>

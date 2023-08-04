@@ -11,7 +11,15 @@ class admin_users extends Controller{
         } else {
             $users = $this->admin_users->selectUserById($_SESSION['id']);
         }
-        $tableUsers = $this->admin_users->selectUserByRole();
+
+        if (isset($_GET['search']) && !empty($_GET['search'])) {
+            $key = $_GET['search'];
+            $tableUsers = $this->admin_users->searchingFeature($key);
+        } else {
+            $tableUsers = $this->admin_users->selectUserByRole();
+        }
+        
+        
         $this->view_Admin("admin_users", [
             'page' => 'users',
             'users' => $users,
@@ -50,6 +58,8 @@ class admin_users extends Controller{
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
         $email = $_POST['email'];
+        $city = $_POST['city'];
+        $post_code = $_POST['post_code'];
         $password = $_POST['password'];
         $hashPass = password_hash($password, PASSWORD_DEFAULT);
         $file = $_FILES['img'];
@@ -88,8 +98,7 @@ class admin_users extends Controller{
 
         if(empty($errors)){
             if(isset($_POST['btn_insertUser'])){
-                echo "222222";
-                $this->admin_users->insertUserByRole0($fullname, $phonenumber, $address, $email, $hashPass, $img);
+                $this->admin_users->insertUserByRole0($fullname, $phonenumber, $address, $city, $post_code, $email, $hashPass, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();
@@ -109,6 +118,8 @@ class admin_users extends Controller{
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
         $email = $_POST['email'];
+        $city = $_POST['city'];
+        $post_code = $_POST['post_code'];
         $password = $_POST['password'];
         $hashPass = password_hash($password, PASSWORD_DEFAULT);
         $file = $_FILES['img'];
@@ -146,7 +157,7 @@ class admin_users extends Controller{
 
         if(empty($errors)){
             if(isset($_POST['btn_updateUser'])){
-                $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $hashPass, $img);
+                $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $hashPass, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/".$img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();

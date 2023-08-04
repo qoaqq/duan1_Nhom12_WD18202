@@ -91,7 +91,9 @@
                                         <ul class="search">
                                             <li>
                                                 <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_shop" method="get">
-                                                    <input type="text" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; } ?>" name="search">
+                                                    <input type="text" value="<?php if (isset($_GET['search'])) {
+                                                                                    echo $_GET['search'];
+                                                                                } ?>" name="search">
                                                     <button type="submit"> <i class="fa fa-search"></i> </button>
                                                 </form>
                                             </li>
@@ -102,6 +104,22 @@
                                             <i class="fa fa-bars"></i>
                                         </a>
                                         <ul>
+                                            <?php
+                                            if (isset($_SESSION['id'])) {
+                                                echo '
+                                                        <li>
+                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account">
+                                                            Profile
+                                                            </a>
+                                                        </li>
+                                                            ';
+                                            } else {
+                                                echo '
+                                                            <li style="display: none;"></li>
+                                                        ';
+                                            }
+                                            ?>
+
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 if ($data['role']['vaitro'] == 1) {
@@ -123,6 +141,7 @@
                                                     ';
                                             }
                                             ?>
+
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '
@@ -134,6 +153,8 @@
                                                     ';
                                             }
                                             ?>
+
+
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '

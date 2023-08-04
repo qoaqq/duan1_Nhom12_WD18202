@@ -19,10 +19,22 @@
     <p style="color: red;"><?= $data['errors']['address'] ?? '' ?></p>
     </br>
     <div class="form-group">
-        <label for="exampleInputPassword1">Email</label>
+        <label for="exampleInputPassword1">Email:</label>
         <input type="email" class="form-control" id="exampleInputPassword1" name="email" >
     </div>
     <p style="color: red;"><?= $data['errors']['email'] ?? '' ?></p>
+    </br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">City:</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="city" >
+    </div>
+    <p style="color: red;"></p>
+    </br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Post code:</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" name="post_code" >
+    </div>
+    <p style="color: red;"></p>
     </br>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>

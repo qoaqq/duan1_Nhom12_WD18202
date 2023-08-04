@@ -28,6 +28,18 @@
   <p style="color: red;"><?= $data['errors']['email'] ?? '' ?></p>
   </br>
   <div class="form-group">
+    <label for="exampleInputPassword1">City:</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="city" value="<?= $data['update']['thanhpho'] ?>">
+  </div>
+  <p style="color: red;"></p>
+  </br>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Post code:</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" name="post_code" value="<?= $data['update']['postcode'] ?>">
+  </div>
+  <p style="color: red;"></p>
+  </br>
+  <div class="form-group">
     <label for="exampleInputPassword1">Password:</label>
     <input type="text" class="form-control" id="exampleInputPassword1" name="password" value="<?= $data['update']['password'] ?>">
   </div>

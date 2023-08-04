@@ -23,7 +23,6 @@
             return $result;
         }
         
-        
         public function getDanhmucById($id) {
             $query = "SELECT * FROM danhmuc WHERE id = $id";
             $result = mysqli_query($this->con, $query);
@@ -35,6 +34,15 @@
             $result = mysqli_query($this->con, $qr);
             return $result; 
         }        
+
+        public function searchingDanhmucFeature($key){
+            $qr = "SELECT * FROM danhmuc WHERE 
+            id LIKE '%$key%' 
+            OR ten_danhmuc LIKE '%$key%'
+            OR id_gioitinhLoaihang LIKE '%$key%'
+            ";
+            return mysqli_query($this->con, $qr);
+        }
     }
    
 ?>

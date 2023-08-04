@@ -13,8 +13,14 @@
             } else {
                 $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             }
-            $bill_list = $this->admin_bilDB->selectBillByKhachHang();
 
+            if (isset($_GET['search']) && !empty($_GET['search'])) {
+                $key = $_GET['search'];
+                $bill_list = $this->admin_bilDB->searchingBillFeature($key);
+            } else {
+                $bill_list = $this->admin_bilDB->selectBillByKhachHang();
+            }
+            
             $this->view_Admin("admin_Bill", [
                 'page' => 'bill_page',
                 'bill_list' => $bill_list,
@@ -28,6 +34,7 @@
             } else {
                 $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
             }
+
             $status_list = $this->admin_bilDB->selectStatusBillById($id);
             $bill_list = $this->admin_bilDB->selectAllBill();
 

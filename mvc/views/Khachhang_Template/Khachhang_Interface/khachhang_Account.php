@@ -1,12 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<!-- Mirrored from htmldemo.net/james/james/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:00 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/my-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:19:58 GMT -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Checkout || James </title>
+    <title>My account || James </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -100,26 +100,10 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a>
                                             <i class="fa fa-bars"></i>
                                         </a>
                                         <ul>
-                                            <?php
-                                            if (isset($_SESSION['id'])) {
-                                                echo '
-                                                        <li>
-                                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account">
-                                                            Profile
-                                                            </a>
-                                                        </li>
-                                                            ';
-                                            } else {
-                                                echo '
-                                                            <li style="display: none;"></li>
-                                                        ';
-                                            }
-                                            ?>
-
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 if ($data['role']['vaitro'] == 1) {
@@ -141,7 +125,6 @@
                                                     ';
                                             }
                                             ?>
-
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '
@@ -153,8 +136,6 @@
                                                     ';
                                             }
                                             ?>
-
-
                                             <?php
                                             if (isset($_SESSION['id'])) {
                                                 echo '
@@ -172,7 +153,7 @@
                             </div>
                             <div class="cart-menu">
                                 <ul>
-                                    <li><a href="#"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt="">
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart"> <img src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/img/icon-cart.png" alt="">
                                             <span>
                                                 <?php
                                                 if (isset($data['count_sp'][0])) {
@@ -207,8 +188,9 @@
                                                         </div>
                                                     </li>
                                                 <?php endforeach ?>
+
                                             </ul>
-                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart" class="checkout">Go To Cart</a>
+                                            <a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart" class="checkout">go to cart</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -373,15 +355,15 @@
         </div>
     </header>
     <!-- header area end -->
-    <!-- checkout area start -->
-    <div class="checkout-area">
+    <!-- my account area start -->
+    <div class="account-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="location">
                         <ul>
                             <li><a href="index.html" title="go to homepage">Home<span>/</span></a> </li>
-                            <li><strong> checkout</strong></li>
+                            <li><strong> my account</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -398,25 +380,8 @@
                             </div>
                             <div class="single-sidebar-content">
                                 <ul>
-                                    <li><a href="#">Dresses (4)</a></li>
-                                    <li><a href="#">shoes (6)</a></li>
-                                    <li><a href="#">Handbags (1)</a></li>
-                                    <li><a href="#">Clothing (3)</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="single-sidebar">
-                            <div class="single-sidebar-title">
-                                <h3>Color</h3>
-                            </div>
-                            <div class="single-sidebar-content">
-                                <ul>
-                                    <li><a href="#">Black (2)</a></li>
-                                    <li><a href="#">Blue (2)</a></li>
-                                    <li><a href="#">Green (4)</a></li>
-                                    <li><a href="#">Grey (2)</a></li>
-                                    <li><a href="#">Red (2)</a></li>
-                                    <li><a href="#">White (2)</a></li>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_men']['id_gioitinh'] ?>"><?= $data['danhmuc_men']['ten_danhmuc'] ?></a></li>
+                                    <li><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_sanPhamByGender/<?= $data['danhmuc_women']['id_gioitinh'] ?>"><?= $data['danhmuc_women']['ten_danhmuc'] ?></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -427,14 +392,138 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 text-center">
-                    <h1>Thank You For Your Order</h1>
-                    <button class="btn btn-dark"><a href="http://localhost/duan1_Nhom12_WD18202/khachhang/Theme" style="color: white;">Go home</a></button>
+                <div class="col-lg-9">
+                    <div class="my-account-accordion">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fa fa-list-ol"></i>
+                                            Order history and details
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="account-title">
+                                                    <h4>Here are the orders you've placed since your account was created.</h4>
+                                                </div>
+                                                <div class="order-history">
+                                                    <table class="table text-center">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Full name</th>
+                                                                <th scope="col">Phonenumber</th>
+                                                                <th scope="col">Address</th>
+                                                                <th scope="col">Grand total</th>
+                                                                <th scope="col">Date</th>
+                                                                <th scope="col">Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?php foreach ($data['bill'] as  $bill) : ?>
+                                                                <tr>
+                                                                    <td><?= $bill['tenkh'] ?></td>
+                                                                    <td><?= $bill['sdt'] ?></td>
+                                                                    <td><?= $bill['diachi'] ?></td>
+                                                                    <td>$<?= $bill['total'] ?></td>
+                                                                    <td><?= $bill['ngay_tao'] ?></td>
+                                                                    <td><?= $bill['status'] ?></td>
+                                                                </tr>
+                                                            <?php endforeach ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-bs-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <i class="fa fa-user"></i>
+                                            Your personal information
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <div class="delivery-details">
+                                                <form action="http://localhost/duan1_Nhom12_WD18202/khachhang/updateKhachhangProfileFeature?id=<?= $data['role']['id'] ?>" enctype="multipart/form-data" method="post">
+                                                    <div class="list-style">
+                                                        <div class="account-title">
+                                                            <h4>Please be sure to update your personal information if it has changed. </h4>
+                                                        </div>
+                                                        <div class="form-name">
+                                                            <label>Your Avatar <em>*</em> </label>
+                                                            <img style="border-radius: 5px;" src="/duan1_Nhom12_WD18202/public/img/<?= $data['role']['anh'] ?>" width="200" alt="">
+                                                            <input type="hidden" name="img" value="<?= $data['role']['anh'] ?>">
+                                                            <br>
+                                                            <br>
+                                                            <label>Change avatar <em>*</em> </label>
+                                                            <input type="file" name="img">
+                                                            <p style="color: red;"><?= $data['errors']['img'] ?? '' ?></p>
+                                                        </div>
+                                                        <div class="form-name">
+                                                            <label>Full Name <em>*</em> </label>
+                                                            <input type="text" name="fullname" value="<?= $data['role']['tenkh'] ?>" placeholder="Full Name">
+                                                            <p style="color: red;"><?= $data['errors']['fullname'] ?? '' ?></p>
+                                                        </div>
+                                                        <div class="form-name">
+                                                            <label>Phonenumber <em>*</em> </label>
+                                                            <input type="text" name="phonenumber" value="<?= $data['role']['sdt'] ?>" placeholder="Phonenumber">
+                                                            <p style="color: red;"><?= $data['errors']['phonenumber'] ?? '' ?></p>
+                                                        </div>
+
+                                                        <div class="form-name">
+                                                            <label>Email <em>*</em> </label>
+                                                            <input type="email" name="email" value="<?= $data['role']['email'] ?>" placeholder="Email">
+                                                            <p style="color: red;"><?= $data['errors']['email'] ?? '' ?></p>
+                                                        </div>
+
+                                                        <div class="form-name">
+                                                            <label>Address <em>*</em> </label>
+                                                            <input type="text" name="address" value="<?= $data['role']['diachi'] ?>" placeholder="Address">
+                                                            <p style="color: red;"><?= $data['errors']['address'] ?? '' ?></p>
+                                                        </div>
+
+                                                        <div class="form-name">
+                                                            <label>City <em>*</em> </label>
+                                                            <input type="text" name="city" value="<?= $data['role']['thanhpho'] ?>" placeholder="City">
+                                                        </div>
+                                                        <div class="form-name">
+                                                            <label>Post Code <em>*</em> </label>
+                                                            <input type="number" name="post_code" value="<?= $data['role']['postcode'] ?>" placeholder="Post Code">
+                                                        </div>
+
+                                                        <div class="save-button">
+                                                            <button type="submit" name="btn_updateProfileShop">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="account-button">
+                            <div class="home"> <a href="index.html"> home</a> </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- checkout area end -->
+    <!-- my account area end -->
     <!-- footer top area start -->
     <div class="footer-top-area">
         <div class="container">
@@ -505,7 +594,6 @@
                             <ul>
                                 <li><a href="#">Sitemap</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Your Account</a></li>
                                 <li><a href="#">Advanced Search</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul>
@@ -588,6 +676,6 @@
     <script src="/duan1_Nhom12_WD18202/public/khachhang/htmldemo.net/james/james/js/main.js"></script>
 </body>
 
-<!-- Mirrored from htmldemo.net/james/james/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:20:01 GMT -->
+<!-- Mirrored from htmldemo.net/james/james/my-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jul 2023 10:19:58 GMT -->
 
 </html>

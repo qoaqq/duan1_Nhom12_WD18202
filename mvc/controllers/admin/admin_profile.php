@@ -26,6 +26,8 @@ class admin_profile extends Controller
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
         $email = $_POST['email'];
+        $city = $_POST['city'];
+        $post_code = $_POST['post_code'];
         $file = $_FILES['img'];
         $img = $_POST['img'];
         $errors = array();
@@ -57,7 +59,7 @@ class admin_profile extends Controller
 
         if (empty($errors)) {
             if (isset($_POST['btn_updateAdminProfile'])) {
-                $this->admin_profile->updateAdminProdfileById($id, $fullname, $phonenumber, $address, $email, $img);
+                $this->admin_profile->updateAdminProdfileById($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/" . $id);
                 exit();
