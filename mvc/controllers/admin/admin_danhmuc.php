@@ -42,6 +42,7 @@ class admin_danhmuc extends Controller
         } else {
             $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
         }
+
         $this->view_admin("admin_danhMuc", [
             'page' => 'add_danhmuc',
             'users' => $users,
@@ -51,6 +52,13 @@ class admin_danhmuc extends Controller
 
     public function addDM_Feature()
     {
+        $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
+
         $tendm = $_POST['tendm'];
         $idlh = $_POST['idlh'];
         $errors = array();
@@ -62,7 +70,9 @@ class admin_danhmuc extends Controller
         if (!empty($errors)) {
             $this->view_admin("admin_danhMuc", [
                 'page' => 'add_danhmuc',
-                'errors' => $errors
+                'errors' => $errors,
+                'users' => $users,
+                'gioitinh_loaiHang' => $gioitinh_loaiHang
             ]);
         } else {
             if (isset($_POST['btn_addDanhmuc'])) {
@@ -93,6 +103,13 @@ class admin_danhmuc extends Controller
 
     public function editDM_Theme($id)
     {
+        $gioitinh_loaiHang = $this->danhmucModel->selectAll_gioitinhLoaiHang();
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
+
         $dm = $this->danhmucModel->getDanhmucById($id);
         if (isset($_POST['btn_editDanhmuc'])) {
             $tendm = $_POST['tendm'];
@@ -116,7 +133,9 @@ class admin_danhmuc extends Controller
                 'page' => 'edit_danhmuc',
                 'dm' => $dm,
                 'id' => $id,
-                'errors' => $errors
+                'errors' => $errors,
+                'users' => $users,
+                'gioitinh_loaiHang' => $gioitinh_loaiHang
             ]);
         }
     }

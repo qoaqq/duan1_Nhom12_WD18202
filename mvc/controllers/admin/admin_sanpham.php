@@ -83,6 +83,13 @@ class admin_sanpham extends Controller
 
     public function addSP_Feature()
     {
+        $loaiHang = $this->sanphamModel->selectAll_loaiHang();
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
+
         $tensp = $_POST['tensp'];
         $gia = $_POST['gia'];
         $mota = $_POST['mota'];
@@ -104,11 +111,23 @@ class admin_sanpham extends Controller
 
         if ($file['size'] <= 0) {
             $errors['anh'] = "Bạn cần nhập ảnh";
+            $this->view_admin("admin_sanpham", [
+                'page' => 'add_sanpham',
+                'errors' => $errors,
+                'users' => $users,
+                'loaiHang' => $loaiHang
+            ]);
         } else {
             $image = ['jpg', 'png', 'gif'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
                 $errors['anh'] = "File không phải là ảnh";
+                $this->view_admin("admin_sanpham", [
+                    'page' => 'add_sanpham',
+                    'errors' => $errors,
+                    'users' => $users,
+                    'loaiHang' => $loaiHang
+                ]);
             }
         }
         if (empty($errors)) {
@@ -123,7 +142,9 @@ class admin_sanpham extends Controller
         if (!empty($errors)) {
             $this->view_admin("admin_sanpham", [
                 'page' => 'add_sanpham',
-                'errors' => $errors
+                'errors' => $errors,
+                'users' => $users,
+                'loaiHang' => $loaiHang
             ]);
         }
     }
@@ -148,6 +169,13 @@ class admin_sanpham extends Controller
 
     public function editSP_Feature($id)
     {
+        $loaiHang = $this->sanphamModel->selectAll_loaiHang();
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->adminUser_Model->selectUserById($_SESSION['id']);
+        }
+
         $sp = $this->sanphamModel->getSanphamByID($id);
         $tensp = $_POST['tensp'];
         $gia = $_POST['gia'];
@@ -176,6 +204,14 @@ class admin_sanpham extends Controller
             $ext = pathinfo($images, PATHINFO_EXTENSION);
             if (!in_array($ext, $img)) {
                 $errors['anh'] = "File không phải là ảnh";
+                $this->view_admin("admin_sanPham", [
+                    'page' => 'edit_sanpham',
+                    'sp' => $sp,
+                    'id' => $id,
+                    'errors' => $errors,
+                    'users' => $users,
+                    'loaiHang' => $loaiHang
+                ]);
             }
         }
 
@@ -191,7 +227,9 @@ class admin_sanpham extends Controller
                     'page' => 'edit_sanpham',
                     'sp' => $sp,
                     'id' => $id,
-                    'errors' => $errors
+                    'errors' => $errors,
+                    'users' => $users,
+                    'loaiHang' => $loaiHang
                 ]);
             }
         }

@@ -1,12 +1,15 @@
 <?php
-class admin_users extends Controller{
+class admin_users extends Controller
+{
     public $admin_users;
-    public function __construct(){
+    public function __construct()
+    {
         $this->admin_users = $this->admin_Model("adminUser_Model");
     }
 
-    public function Theme(){
-        if(!isset($_SESSION['id'])){
+    public function Theme()
+    {
+        if (!isset($_SESSION['id'])) {
             header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
         } else {
             $users = $this->admin_users->selectUserById($_SESSION['id']);
@@ -18,8 +21,8 @@ class admin_users extends Controller{
         } else {
             $tableUsers = $this->admin_users->selectUserByRole();
         }
-        
-        
+
+
         $this->view_Admin("admin_users", [
             'page' => 'users',
             'users' => $users,
@@ -27,22 +30,9 @@ class admin_users extends Controller{
         ]);
     }
 
-    public function getIdUserUpdate($id){
-        if(!isset($_SESSION['id'])){
-            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
-        } else {
-            $users = $this->admin_users->selectUserById($_SESSION['id']);
-        }
-        $updateTable = $this->admin_users->selectUserById($id);
-        $this->view_Admin("admin_users", [
-            'page' => 'updateUser',
-            'users' => $users,
-            'update' => $updateTable
-        ]);
-    }
-
-    public function insertTheme(){
-        if(!isset($_SESSION['id'])){
+    public function insertTheme()
+    {
+        if (!isset($_SESSION['id'])) {
             header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
         } else {
             $users = $this->admin_users->selectUserById($_SESSION['id']);
@@ -53,7 +43,14 @@ class admin_users extends Controller{
         ]);
     }
 
-    public function insertFeature(){
+    public function insertFeature()
+    {
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
+
         $fullname = $_POST['fullname'];
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
@@ -66,54 +63,86 @@ class admin_users extends Controller{
         $img = $file['name'];
         $errors = array();
 
-        if(empty($fullname)) {
+        if (empty($fullname)) {
             $errors['fullname'] = "Vui lòng nhập tên";
         }
 
-        if(empty($phonenumber)){
+        if (empty($phonenumber)) {
             $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
         }
 
-        if(empty($address)){
+        if (empty($address)) {
             $errors['address'] = "Vui lòng nhập địa chỉ";
         }
 
-        if(empty($email)){
+        if (empty($email)) {
             $errors['email'] = "Vui lòng nhập email";
         }
 
-        if(empty($password)){
+        if (empty($password)) {
             $errors['password'] = "Vui lòng nhập mật khẩu";
         }
 
         if ($file['size'] <= 0) {
             $errors['img'] = "Bạn cần nhập ảnh";
+            $this->view_Admin("admin_users", [
+                'errors' => $errors,
+                'page' => 'insertUser',
+                'users' => $users
+            ]);
         } else {
             $image = ['jpg', 'png', 'gif'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
                 $errors['img'] = "File không phải là ảnh";
+                $this->view_Admin("admin_users", [
+                    'errors' => $errors,
+                    'page' => 'insertUser',
+                    'users' => $users
+                ]);
             }
         }
 
-        if(empty($errors)){
-            if(isset($_POST['btn_insertUser'])){
+        if (empty($errors)) {
+            if (isset($_POST['btn_insertUser'])) {
                 $this->admin_users->insertUserByRole0($fullname, $phonenumber, $address, $city, $post_code, $email, $hashPass, $img);
-                move_uploaded_file($file['tmp_name'], "./public/img/".$img);
+                move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();
             }
-        }
-
-        if(!empty($errors)){
+        } else {
+            print_r($errors);
             $this->view_Admin("admin_users", [
-                'page' => 'insertUser',
                 'errors' => $errors,
+                'page' => 'insertUser',
+                'users' => $users
             ]);
         }
     }
 
-    public function updateFeature($id){
+    public function getIdUserUpdate($id)
+    {
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
+        $updateTable = $this->admin_users->selectUserById($id);
+        $this->view_Admin("admin_users", [
+            'page' => 'updateUser',
+            'users' => $users,
+            'update' => $updateTable
+        ]);
+    }
+
+    public function updateFeature($id)
+    {
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_users->selectUserById($_SESSION['id']);
+        }
+
         $fullname = $_POST['fullname'];
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
@@ -126,23 +155,23 @@ class admin_users extends Controller{
         $img = $_POST['img'];
         $errors = array();
 
-        if(empty($fullname)) {
+        if (empty($fullname)) {
             $errors['fullname'] = "Vui lòng nhập tên";
         }
 
-        if(empty($phonenumber)){
+        if (empty($phonenumber)) {
             $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
         }
 
-        if(empty($address)){
+        if (empty($address)) {
             $errors['address'] = "Vui lòng nhập địa chỉ";
         }
 
-        if(empty($email)){
+        if (empty($email)) {
             $errors['email'] = "Vui lòng nhập email";
         }
 
-        if(empty($password)){
+        if (empty($password)) {
             $errors['password'] = "Vui lòng nhập mật khẩu";
         }
 
@@ -151,37 +180,47 @@ class admin_users extends Controller{
             $img = $file['name'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
+                $updateTable = $this->admin_users->selectUserById($id);
                 $errors['img'] = "File không phải là ảnh";
+                $this->view_Admin("admin_users", [
+                'page' => 'updateUser',
+                'errors' => $errors,
+                'update' => $updateTable,
+                'users' => $users
+            ]);
             }
         }
 
-        if(empty($errors)){
-            if(isset($_POST['btn_updateUser'])){
+        if (empty($errors)) {
+            if (isset($_POST['btn_updateUser'])) {
                 $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $hashPass, $img);
-                move_uploaded_file($file['tmp_name'], "./public/img/".$img);
+                move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();
             }
         }
 
-        if(!empty($errors)){
+        if (!empty($errors)) {
             $updateTable = $this->admin_users->selectUserById($id);
             $this->view_Admin("admin_users", [
                 'page' => 'updateUser',
                 'errors' => $errors,
-                'update' => $updateTable
+                'update' => $updateTable,
+                'users' => $users
             ]);
         }
     }
 
-    public function deleteFeatureById($id){
+    public function deleteFeatureById($id)
+    {
         $this->admin_users->deleteUserById($id);
         header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
         exit();
     }
 
-    public function deleteFeatureByCheckBox(...$ids){
-        if(isset($_POST['ids']) && is_array($_POST['ids'])){
+    public function deleteFeatureByCheckBox(...$ids)
+    {
+        if (isset($_POST['ids']) && is_array($_POST['ids'])) {
             $ids = $_POST['ids'];
             $this->admin_users->deleteUserByCheckBox(...$ids);
             header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
