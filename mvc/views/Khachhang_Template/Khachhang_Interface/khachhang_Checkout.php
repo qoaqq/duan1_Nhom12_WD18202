@@ -1,3 +1,11 @@
+<?php
+    if(!isset($_SESSION['id'])){
+        $msg = "You need to login";
+        $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_login?msg_cart=" . urlencode($msg);
+        header("location: $url");
+    }
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
