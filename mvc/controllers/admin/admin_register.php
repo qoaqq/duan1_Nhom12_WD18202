@@ -32,23 +32,23 @@ class admin_register extends Controller {
         $errors= array();
 
         if(empty($fullname)) {
-            $errors['fullname'] = "Vui lòng nhập tên";
+            $errors['fullname'] = "Must fill the name";
         }
 
         if(empty($phonenumber)){
-            $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
+            $errors['phonenumber'] = "Must fill the phonenumber";
         }
 
         if(empty($address)){
-            $errors['address'] = "Vui lòng nhập địa chỉ";
+            $errors['address'] = "Must fill the address";
         }
 
         if(empty($email)){
-            $errors['email'] = "Vui lòng nhập email";
+            $errors['email'] = "Must fill the email";
         }
 
         if(empty($password)){
-            $errors['password'] = "Vui lòng nhập mật khẩu";
+            $errors['password'] = "Must fill the password";
         }
 
         
@@ -56,12 +56,12 @@ class admin_register extends Controller {
         $file = $_FILES['img'];
         $img = $file['name'];
         if ($file['size'] <= 0) {
-            $errors['img'] = "Bạn cần nhập ảnh";
+            $errors['img'] = "You need to upload file";
         } else {
             $img_type = ['jpg', 'png', 'gif'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $img_type)) {
-                $errors['img'] = "File không phải là ảnh";
+                $errors['img'] = "This is not a img file";
             }
         }
 

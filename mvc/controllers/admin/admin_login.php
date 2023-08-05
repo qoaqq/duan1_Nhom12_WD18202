@@ -23,10 +23,10 @@ class admin_login extends Controller
             $checkLoggedIn = false;
 
             if (empty($email)) {
-                $errors['email'] = "Vui long nhap vao email";
+                $errors['email'] = "Must fill the email";
             }
             if (empty($password)) {
-                $errors['password'] = "Vui long nhap vao mat khau";
+                $errors['password'] = "Must fill the password";
             }
 
             if (empty($errors)) {
@@ -45,14 +45,14 @@ class admin_login extends Controller
                                 }
                             }
                         } else {
-                            $errors['user'] = "Email hoac mat khau khong chinh xac";
+                            $errors['user'] = "Email or password is incorrect";
                             $this->view_Admin("admin_login", [
                                 'page' => 'login',
                                 'errors' => $errors
                             ]);
                         }
                     } else {
-                        $errors['user'] = "Email hoac mat khau khong chinh xac";
+                        $errors['user'] = "Email or password is incorrect";
                         $this->view_Admin("admin_login", [
                             'page' => 'login',
                             'errors' => $errors

@@ -64,7 +64,7 @@ class admin_danhmuc extends Controller
         $errors = array();
 
         if (empty($tendm)) {
-            $errors['tendm'] = "Vui lòng nhập tên danh mục";
+            $errors['tendm'] = "Must fill the name categories";
         }
 
         if (!empty($errors)) {
@@ -118,7 +118,7 @@ class admin_danhmuc extends Controller
             $errors = array();
 
             if (empty($tendm)) {
-                $errors['tendm'] = "Vui lòng nhập tên danh mục cần sửa";
+                $errors['tendm'] = "Must fill the name need to update";
             }
 
             if (!empty($tendm)) {

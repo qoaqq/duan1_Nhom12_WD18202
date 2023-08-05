@@ -111,7 +111,6 @@ class admin_users extends Controller
                 exit();
             }
         } else {
-            print_r($errors);
             $this->view_Admin("admin_users", [
                 'errors' => $errors,
                 'page' => 'insertUser',

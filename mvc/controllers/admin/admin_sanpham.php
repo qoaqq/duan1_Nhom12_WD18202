@@ -100,17 +100,17 @@ class admin_sanpham extends Controller
         $errors = array();
 
         if (empty($tensp)) {
-            $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
+            $errors['tensp'] = "Must fill the name product";
         }
         if ($gia <= 0 && (empty($gia))) {
-            $errors['gia'] = "Vui lòng nhập giá sản phẩm";
+            $errors['gia'] = "Must fill the price";
         }
         if ($soluong <= 0 && (empty($soluong))) {
-            $errors['soluong'] = "Vui lòng nhập số lượng";
+            $errors['soluong'] = "Must fill the quantity";
         }
 
         if ($file['size'] <= 0) {
-            $errors['anh'] = "Bạn cần nhập ảnh";
+            $errors['anh'] = "You need to upload file";
             $this->view_admin("admin_sanpham", [
                 'page' => 'add_sanpham',
                 'errors' => $errors,
@@ -121,7 +121,7 @@ class admin_sanpham extends Controller
             $image = ['jpg', 'png', 'gif'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
-                $errors['anh'] = "File không phải là ảnh";
+                $errors['anh'] = "This is not a img file";
                 $this->view_admin("admin_sanpham", [
                     'page' => 'add_sanpham',
                     'errors' => $errors,
@@ -189,13 +189,13 @@ class admin_sanpham extends Controller
         $images = $_POST['anh'];
 
         if (empty($tensp)) {
-            $errors['tensp'] = "Vui lòng nhập tên sản phẩm";
+            $errors['tensp'] = "Must fill the name product";
         }
         if ($gia <= 0 && (empty($gia))) {
-            $errors['gia'] = "Vui lòng nhập giá sản phẩm";
+            $errors['gia'] = "Must fill the price";
         }
         if ($soluong <= 0 && (empty($soluong))) {
-            $errors['soluong'] = "Vui lòng nhập số lượng";
+            $errors['soluong'] = "Must fill the quantity";
         }
 
         if ($file['size'] > 0) {
@@ -203,7 +203,7 @@ class admin_sanpham extends Controller
             $images = $file['name'];
             $ext = pathinfo($images, PATHINFO_EXTENSION);
             if (!in_array($ext, $img)) {
-                $errors['anh'] = "File không phải là ảnh";
+                $errors['anh'] = "This is not a img file";
                 $this->view_admin("admin_sanPham", [
                     'page' => 'edit_sanpham',
                     'sp' => $sp,

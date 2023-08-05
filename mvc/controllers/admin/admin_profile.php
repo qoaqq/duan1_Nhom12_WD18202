@@ -22,6 +22,12 @@ class admin_profile extends Controller
 
     public function updateAdminProfile($id)
     {
+        if (!isset($_SESSION['id'])) {
+            header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_login");
+        } else {
+            $users = $this->admin_profile->selectUserById($_SESSION['id']);
+        }
+
         $fullname = $_POST['fullname'];
         $phonenumber = $_POST['phonenumber'];
         $address = $_POST['address'];
@@ -33,19 +39,19 @@ class admin_profile extends Controller
         $errors = array();
 
         if (empty($fullname)) {
-            $errors['fullname'] = "Vui lòng nhập tên";
+            $errors['fullname'] = "Must fill the name";
         }
 
         if (empty($phonenumber)) {
-            $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
+            $errors['phonenumber'] = "Must fill the phonenumber";
         }
 
         if (empty($address)) {
-            $errors['address'] = "Vui lòng nhập địa chỉ";
+            $errors['address'] = "Must fill the address";
         }
 
         if (empty($email)) {
-            $errors['email'] = "Vui lòng nhập email";
+            $errors['email'] = "Must fill the email";
         }
 
         if ($file['size'] > 0) {
@@ -53,7 +59,12 @@ class admin_profile extends Controller
             $img = $file['name'];
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
-                $errors['img'] = "File không phải là ảnh";
+                $errors['img'] = "This is not a img file";
+                $this->view_Admin("admin_profile", [
+                    'page' => 'profile',
+                    'users' => $users,
+                    'errors' => $errors
+                ]);
             }
         }
 
