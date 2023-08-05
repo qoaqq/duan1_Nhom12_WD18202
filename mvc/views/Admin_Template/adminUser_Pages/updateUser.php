@@ -40,12 +40,6 @@
   <p style="color: red;"></p>
   </br>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password:</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="password" value="<?= $data['update']['password'] ?>">
-  </div>
-  <p style="color: red;"><?= $data['errors']['password'] ?? '' ?></p>
-  </br>
-  <div class="form-group">
     <label for="exampleInputPassword1">Image:</label>
     <input type="hidden" name="img" value="<?= $data['update']['anh'] ?>">
     <img src="/duan1_Nhom12_WD18202/public/img/<?= $data['update']['anh'] ?>" width="200" height="200" alt="">
