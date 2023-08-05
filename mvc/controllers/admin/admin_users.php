@@ -148,30 +148,24 @@ class admin_users extends Controller
         $email = $_POST['email'];
         $city = $_POST['city'];
         $post_code = $_POST['post_code'];
-        $password = $_POST['password'];
-        $hashPass = password_hash($password, PASSWORD_DEFAULT);
         $file = $_FILES['img'];
         $img = $_POST['img'];
         $errors = array();
 
         if (empty($fullname)) {
-            $errors['fullname'] = "Vui lòng nhập tên";
+            $errors['fullname'] = "Must fill the name";
         }
 
         if (empty($phonenumber)) {
-            $errors['phonenumber'] = "Vui lòng nhập số điện thoại";
+            $errors['phonenumber'] = "Must fill the phonenumber";
         }
 
         if (empty($address)) {
-            $errors['address'] = "Vui lòng nhập địa chỉ";
+            $errors['address'] = "Must fill the address";
         }
 
         if (empty($email)) {
-            $errors['email'] = "Vui lòng nhập email";
-        }
-
-        if (empty($password)) {
-            $errors['password'] = "Vui lòng nhập mật khẩu";
+            $errors['email'] = "Must fill the email";
         }
 
         if ($file['size'] > 0) {
@@ -180,7 +174,7 @@ class admin_users extends Controller
             $ext = pathinfo($img, PATHINFO_EXTENSION);
             if (!in_array($ext, $image)) {
                 $updateTable = $this->admin_users->selectUserById($id);
-                $errors['img'] = "File không phải là ảnh";
+                $errors['img'] = "This is not a img file";
                 $this->view_Admin("admin_users", [
                 'page' => 'updateUser',
                 'errors' => $errors,
@@ -192,7 +186,7 @@ class admin_users extends Controller
 
         if (empty($errors)) {
             if (isset($_POST['btn_updateUser'])) {
-                $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $hashPass, $img);
+                $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
                 header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
                 exit();

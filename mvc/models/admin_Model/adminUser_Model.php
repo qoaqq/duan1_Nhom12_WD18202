@@ -55,9 +55,9 @@ class adminUser_Model extends DB
           return mysqli_query($this->con, $qr);
      }
 
-     public function updateUserByIdRole($id, $tenkh, $sdt, $diachi, $email, $thanhpho, $postcode, $password, $anh)
+     public function updateUserByIdRole($id, $tenkh, $sdt, $diachi, $email, $thanhpho, $postcode, $anh)
      {
-          $qr = "UPDATE `khachhang` SET `tenkh`='$tenkh',`sdt`='$sdt',`diachi`='$diachi',`email`='$email', `thanhpho`='$thanhpho', `postcode`= $postcode,`password`='$password',`anh`='$anh' 
+          $qr = "UPDATE `khachhang` SET `tenkh`='$tenkh',`sdt`='$sdt',`diachi`='$diachi',`email`='$email', `thanhpho`='$thanhpho', `postcode`= $postcode,`anh`='$anh' 
                WHERE `vaitro`=b'0' AND `id`=$id";
           return mysqli_query($this->con, $qr);
      }
