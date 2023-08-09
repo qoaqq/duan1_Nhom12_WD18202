@@ -8,11 +8,11 @@
         <p style="color: red;"><?= $data['errors']['tendm'] ?? '' ?></p>
     </div>
     <div class="form-group">
-        <label for="idloaihang">ID Sector:</label>
+        <label for="idloaihang">Brands:</label>
         <select class="form-select" name="idlh" id="">
             <?php foreach ($data['gioitinh_loaiHang'] as $cate) : ?>
                 <option value="<?= $cate['id'] ?>">
-                    <?= $cate['id'] ?>
+                    <?= $cate['ten_loaihang'] ?>
                 </option>
             <?php endforeach ?>
         </select>

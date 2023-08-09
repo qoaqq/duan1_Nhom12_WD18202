@@ -431,7 +431,7 @@
                                                                     <td><?= $bill['diachi'] ?></td>
                                                                     <td>$<?= $bill['total'] ?></td>
                                                                     <td><?= $bill['ngay_tao'] ?></td>
-                                                                    <td><?= $bill['status'] ?></td>
+                                                                    <td><?= $bill['status_name'] ?></td>
                                                                 </tr>
                                                             <?php endforeach ?>
                                                         </tbody>

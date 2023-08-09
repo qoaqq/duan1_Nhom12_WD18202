@@ -511,6 +511,21 @@ class kh_Home extends Controller
         }
 
         if (isset($_POST['btn_checkout'])) {
+            $isEmptyOrZeroQuantity = false;
+            foreach ($_POST['products'] as $product) {
+                if ($product['quantity'] === '' || $product['quantity'] == 0) {
+                    $isEmptyOrZeroQuantity = true;
+                    break;
+                }
+            }
+
+            if ($isEmptyOrZeroQuantity) {
+                $msg_emptyquantity = "Quantity do not empty or 0";
+                $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart?msg_emptyquantity=" . urlencode($msg_emptyquantity);
+                header("location: $url");
+                exit;
+            }
+
             if (isset($_POST)) {
                 $detail_bill = $_POST;
             } else {
@@ -537,7 +552,8 @@ class kh_Home extends Controller
                     }
                 }
             }
-            header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart");
+            $msg_updatesuccess = "Update success";
+            header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart?msg_updatesuccess=" . urlencode($msg_updatesuccess));
             exit();
         }
 
@@ -681,7 +697,7 @@ class kh_Home extends Controller
             $count_sp = [];
         }
 
-        if(isset($_SESSION['id'])){
+        if (isset($_SESSION['id'])) {
             $bill = $this->khachHang_Model->selectBillForProfile($_SESSION['id']);
         } else {
             $bill = [];

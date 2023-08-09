@@ -1,7 +1,7 @@
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_bill/Theme" method="get">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_bill/Theme'">All Products</button>
+            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_bill/Theme'">All Bill</button>
             <button class="btn btn-outline-danger" type="submit">Search</button>
         </div>
         <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {
@@ -33,9 +33,9 @@
                     <td><?= $list['diachi'] ?></td>
                     <td>$<?= $list['total'] ?></td>
                     <td><?= $list['ngay_tao'] ?></td>
-                    <td><?= $list['status'] ?></td>
+                    <td><?= $list['status_name'] ?></td>
                     <td>
-                        <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_Bill/updateStatusBill/<?= $list['id'] ?>">
+                        <a href="http://localhost/duan1_Nhom12_WD18202/admin/admin_Bill/updateStatusBill?id=<?= $list['id'] ?>">
                             <button type="button" class="btn btn-success">Edit Status</button>
                         </a>
                     </td>

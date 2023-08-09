@@ -7,7 +7,8 @@
         }
 
         public function selectAll_gioitinhLoaiHang(){
-            $qr = "SELECT * FROM gioitinh_loaihang";
+            $qr = "SELECT gioitinh_loaihang.id, loaihang.ten_loaihang FROM `gioitinh_loaihang` 
+            INNER JOIN loaihang ON gioitinh_loaihang.id = loaihang.id";
             return mysqli_query($this->con, $qr);
         }
 
@@ -24,13 +25,18 @@
         }
         
         public function getDanhmucById($id) {
-            $query = "SELECT * FROM danhmuc WHERE id = $id";
+            $query = "SELECT danhmuc.id, danhmuc.ten_danhmuc, loaihang.ten_loaihang, danhmuc.id_gioitinhLoaihang FROM danhmuc 
+            INNER JOIN gioitinh_loaihang ON gioitinh_loaihang.id = danhmuc.id_gioitinhLoaihang
+            INNER JOIN loaihang ON loaihang.id = gioitinh_loaihang.id_loaihang
+            WHERE danhmuc.id = $id";
             $result = mysqli_query($this->con, $query);
             return mysqli_fetch_assoc($result);
         }
 
         public function listDanhmuc(){
-            $qr = "SELECT * FROM danhmuc";
+            $qr = "SELECT danhmuc.id, danhmuc.ten_danhmuc, loaihang.ten_loaihang, danhmuc.id_gioitinhLoaihang FROM danhmuc 
+            INNER JOIN gioitinh_loaihang ON gioitinh_loaihang.id = danhmuc.id_gioitinhLoaihang
+            INNER JOIN loaihang ON loaihang.id = gioitinh_loaihang.id_loaihang";
             $result = mysqli_query($this->con, $qr);
             return $result; 
         }        
@@ -44,5 +50,3 @@
             return mysqli_query($this->con, $qr);
         }
     }
-   
-?>

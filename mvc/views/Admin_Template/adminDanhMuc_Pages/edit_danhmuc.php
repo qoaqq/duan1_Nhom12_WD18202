@@ -9,11 +9,11 @@
         <br>
         <p style="color: red;"><?= $data['errors']['tendm'] ?? '' ?></p>
         <div class="form-group">
-            <label for="idloaihang">ID Sectors:</label>
+            <label for="idloaihang">Brands:</label>
             <select class="form-select" name="idlh">
                 <?php foreach ($data['gioitinh_loaiHang'] as $cate) : ?>
                     <option value="<?= $cate['id'] ?>" <?= ($cate['id'] == $data['dm']['id_gioitinhLoaihang']) ? 'selected' : '' ?>>
-                        <?= $cate['id'] ?>
+                        <?= $cate['ten_loaihang'] ?>
                     </option>
                 <?php endforeach ?>
             </select>

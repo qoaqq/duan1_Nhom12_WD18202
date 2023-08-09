@@ -2,7 +2,7 @@
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/Theme" method="get">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_users/Theme'">All Products</button>
+            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_users/Theme'">All Users</button>
             <button class="btn btn-outline-danger" type="submit">Search</button>
         </div>
         <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {

@@ -190,7 +190,7 @@ class khachHang_ModelInterface extends DB
 
    public function insertBill($id_khachhang, $total)
    {
-      $qr = "INSERT INTO `bill`(`id`, `id_khachhang`, `total`, `ngay_tao`, `status`) VALUES (null, $id_khachhang, $total, NOW(), 'Chưa trung chuyển')";
+      $qr = "INSERT INTO `bill`(`id`, `id_khachhang`, `total`, `ngay_tao`, `id_status`) VALUES (null, $id_khachhang, $total, NOW(), 2)";
       mysqli_query($this->con, $qr);
 
       // Lấy ID vừa insert và trả về
@@ -240,9 +240,10 @@ class khachHang_ModelInterface extends DB
    }
 
    public function selectBillForProfile($id){
-      $qr = "SELECT bill.id, bill.total, bill.ngay_tao, bill.status, khachhang.tenkh, khachhang.sdt, khachhang.diachi 
+      $qr = "SELECT bill.id, bill.total, bill.ngay_tao, bill.id_status, khachhang.tenkh, khachhang.sdt, khachhang.diachi, status_bill.status_name
       FROM bill 
       INNER JOIN khachhang ON bill.id_khachhang = khachhang.id 
+      INNER JOIN status_bill ON status_bill.id = bill.id_status
       WHERE bill.id_khachhang = $id";
       return mysqli_query($this->con, $qr);
    }

@@ -1,7 +1,7 @@
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme" method="get">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme'">All Products</button>
+            <button class="btn btn-outline-danger" type="button" onclick="window.location.href='/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme'">All Categories</button>
             <button class="btn btn-outline-danger" type="submit">Search</button>
         </div>
         <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {
@@ -37,7 +37,7 @@
                     <th></th>
                     <th>ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">ID Sectors</th>
+                    <th scope="col">Brands</th>
                     <th scope="col">Operation</th>
                 </tr>
             </thead>
@@ -50,7 +50,7 @@
                             <td><input type="checkbox" name="ids[]" value="<?= $row['id'] ?>"></td>
                             <td><?= $row['id'] ?></td>
                             <td><?= $row['ten_danhmuc'] ?></td>
-                            <td><?= $row['id_gioitinhLoaihang'] ?></td>
+                            <td><?= $row['ten_loaihang'] ?></td>
                             <td>
                                 <a class="btn btn-success" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/editDM_Feature/<?= $row['id'] ?>">Edit</a>
                                 <a class="btn btn-danger" href="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byId/&id=<?= $row['id'] ?>" onclick="return confirm('Do you want to delete?')">Delete</a>

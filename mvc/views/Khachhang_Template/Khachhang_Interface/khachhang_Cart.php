@@ -390,6 +390,12 @@
                 if (isset($_GET['msg'])) {
                     echo '<h4 class="text-center" style="color: red;">' . htmlspecialchars($_GET['msg']) . '!</h4>';
                 }
+                if (isset($_GET['msg_emptyquantity'])) {
+                    echo '<h4 class="text-center" style="color: red;">' . htmlspecialchars($_GET['msg_emptyquantity']) . '!</h4>';
+                }
+                if (isset($_GET['msg_updatesuccess'])) {
+                    echo '<h4 class="text-center" style="color: red;">' . htmlspecialchars($_GET['msg_updatesuccess']) . '!</h4>';
+                }
                 ?>
                 <div class="row">
                     <div class="col-md-12">
