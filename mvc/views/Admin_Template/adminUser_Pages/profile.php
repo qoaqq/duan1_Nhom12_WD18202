@@ -1,3 +1,8 @@
+<?php
+    if(isset($_GET['msg_updateAdminProfile'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_updateAdminProfile']."</h3>";
+    }
+?>
 <form method="post" enctype="multipart/form-data" action="http://localhost/duan1_Nhom12_WD18202/admin/admin_profile/updateAdminProfile/<?= $data['users']['id'] ?>" class="container">
   <div class="form-group">
     <label for="formGroupExampleInput">Name:</label>
