@@ -77,7 +77,9 @@ class admin_danhmuc extends Controller
         } else {
             if (isset($_POST['btn_addDanhmuc'])) {
                 $this->danhmucModel->insertDanhmuc($tendm, $idlh);
-                header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme");
+                $msg_addDanhmuc = "Add success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme?msg_addDanhmuc=". urlencode($msg_addDanhmuc);
+                header("Location: $url");
                 exit();
             }
         }
@@ -123,7 +125,9 @@ class admin_danhmuc extends Controller
 
             if (!empty($tendm)) {
                 $this->danhmucModel->updateDanhmuc($tendm, $id, $idlh);
-                header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme");
+                $msg_editDanhmuc = "Update success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/Theme?msg_editDanhmuc=". urlencode($msg_editDanhmuc);
+                header("Location: $url");
                 exit();
             }
         }

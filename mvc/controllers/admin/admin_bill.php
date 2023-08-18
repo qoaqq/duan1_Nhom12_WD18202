@@ -54,7 +54,9 @@
                 $selected_status = $_POST['status'];
                 $id_bill = $_POST['id_bill'];
                 $this->admin_billDB->updateBillById($id_bill, $selected_status);
-                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_Bill");
+                $msg_billUpdate = "Update success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_Bill?msg_billUpdate=". urlencode($msg_billUpdate);
+                header("location: $url");
                 exit();
             } else {
                 echo "update failed";

@@ -12,6 +12,17 @@
 
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_danhmuc/delDM_byCheckBox" method="post">
     <h1 class="text-center">ADMIN CATEGORIES</h1>
+    <?php
+    if (isset($_GET['msg_addDanhmuc'])) {
+        echo "<h3 style='color: red' class='text-center'>" . $_GET['msg_addDanhmuc'] . "</h3>";
+    }
+    ?>
+
+    <?php
+    if (isset($_GET['msg_editDanhmuc'])) {
+        echo "<h3 style='color: red' class='text-center'>" . $_GET['msg_editDanhmuc'] . "</h3>";
+    }
+    ?>
     <br>
     <div class="row">
         <div class="col-md-6">

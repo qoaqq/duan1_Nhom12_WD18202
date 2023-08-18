@@ -107,7 +107,9 @@ class admin_users extends Controller
             if (isset($_POST['btn_insertUser'])) {
                 $this->admin_users->insertUserByRole0($fullname, $phonenumber, $address, $city, $post_code, $email, $hashPass, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
-                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
+                $msg_insertUser = "Add success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_users?msg_insertUser=". urlencode($msg_insertUser);
+                header("location: $url");
                 exit();
             }
         } else {
@@ -188,7 +190,9 @@ class admin_users extends Controller
             if (isset($_POST['btn_updateUser'])) {
                 $this->admin_users->updateUserByIdRole($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
-                header("location: http://localhost/duan1_Nhom12_WD18202/admin/admin_users");
+                $msg_updateUser = "Update success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_users?msg_insertUser=". urlencode($msg_updateUser);
+                header("location: $url");
                 exit();
             }
         }

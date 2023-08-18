@@ -520,23 +520,31 @@ class kh_Home extends Controller
             }
 
             if ($isEmptyOrZeroQuantity) {
-                $msg_emptyquantity = "Quantity do not empty or 0";
+                $msg_emptyquantity = "Quantity do not empty or zero";
                 $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart?msg_emptyquantity=" . urlencode($msg_emptyquantity);
                 header("location: $url");
                 exit;
             }
 
-            if (isset($_POST)) {
-                $detail_bill = $_POST;
-            } else {
-                $detail_bill = [];
+            if (!isset($_POST['products'])) {
+                $msg = "Your Cart Is Empty";
+                $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart&msg=" . urlencode($msg);
+                header("Location: $url");
+                exit();
             }
+        }
 
-            if (isset($_SESSION['id'])) {
-                $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
-            } else {
-                $user = [];
-            }
+        if (!empty($_POST)) {
+            $detail_bill = $_POST;
+            $_SESSION['detail_bill'] = $detail_bill;
+        } else {
+            $detail_bill = [];
+        }
+
+        if (isset($_SESSION['id'])) {
+            $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+        } else {
+            $user = [];
         }
 
         if (isset($_POST['btn_updateCart'])) {
@@ -551,17 +559,11 @@ class kh_Home extends Controller
                         $_SESSION['product']['id'][$productId] = $newQuantity;
                     }
                 }
-            }
-            $msg_updatesuccess = "Update success";
-            header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart?msg_updatesuccess=" . urlencode($msg_updatesuccess));
-            exit();
-        }
 
-        if (!isset($_POST['products'])) {
-            $msg = "Your Cart Is Empty";
-            $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart&msg=" . urlencode($msg);
-            header("Location: $url");
-            exit();
+                $msg_updatesuccess = "Update success";
+                header("Location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_cart?msg_updatesuccess=" . urlencode($msg_updatesuccess));
+                exit();
+            }
         }
 
         $this->view_Khachhang("khachhang_Checkout", [
@@ -581,31 +583,39 @@ class kh_Home extends Controller
     public function orderSuccess()
     {
         $id_user = $_SESSION['id'];
-        $grand_total = $_POST['grand_total'];
+        $grand_total = isset($_POST['grand_total']) && !empty($_POST['grand_total']) ? $_POST['grand_total'] : $_SESSION['detail_bill']['grand_price'];
 
         if (isset($_POST['btn_checkOut'])) {
-            $id_bill = $this->khachHang_Model->insertBill($id_user, $grand_total);
-
-            if ($id_bill) {
-                if (isset($_POST['products'])) {
-                    $products = $_POST['products'];
-                    foreach ($products as $product) {
-                        $id_sanpham = $product['id'];
-                        $soluong = $product['quantity'];
-                        $total_price = $product['total_price'];
-                        $this->khachHang_Model->insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price);
+            $user = $this->khachHang_Model->selectKhachHang($_SESSION['id']);
+            if (!empty($user['tenkh']) && !empty($user['sdt']) && !empty($user['diachi']) && !empty($user['email']) && !empty($user['thanhpho']) && !empty($user['postcode'])) {
+                $id_bill = $this->khachHang_Model->insertBill($id_user, $grand_total);
+                if ($id_bill) {
+                    if (isset($_POST['products'])) {
+                        $products = $_POST['products'];
+                        foreach ($products as $product) {
+                            $id_sanpham = $product['id'];
+                            $soluong = $product['quantity'];
+                            $total_price = $product['total_price'];
+                            $this->khachHang_Model->insertChitietbill($id_bill, $id_sanpham, $soluong, $total_price);
+                        }
+                    } else {
+                        $products = [];
                     }
                 } else {
-                    $products = [];
+                    echo "Insert bill failed.";
                 }
-            } else {
-                echo "Insert bill failed.";
+                unset($_SESSION['product']['id']);
+                header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/notificationOrder");
+                exit;
+            } elseif (empty($user['tenkh']) || empty($user['sdt']) || empty($user['diachi']) || empty($user['email']) || empty($user['thanhpho']) || empty($user['postcode'])) {
+                $msg_checkout = "Delivery do not empty please complete your delivery first";
+                $url_checkout = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_checkout?msg_checkout=$msg_checkout";
+                header("Location: $url_checkout");
+                exit();
             }
-            unset($_SESSION['product']['id']);
-            header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/notificationOrder");
-            exit;
         }
     }
+
 
     public function notificationOrder()
     {
@@ -808,7 +818,9 @@ class kh_Home extends Controller
             if (isset($_POST['btn_updateProfileShop'])) {
                 $this->khachHang_Model->updateKhachhangProfile($id, $fullname, $phonenumber, $address, $email, $city, $post_code, $img);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
-                header("location: http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account");
+                $msg_updateKhachhangProfile = "Update success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/khachhang/khachhang_account?msg_updateKhachhangProfile=$msg_updateKhachhangProfile";
+                header("location: $url");
                 exit();
             }
         } else {

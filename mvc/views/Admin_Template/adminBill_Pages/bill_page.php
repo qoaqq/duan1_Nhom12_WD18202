@@ -10,6 +10,12 @@
     </div>
 </form>
 <h1 class="text-center">ADMIN BILL</h1>
+<?php
+    if(isset($_GET['msg_billUpdate'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_billUpdate']."</h3>";
+    }
+?>
+
 <section class="text-center">
     <table class="table">
         <thead>

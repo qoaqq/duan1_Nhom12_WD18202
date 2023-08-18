@@ -10,6 +10,17 @@
     </div>
 </form>
 <h1 class="text-center" style="margin-bottom: 20px;">ADMIN PRODUCTS</h1>
+<?php
+    if(isset($_GET['msg_editSanpham'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_editSanpham']."</h3>";
+    }
+?>
+
+<?php
+    if(isset($_GET['msg_addSanpham'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_addSanpham']."</h3>";
+    }
+?>
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/delSP_byCheckBox" method="post">
     <div class="row">
         <div class="col-md-6">

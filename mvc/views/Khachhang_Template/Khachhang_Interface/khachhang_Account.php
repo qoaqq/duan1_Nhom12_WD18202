@@ -442,7 +442,11 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <?php
+                                if (isset($_GET['msg_updateKhachhangProfile'])) {
+                                    echo "<h4 style='color: red;'>" . $_GET['msg_updateKhachhangProfile'] . "!</h4>";
+                                }
+                            ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="headingFour">
                                     <h4 class="panel-title">

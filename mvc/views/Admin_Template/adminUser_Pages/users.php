@@ -11,6 +11,17 @@
     </div>
 </form>
 <h1 class="text-center">ADMIN CUSTOMER ACCOUNT</h1>
+<?php
+    if(isset($_GET['msg_insertUser'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_insertUser']."</h3>";
+    }
+?>
+
+<?php
+    if(isset($_GET['msg_updateUser'])){
+        echo "<h3 style='color: red' class='text-center'>".$_GET['msg_updateUser']."</h3>";
+    }
+?>
 <form action="http://localhost/duan1_Nhom12_WD18202/admin/admin_users/deleteFeatureByCheckBox" method="post">
     <br>
     <div class="row">

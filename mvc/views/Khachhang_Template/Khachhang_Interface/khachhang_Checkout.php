@@ -1,9 +1,9 @@
 <?php
-    if(!isset($_SESSION['id'])){
-        $msg = "You need to login";
-        $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_login?msg_cart=" . urlencode($msg);
-        header("location: $url");
-    }
+if (!isset($_SESSION['id'])) {
+    $msg = "You need to login";
+    $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_login?msg_cart=" . urlencode($msg);
+    header("location: $url");
+}
 ?>
 
 <!doctype html>
@@ -458,54 +458,63 @@
                                         <div class="panel-body">
                                             <div class="confirm-order">
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Product Name</th>
-                                                                <th>Quantity</th>
-                                                                <th>Unit Price</th>
-                                                                <th>Total</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <?php if (isset($data['detail_bill']['products'])) { ?>
-                                                            <?php foreach ($data['detail_bill']['products'] as $detail_bill) : ?>
-                                                                <tbody>
+
+
+                                                    <?php
+                                                    $detail_bill_data = isset($data['detail_bill']['products']) ? $data['detail_bill'] : $_SESSION['detail_bill'];
+
+                                                    if (!empty($detail_bill_data['products'])) {
+                                                        echo "
+                                                            <table class='table table-bordered table-hover'>
+                                                                <thead>
                                                                     <tr>
-                                                                        <td>
-                                                                            <a href="#"><?= $detail_bill['ten_sanpham'] ?></a>
-                                                                        </td>
-                                                                        <td><?= $detail_bill['quantity'] ?></td>
-                                                                        <td><?= $detail_bill['price'] ?></td>
-                                                                        <td><?= $detail_bill['total_price'] ?></td>
+                                                                        <th>Product Name</th>
+                                                                        <th>Quantity</th>
+                                                                        <th>Unit Price</th>
+                                                                        <th>Total</th>
                                                                     </tr>
-                                                                    <!-- Khởi tạo các input ẩn để lưu thông tin sản phẩm -->
-                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][id]" value="<?= $detail_bill['id'] ?>">
-                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][ten_sanpham]" value="<?= $detail_bill['ten_sanpham'] ?>">
-                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][quantity]" value="<?= $detail_bill['quantity'] ?>">
-                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][price]" value="<?= $detail_bill['price'] ?>">
-                                                                    <input type="hidden" name="products[<?= $detail_bill['id'] ?>][total_price]" value="<?= $detail_bill['total_price'] ?>">
-                                                                </tbody>
-                                                            <?php endforeach ?>
-                                                        <?php } else { ?>
-                                                            <?php $data['detail_bill']['products'] = []; ?>
-                                                        <?php } ?>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <td class="text-right" colspan="3">
-                                                                    <strong>Sub-Total:</strong>
-                                                                </td>
-                                                                <td><?= $data['detail_bill']['grand_price'] ?></td>
-                                                                <input type="hidden" name="grand_total" value="<?= $data['detail_bill']['grand_price'] ?>">
-                                                            </tr>
-                                                        </tfoot>
-                                                    </table>
+                                                                </thead>
+                                                                <tbody>";
+
+                                                        foreach ($detail_bill_data['products'] as $detail_bill) {
+                                                            echo "
+                                                                <tr>
+                                                                    <td><a href='#'>" . $detail_bill['ten_sanpham'] . "</a></td>
+                                                                    <td>" . $detail_bill['quantity'] . "</td>
+                                                                    <td>" . $detail_bill['price'] . "</td>
+                                                                    <td>" . $detail_bill['total_price'] . "</td>
+                                                                </tr>";
+                                                        }
+
+                                                        echo "
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <td class='text-right' colspan='3'>
+                                                                        <strong>Sub-Total:</strong>
+                                                                    </td>
+                                                                    <td>" . $detail_bill_data['grand_price'] . "</td>
+                                                                    <input type='hidden' name='grand_total' value='" . $detail_bill_data['grand_price'] . "'>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>";
+                                                    } else {
+                                                        echo "<table style='display:none;'></table>";
+                                                    }
+                                                    ?>
                                                 </div>
+
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <?php
+                                if (isset($_GET['msg_checkout'])) {
+                                    echo "<h4 style='color: red;'>" . $_GET['msg_checkout'] . "!</h4>";
+                                }
+                                ?>
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingSix">
@@ -527,26 +536,32 @@
                                                             <div class="form-name">
                                                                 <label>First Name <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['tenkh'] ?>" readonly name="name_user">
+                                                                <p style="color: red;"><?= $data['errors']['tenkh'] ?? '' ?></p>
                                                             </div>
                                                             <div class="form-name">
                                                                 <label>Address 1 <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['diachi'] ?>" readonly name="address">
+                                                                <p style="color: red;"><?= $data['errors']['diachi'] ?? '' ?></p>
                                                             </div>
                                                             <div class="form-name">
                                                                 <label>Phone Number <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['sdt'] ?>" readonly name="phonenumber">
+                                                                <p style="color: red;"><?= $data['errors']['sdt'] ?? '' ?></p>
                                                             </div>
                                                             <div class="form-name">
                                                                 <label>Email <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['email'] ?>" readonly name="email">
+                                                                <p style="color: red;"><?= $data['errors']['email'] ?? '' ?></p>
                                                             </div>
                                                             <div class="form-name">
                                                                 <label>City <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['thanhpho'] ?>" readonly name="city">
+                                                                <p style="color: red;"><?= $data['errors']['thanhpho'] ?? '' ?></p>
                                                             </div>
                                                             <div class="form-name">
                                                                 <label>Post code <em>*</em> </label>
                                                                 <input type="text" value="<?= $data['user']['postcode'] ?>" readonly name="post_code">
+                                                                <p style="color: red;"><?= $data['errors']['postcode'] ?? '' ?></p>
                                                             </div>
                                                         </div>
                                                     </div>

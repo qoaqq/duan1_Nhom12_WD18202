@@ -13,7 +13,8 @@
         }
 
         public function updateDanhmuc($tendm, $id, $loaiHang) {
-            $qr = "UPDATE `danhmuc` SET `ten_danhmuc`='$tendm', `id_loaihang`=$loaiHang  WHERE `id` = $id";
+            $qr = "UPDATE `danhmuc` SET `ten_danhmuc`='$tendm', `id_gioitinhLoaihang`=$loaiHang  WHERE `id` = $id";
+            echo $qr;
             return mysqli_query($this->con, $qr);
         }
 

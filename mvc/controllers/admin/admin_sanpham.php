@@ -133,8 +133,10 @@ class admin_sanpham extends Controller
         if (empty($errors)) {
             if (isset($_POST['btn_addSanpham'])) {
                 $this->sanphamModel->insertSanpham($tensp, $gia, $img, $mota, $soluong, $idlh);
-                header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp");
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $img);
+                $msg_addSanpham = "Add success";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/showSp?msg_addSanpham=". urlencode($msg_addSanpham);
+                header("Location: $url");
                 exit();
             }
         }
@@ -219,7 +221,9 @@ class admin_sanpham extends Controller
             if ((!empty($tensp)) && (!empty($gia)) && (!empty($soluong))) {
                 $this->sanphamModel->updateSanpham($id, $tensp, $gia, $images, $mota, $soluong, $idlh);
                 move_uploaded_file($file['tmp_name'], "./public/img/" . $images);
-                header("Location: http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme");
+                $msg_editSanpham = "Update Succes";
+                $url = "http://localhost/duan1_Nhom12_WD18202/admin/admin_sanpham/Theme?msg_editSanpham=". urlencode($msg_editSanpham);
+                header("Location: $url");
                 exit();
             }
             if (!empty($errors)) {
