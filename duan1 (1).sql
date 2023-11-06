@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 29, 2023 lúc 02:54 AM
+-- Máy chủ: localhost
+-- Thời gian đã tạo: Th10 06, 2023 lúc 05:04 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -185,8 +185,18 @@ CREATE TABLE `bill` (
   `id_khachhang` int(11) NOT NULL,
   `total` int(11) NOT NULL,
   `ngay_tao` date NOT NULL DEFAULT current_timestamp(),
-  `status` enum('Đã thanh toán','Chưa thanh toán','','') NOT NULL DEFAULT 'Chưa thanh toán'
+  `id_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `bill`
+--
+
+INSERT INTO `bill` (`id`, `id_khachhang`, `total`, `ngay_tao`, `id_status`) VALUES
+(31, 84, 321, '2023-08-09', 1),
+(32, 84, 489, '2023-08-09', 3),
+(33, 88, 2236, '2023-08-09', 1),
+(41, 88, 715, '2023-08-18', 3);
 
 -- --------------------------------------------------------
 
@@ -198,10 +208,20 @@ CREATE TABLE `chitietbill` (
   `id` int(11) NOT NULL,
   `id_bill` int(11) NOT NULL,
   `id_sanpham` int(11) NOT NULL,
-  `size` int(10) NOT NULL,
   `soluong` int(11) NOT NULL,
   `total_price` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitietbill`
+--
+
+INSERT INTO `chitietbill` (`id`, `id_bill`, `id_sanpham`, `soluong`, `total_price`) VALUES
+(62, 31, 56, 1, 321),
+(63, 32, 55, 1, 489),
+(64, 33, 25, 2, 460),
+(65, 33, 44, 4, 960),
+(66, 33, 45, 6, 816);
 
 -- --------------------------------------------------------
 
@@ -292,7 +312,9 @@ INSERT INTO `danhmuc` (`id`, `ten_danhmuc`, `id_gioitinhLoaihang`) VALUES
 (20, 'Men', 2),
 (21, 'Men', 3),
 (22, 'Women', 4),
-(23, 'Women', 5);
+(23, 'Women', 5),
+(30, 'rwbrh43brhj', 1),
+(31, 'ewrew', 2);
 
 -- --------------------------------------------------------
 
@@ -347,6 +369,8 @@ CREATE TABLE `khachhang` (
   `tenkh` varchar(200) NOT NULL,
   `sdt` varchar(250) NOT NULL,
   `diachi` text NOT NULL,
+  `thanhpho` varchar(50) NOT NULL,
+  `postcode` text NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` text NOT NULL,
   `anh` text NOT NULL,
@@ -357,10 +381,13 @@ CREATE TABLE `khachhang` (
 -- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`id`, `tenkh`, `sdt`, `diachi`, `email`, `password`, `anh`, `vaitro`) VALUES
-(84, 'Tôn Quyên', '0123456789', 'to 32427', 'q.duoc5@gmail.com', '$2y$10$K5Mf/KgMCxzeMf.RgYYGh.Zz6Bw5UTM/SZ5YPRmn85v.2TYhFAOnC', 'thumbnail.png', b'1'),
-(85, 'sdfd333', '456465445', 'ewrewrwetrge', 'q.duoc5asdfasdf@gmail.com', '$2y$10$T5zEZkxhOZ1RgpTo1N.4n.jNM6TVam9ltUXSXloN9byLVB4ovYYuy', '278646164_1339768013203249_8219283401960079602_n.jpg', b'0'),
-(86, 'duong lam', '0347073713', 'to 7,phan dinh phung', 'q.duoc5@gmail.com', '$2y$10$vVH/PAhEhkeQRgh.CydY4OCLUhusIF.48n0EiiR1mq1yJ1XX1.W2.', 'Picture5.png', b'0');
+INSERT INTO `khachhang` (`id`, `tenkh`, `sdt`, `diachi`, `thanhpho`, `postcode`, `email`, `password`, `anh`, `vaitro`) VALUES
+(84, 'ton quyen', '01234567892323', 'wewe2323', 'Ha Noi', '1000000', 'q.duoc5@gmail.com', '$2y$10$K5Mf/KgMCxzeMf.RgYYGh.Zz6Bw5UTM/SZ5YPRmn85v.2TYhFAOnC', 'thumbnail.png', b'1'),
+(88, 'quangduoc', '123456789', 'to 2 trung vuong', 'ha noi', '12345', 'duocquang@gmail.com', '$2y$10$Nbw4uVX.oza0fPdYZSAvY.nBkYxHLvbrK5g7hUWFIL5Ku/ufNRoTa', '278646164_1339768013203249_8219283401960079602_n.jpg', b'0'),
+(96, 'quyen', '324234', '4324r324234', 'qwerwqer', '123123', 'eerwrew@gmail.com', '$2y$10$oPfEx0n5FA6VzN5547suweDmEmvHjMFF4pAXuhFIyTDj8aeSTQXxu', '305400402_567980678457123_5812500644905963360_n.jpg', b'0'),
+(97, 'rqwerwqer', '213143', 'ewrwerwer', 'viet nam', '25000', '324324234234@gmail.com', '$2y$10$WRRGUacB3ttcEQORIFYvXOQdX19Kto8d9cEdm7nU4ai86zXEaGUHO', '311030949_475072674680373_7077046821910485748_n.jpg', b'0'),
+(98, 'asdfsadf', '324324', '324324', '32432', '3243243', 'werwer@gmail.com', '$2y$10$N/xpYONjqt.rMBRsS1Ruue.1DMD4r9j0qjVZIoPqn8kxjdPE1uhOK', '117131351_291172675658041_1938210028330741882_n.jpg', b'0'),
+(99, 'sdfsd', '34324234324', 'ewrwerewr', 'viet nam', '25000', 'q.duoc5qweqwe@gmail.com', '$2y$10$IYGfhZTWJ3vQBFrVyhf1cOz4uoHx0fG1fQ2XDQSkzY2TSX2U0mkzC', 'a.png', b'0');
 
 -- --------------------------------------------------------
 
@@ -395,7 +422,7 @@ CREATE TABLE `sanpham` (
   `ten_sanpham` varchar(200) NOT NULL,
   `gia` float NOT NULL,
   `anh` text NOT NULL,
-  `mota` text NOT NULL,
+  `mota` varchar(250) NOT NULL,
   `soluong` int(11) NOT NULL,
   `id_loaihang` int(11) DEFAULT NULL,
   `random_number` int(11) DEFAULT NULL
@@ -406,56 +433,79 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id`, `ten_sanpham`, `gia`, `anh`, `mota`, `soluong`, `id_loaihang`, `random_number`) VALUES
-(12, 'Adidas Campus', 98, 'adidas_campus.jpg', '', 23, 4, 1236),
-(13, 'Adidas Samba', 100, 'adidas_samba.jpg', '', 12, 4, 788),
-(14, 'Adidas Yeeze 350', 120, 'adidas_yeeze350.jpg', '', 23, 4, 232),
-(15, 'Adidas Yeeze 350 Black', 200, 'adidas_yeeze350Black.jpg', '', 15, 4, 8798),
-(16, 'Adidas Yeeze Foam', 320, 'adidas_yeezeFoam.jpg', '', 9, 4, 3295),
-(17, 'Adidas AdiFom', 310, 'adidas_adFom.jpg', '', 10, 4, 80),
-(19, 'Adidas Campus Women', 99, 'adidas_campusWomen.jpg', '', 24, 4, 517),
-(20, 'Adidas Gazelle', 95, 'adidas_gazelle.jpg', '', 19, 4, 2346),
-(21, 'Adidas Sambarose', 89, 'adidas_sambarose.jpg', '', 26, 4, 177),
-(22, 'Converse Comme Des', 120, 'converse_commeDes.jpg', '', 23, 2, 3850),
-(23, 'Converse 700x', 85, 'converse70Ox.jpg', '', 30, 2, 8720),
-(24, 'Converse High 1970s', 95, 'converse70s.jpg', '', 18, 2, 2050),
-(25, 'Converse Rick Owen', 230, 'converseRO.jpg', '', 14, 2, 4090),
-(26, 'Converse WEAPON', 160, 'converseWEAPON.jpg', '', 22, 2, 4300),
-(27, 'Converse Golf Le Fleur', 250, 'converGolfLeFluer.jpg', '', 11, 2, 9232),
-(28, 'Converse Duck Boot', 320, 'converseDUCKBOOT.jpg', '', 17, 2, 3258),
-(29, 'Converse Hike Hi', 99, 'converseHikeHi.jpg', '', 28, 2, 8596),
-(30, 'Converse OFFWHITE', 299, 'converseOFFWHITE.jpg', '', 31, 2, 3208),
-(31, 'Converse TURBOWPN', 400, 'converseTURBOWPN.jpg', '', 17, 2, 249),
-(32, 'Jordan 4 Thunder', 222, 'S_57.jpg', '', 23, 1, 1625),
-(33, 'Jordan 1 High Blue', 333, 'giay-nike-air-jordan-1-retro-high-og-unc-toe-gs-fd1437-400 (2).jpg', '', 36, 1, 7378),
-(34, 'Jordan 4 Marvel', 460, 'jordan1_marvel (2).jpg', '', 34, 1, 2014),
-(35, 'Jordan 7', 290, 'Jordan7.jpg', '', 38, 1, 7937),
-(36, 'Jordan 11', 280, 'Jordan11.jpg', '', 19, 1, 3645),
-(37, 'Jordan 1 Low', 210, 'Jordan1_low.jpg', '', 25, 1, 4414),
-(38, 'Jordan 1 Pink', 160, 'Jordan1_pink.jpg', '', 27, 1, 1134),
-(39, 'Jordan 1 Green Low', 399, 'jordan1Green_low.jpg', '', 39, 1, 2431),
-(40, 'Jordan 3', 135, 'Jordan3.jpg', '', 26, 1, 8753),
-(41, 'Jordan 4', 199, 'Jordan4.jpg', '', 13, 1, 6472),
-(42, 'New Balance 530', 336, 'nBalance530.jpg', '', 29, 5, 6101),
-(43, 'New Balance 550', 285, 'nBalance550.jpg', '', 24, 5, 1089),
-(44, 'New Balance 1960', 240, 'nBalance1906.jpg', '', 21, 5, 7141),
-(45, 'New Balance 2002', 136, 'nBalance2002.jpg', '', 15, 5, 2440),
-(46, 'New Balance 9060', 123, 'nBalance9060.jpg', '', 12, 5, 777),
-(47, 'New Balance 327', 222, 'nBalance327.jpg', '', 11, 5, 6564),
-(48, 'New Balance 550 White', 214, 'Untitled-1.jpg', '', 19, 5, 491),
-(49, 'New Balance 574', 136, 'nBalance574.jpg', '', 32, 5, 2762),
-(50, 'New Balance 990v5', 241, 'nBalance990v5.jpg', '', 22, 5, 2337),
-(51, 'New Balance 991', 237, 'nBalance991.jpg', '', 38, 5, 3399),
-(52, 'Nike Air Low Supreme', 299, 'nikeAirLowSupreme.jpg', '', 8, 3, 9985),
-(53, 'Nike Air Max 1', 399, 'nikeAirMax1.jpg', '', 41, 3, 9731),
-(54, 'Nike Dunk Low Black', 412, 'nikeDunkLowBlack.jpg', '', 32, 3, 8697),
-(55, 'Nike Dunk Low Chicago', 489, 'nikeDunkLowChicago.jpg', '', 37, 3, 4296),
-(56, 'Nike Dunk Low Red Swoosh', 321, 'nikeDunkLowRedSwoosh.jpg', '', 34, 3, 5388),
-(57, 'Nike Dunk Low 520 Pack Pink', 296, 'nikeDunkLow520PackPink.jpg', '', 16, 3, 4053),
-(58, 'Nike Dunk Low Black Citron Pulse', 239, 'nikeDunkLowCitronPulse.jpg', '', 14, 3, 4101),
-(59, 'Nike Dunk Low Disrupt 2', 412, 'nikeDunkLowDisrupt2.jpg', '', 38, 3, 8346),
-(60, 'Nike Dunk Low PRM', 499, 'nikeDunkLowPRM.jpg', '', 35, 3, 9429),
-(61, 'Nike Dunk Low Solar Flare', 209, 'nikeDunkLowSolarFlare.jpg', '', 29, 3, 2107),
-(90, 'Adidas Astir', 110, 'adidas_astir.jpg', '', 15, 4, 2248);
+(12, 'Adidas Campus', 98, 'adidas_campus.jpg', '', 23, 4, 8631),
+(13, 'Adidas Samba', 100, 'adidas_samba.jpg', '', 12, 4, 9529),
+(14, 'Adidas Yeeze 350', 120, 'adidas_yeeze350.jpg', '', 23, 4, 1751),
+(15, 'Adidas Yeeze 350 Black', 200, 'adidas_yeeze350Black.jpg', '', 15, 4, 170),
+(16, 'Adidas Yeeze Foam', 320, 'adidas_yeezeFoam.jpg', '', 9, 4, 5597),
+(17, 'Adidas AdiFom', 310, 'adidas_adFom.jpg', '', 10, 4, 7474),
+(19, 'Adidas Campus Women', 99, 'adidas_campusWomen.jpg', '', 24, 4, 583),
+(20, 'Adidas Gazelle', 95, 'adidas_gazelle.jpg', '', 19, 4, 490),
+(21, 'Adidas Sambarose', 89, 'adidas_sambarose.jpg', '', 26, 4, 701),
+(22, 'Converse Comme Des', 120, 'converse_commeDes.jpg', '', 23, 2, 2036),
+(23, 'Converse 700x', 85, 'converse70Ox.jpg', '', 30, 2, 8076),
+(24, 'Converse High 1970s', 95, 'converse70s.jpg', '', 18, 2, 4275),
+(25, 'Converse Rick Owen', 230, 'converseRO.jpg', '', 14, 2, 7149),
+(26, 'Converse WEAPON', 160, 'converseWEAPON.jpg', '', 22, 2, 2917),
+(27, 'Converse Golf Le Fleur', 250, 'converGolfLeFluer.jpg', '', 11, 2, 3141),
+(28, 'Converse Duck Boot', 320, 'converseDUCKBOOT.jpg', '', 17, 2, 6954),
+(29, 'Converse Hike Hi', 99, 'converseHikeHi.jpg', '', 28, 2, 5349),
+(30, 'Converse OFFWHITE', 299, 'converseOFFWHITE.jpg', '', 31, 2, 5882),
+(31, 'Converse TURBOWPN', 400, 'converseTURBOWPN.jpg', '', 17, 2, 3365),
+(32, 'Jordan 4 Thunder', 222, 'S_57.jpg', '', 23, 1, 9178),
+(33, 'Jordan 1 High Blue', 333, 'giay-nike-air-jordan-1-retro-high-og-unc-toe-gs-fd1437-400 (2).jpg', '', 36, 1, 5795),
+(34, 'Jordan 4 Marvel', 460, 'jordan1_marvel.jpg', '', 34, 1, 1443),
+(35, 'Jordan 7', 290, 'Jordan7.jpg', '', 38, 1, 9831),
+(36, 'Jordan 11', 280, 'Jordan11.jpg', '', 19, 1, 4824),
+(37, 'Jordan 1 Low', 210, 'Jordan1_low.jpg', '', 25, 1, 4630),
+(38, 'Jordan 1 Pink', 160, 'Jordan1_pink.jpg', '', 27, 1, 8679),
+(39, 'Jordan 1 Green Low', 399, 'jordan1Green_low.jpg', '', 39, 1, 9506),
+(40, 'Jordan 3', 135, 'Jordan3.jpg', '', 26, 1, 1492),
+(41, 'Jordan 4', 199, 'Jordan4.jpg', '', 13, 1, 8944),
+(42, 'New Balance 530', 336, 'nBalance530.jpg', '', 29, 5, 246),
+(43, 'New Balance 550', 285, 'nBalance550.jpg', '', 24, 5, 4396),
+(44, 'New Balance 1960', 240, 'nBalance1906.jpg', '', 21, 5, 1242),
+(45, 'New Balance 2002', 136, 'nBalance2002.jpg', '', 15, 5, 3022),
+(46, 'New Balance 9060', 123, 'nBalance9060.jpg', '', 12, 5, 1386),
+(47, 'New Balance 327', 222, 'nBalance327.jpg', '', 11, 5, 7863),
+(48, 'New Balance 550 White', 214, 'Untitled-1.jpg', '', 19, 5, 5160),
+(49, 'New Balance 574', 136, 'nBalance574.jpg', '', 32, 5, 2209),
+(50, 'New Balance 990v5', 241, 'nBalance990v5.jpg', '', 22, 5, 5565),
+(51, 'New Balance 991', 237, 'nBalance991.jpg', '', 38, 5, 1202),
+(52, 'Nike Air Low Supreme', 299, 'nikeAirLowSupreme.jpg', '', 8, 3, 9312),
+(53, 'Nike Air Max 1', 399, 'nikeAirMax1.jpg', '', 41, 3, 2955),
+(54, 'Nike Dunk Low Black', 412, 'nikeDunkLowBlack.jpg', '', 32, 3, 6840),
+(55, 'Nike Dunk Low Chicago', 489, 'nikeDunkLowChicago.jpg', '', 37, 3, 5336),
+(56, 'Nike Dunk Low Red Swoosh', 321, 'nikeDunkLowRedSwoosh.jpg', '', 34, 3, 6162),
+(57, 'Nike Dunk Low 520 Pack Pink', 296, 'nikeDunkLow520PackPink.jpg', '', 16, 3, 4801),
+(58, 'Nike Dunk Low Black Citron Pulse', 239, 'nikeDunkLowCitronPulse.jpg', '', 14, 3, 5518),
+(59, 'Nike Dunk Low Disrupt 2', 412, 'nikeDunkLowDisrupt2.jpg', '', 38, 3, 3190),
+(60, 'Nike Dunk Low PRM', 499, 'nikeDunkLowPRM.jpg', '', 35, 3, 9395),
+(61, 'Nike Dunk Low Solar Flare', 209, 'nikeDunkLowSolarFlare.jpg', '', 29, 3, 7407),
+(90, 'Adidas Astir', 110, 'adidas_astir.jpg', '', 15, 4, 8850),
+(96, 'rewrwer', 234234, 'Picture11.png', 'fesdf', 32, 1, 2031),
+(98, 'hvghvhg', 78, 'Picture2.png', 'ghvgh', 76, 3, 3604),
+(99, 'dfdsf', 32432, 'Picture10.png', 'rwer', 23, 2, 1928);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `status_bill`
+--
+
+CREATE TABLE `status_bill` (
+  `id` int(11) NOT NULL,
+  `status_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `status_bill`
+--
+
+INSERT INTO `status_bill` (`id`, `status_name`) VALUES
+(1, 'Your orders are on the way'),
+(2, 'Your orders aren\'t accept yet'),
+(3, 'Your orders have been denied');
 
 -- --------------------------------------------------------
 
@@ -494,7 +544,8 @@ ALTER TABLE `anh_sanpham`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_kh_bill` (`id_khachhang`);
+  ADD KEY `fk_kh_bill` (`id_khachhang`),
+  ADD KEY `fk_status_bill` (`id_status`);
 
 --
 -- Chỉ mục cho bảng `chitietbill`
@@ -553,6 +604,12 @@ ALTER TABLE `sanpham`
   ADD KEY `fk_loaihang_sp` (`id_loaihang`);
 
 --
+-- Chỉ mục cho bảng `status_bill`
+--
+ALTER TABLE `status_bill`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tag`
 --
 ALTER TABLE `tag`
@@ -572,13 +629,13 @@ ALTER TABLE `anh_sanpham`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietbill`
 --
 ALTER TABLE `chitietbill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietsp`
@@ -590,7 +647,7 @@ ALTER TABLE `chitietsp`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `gioitinh`
@@ -608,7 +665,7 @@ ALTER TABLE `gioitinh_loaihang`
 -- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT cho bảng `loaihang`
@@ -620,7 +677,13 @@ ALTER TABLE `loaihang`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT cho bảng `status_bill`
+--
+ALTER TABLE `status_bill`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tag`
@@ -642,14 +705,15 @@ ALTER TABLE `anh_sanpham`
 -- Các ràng buộc cho bảng `bill`
 --
 ALTER TABLE `bill`
-  ADD CONSTRAINT `fk_kh_bill` FOREIGN KEY (`id_khachhang`) REFERENCES `khachhang` (`id`);
+  ADD CONSTRAINT `fk_kh_bill` FOREIGN KEY (`id_khachhang`) REFERENCES `khachhang` (`id`),
+  ADD CONSTRAINT `fk_status_bill` FOREIGN KEY (`id_status`) REFERENCES `status_bill` (`id`);
 
 --
 -- Các ràng buộc cho bảng `chitietbill`
 --
 ALTER TABLE `chitietbill`
-  ADD CONSTRAINT `fk_bill_chitietbill` FOREIGN KEY (`id_bill`) REFERENCES `bill` (`id`),
-  ADD CONSTRAINT `fl_sp_chitietbill` FOREIGN KEY (`id_sanpham`) REFERENCES `sanpham` (`id`);
+  ADD CONSTRAINT `fk_bill_chitietbill` FOREIGN KEY (`id_bill`) REFERENCES `bill` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fl_sp_chitietbill` FOREIGN KEY (`id_sanpham`) REFERENCES `sanpham` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Các ràng buộc cho bảng `chitietsp`
